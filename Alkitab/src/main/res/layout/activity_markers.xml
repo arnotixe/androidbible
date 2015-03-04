@@ -13,7 +13,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:background="#3a3a3a">
+        android:background="#3a3a3a"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/bGotoSync"
@@ -26,7 +27,7 @@
             android:textColor="#fff"
             android:padding="16dp"
             android:layout_alignParentRight="true"
-            />
+            android:visibility="gone" />
     </RelativeLayout>
 
 

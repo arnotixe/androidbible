@@ -20,8 +20,9 @@
 		android:positiveButtonText="@null"
 		android:title="@string/pref_volumeButtonNavigation_title" />
 
+	<!-- Hacked away by Arno, we don't want it
 	<CheckBoxPreference
 		android:defaultValue="false"
 		android:key="@string/pref_showHiddenVersion_key"
-		android:title="@string/pref_showHiddenVersion_title" />
+		android:title="@string/pref_showHiddenVersion_title" /> -->
 </PreferenceScreen>

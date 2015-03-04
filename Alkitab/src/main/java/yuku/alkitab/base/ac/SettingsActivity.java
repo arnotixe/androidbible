@@ -14,6 +14,7 @@ import yuku.afw.storage.Preferences;
 import yuku.alkitab.base.App;
 import yuku.alkitab.base.ac.base.BasePreferenceActivity;
 import yuku.alkitab.base.sync.SyncSettingsActivity;
+import yuku.alkitab.base.ac.VersionsActivity;
 import yuku.alkitab.debug.R;
 
 import java.util.List;
@@ -45,11 +46,18 @@ public class SettingsActivity extends BasePreferenceActivity {
 			}
 		}
 
-		for (final Header header : target) {
-			if (header.id == R.id.header_id_sync) {
-				header.intent = new Intent(App.context, SyncSettingsActivity.class);
-			}
-		}
+// Hacked away by Arno
+
+        //for (final Header header : target) {
+        //	if (header.id == R.id.header_id_sync) {
+        // header.intent = new Intent(App.context, SyncSettingsActivity.class);
+        //	}
+        //}
+        for (final Header header : target) {
+        	if (header.id == R.id.header_id_versions) {
+            header.intent = new Intent(App.context, VersionsActivity.class);
+        	}
+        }
 	}
 
 	@Override
@@ -97,7 +105,8 @@ public class SettingsActivity extends BasePreferenceActivity {
 			final ListPreference pref_volumeButtonNavigation = (ListPreference) findPreference(getString(R.string.pref_volumeButtonNavigation_key));
 			autoDisplayListPreference(pref_volumeButtonNavigation);
 
-			final CheckBoxPreference pref_showHiddenVersion = (CheckBoxPreference) findPreference(getString(R.string.pref_showHiddenVersion_key));
+			/* Hacked away by Arno
+			 final CheckBoxPreference pref_showHiddenVersion = (CheckBoxPreference) findPreference(getString(R.string.pref_showHiddenVersion_key));
 			pref_showHiddenVersion.setOnPreferenceChangeListener((preference, newValue) -> {
 				final boolean value = (boolean) newValue;
 
@@ -111,7 +120,7 @@ public class SettingsActivity extends BasePreferenceActivity {
 				}
 
 				return true;
-			});
+			});*/
 		}
 	}
 

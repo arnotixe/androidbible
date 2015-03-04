@@ -29,10 +29,10 @@ android {
     compileSdkVersion 21
     buildToolsVersion '21.1.1'
     defaultConfig {
-        applicationId 'yuku.alkitab.debug'
+        applicationId 'arnotixe.qibi'
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 14000179
+        versionCode 20150304
         versionName '4.0.0-beta14'
         multiDexEnabled true
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- ...-1 is DEBUG version. -2 is Alkitab Release. -3 is Quick Bible Release. -->
-    <string name="ga_trackingId" tools:ignore="TypographyDashes,UnusedResources" translatable="false">UA-37048448-1</string>
+    <!-- ...-1 is DEBUG version. -2 is Alkitab Release. -3 is Quick Bible Release. 57578228-2 -->
+    <string name="ga_trackingId" tools:ignore="TypographyDashes,UnusedResources" translatable="false">UA-57578228-2</string>
 
 </resources>

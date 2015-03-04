@@ -82,7 +82,7 @@ public class VersionConfigUpdaterService extends IntentService {
 		final int lastUpdateCheck = Preferences.getInt(Prefkey.version_config_last_update_check, 0);
 		final int now = (int) (System.currentTimeMillis() / 1000L);
 
-		if (auto && lastUpdateCheck != 0 && now > lastUpdateCheck && now - lastUpdateCheck < 7 * 86400) {
+        if (auto && lastUpdateCheck != 0 && now > lastUpdateCheck && now - lastUpdateCheck < 7 * 86400) {
 			Log.d(TAG, "Auto update: no need to check for updates. Last update check: " + new Date(lastUpdateCheck * 1000L) + " now: " + new Date(now * 1000L));
 			return;
 		}
@@ -91,7 +91,7 @@ public class VersionConfigUpdaterService extends IntentService {
 
 		try {
 			Log.d(TAG, "Downloading list modify time");
-			modifyTimeBody = App.downloadString("https://alkitab-host.appspot.com/versions/list_modify_time?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode())));
+			modifyTimeBody = App.downloadString("http://qibi.is-a-bookkeeper.com/2/list_modify_time?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode())));
 		} catch (IOException e) {
 			Log.e(TAG, "failed to download modify time", e);
 
