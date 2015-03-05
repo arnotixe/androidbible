@@ -20,10 +20,10 @@ apply plugin: 'retrolambda'
 android {
     signingConfigs {
         release {
-            keyAlias System.getenv("SIGN_ALIAS")
-            keyPassword System.getenv("SIGN_PASSWORD")
-            storeFile file(System.getenv("SIGN_KEYSTORE") != null ? System.getenv("SIGN_KEYSTORE") : "/dev/null")
-            storePassword System.getenv("SIGN_PASSWORD")
+            keyAlias 'release-arnotixe'
+            keyPassword 'manjar'
+            storeFile file('/home/arno/teokratisk/publicaciones/biblia/bibliaNWT/QiBi/keystore/.keystore')
+            storePassword 'manjar'
         }
     }
     compileSdkVersion 21

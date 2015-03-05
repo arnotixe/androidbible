@@ -125,7 +125,9 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	private static final String EXTRA_verseUrl = "verseUrl";
 	private boolean uncheckVersesWhenActionModeDestroyed = true;
 
-	private GotoButton.FloaterDragListener bGoto_floaterDrag = new GotoButton.FloaterDragListener() {
+	/* Arno didn't want this either
+
+	  private GotoButton.FloaterDragListener bGoto_floaterDrag = new GotoButton.FloaterDragListener() {
 		final int[] floaterLocationOnScreen = {0, 0};
 
 		@Override
@@ -145,7 +147,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			floater.hide();
 			floater.onDragComplete(screenX - floaterLocationOnScreen[0], screenY - floaterLocationOnScreen[1]);
 		}
-	};
+	}; */
 
 	final Floater.Listener floater_listener = new Floater.Listener() {
 		@Override
@@ -360,7 +362,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			bGoto_longClick();
 			return true;
 		});
-		bGoto.setFloaterDragListener(bGoto_floaterDrag);
+		// Removed by Arno
+		// bGoto.setFloaterDragListener(bGoto_floaterDrag);
 
 		bLeft.setOnClickListener(v -> bLeft_click());
 		bRight.setOnClickListener(v -> bRight_click());
@@ -1898,9 +1901,11 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 			// show selected verses
 			if (single) {
-				mode.setSubtitle(R.string.verse_select_one_verse_selected);
+				// Arno doesn't want this
+				// mode.setSubtitle(R.string.verse_select_one_verse_selected);
 			} else {
-				mode.setSubtitle(getString(R.string.verse_select_multiple_verse_selected, selected.size()));
+				// Arno doesn't want this
+				// mode.setSubtitle(getString(R.string.verse_select_multiple_verse_selected, selected.size()));
 			}
 
 			return true;

@@ -187,7 +187,7 @@
     <string name="menuAddSomething">Add marker</string>
     <string name="color_settings_title">Colors</string>
     <string name="color_settings_night_title">Colors (Night mode)</string>
-    <string name="menuDisplay">Display</string>
+    <string name="menuDisplay">Appearance</string>
     <string name="text_appearance_theme_custom">Custom…</string>
     <string name="text_appearance_text_size">Text size</string>
     <string name="text_appearance_line_spacing">Line spacing</string>
@@ -272,14 +272,14 @@
     <string name="me_no_labels">No labels</string>
     <string name="me_edited_modify_date">(edited %s)</string>
 
-    <string name="pm_progress_1">Progress 1</string>
-    <string name="pm_progress_2">Progress 2</string>
-    <string name="pm_progress_3">Progress 3</string>
-    <string name="pm_progress_4">Progress 4</string>
-    <string name="pm_progress_5">Progress 5</string>
+    <string name="pm_progress_1">Pin 1</string>
+    <string name="pm_progress_2">Pin 1</string>
+    <string name="pm_progress_3">Pin 3</string>
+    <string name="pm_progress_4">Pin 4</string>
+    <string name="pm_progress_5">Pin 5</string>
     <string name="pm_menu_save_progress">Save %s</string>
     <string name="pm_menu_view_progress">View progress</string>
-    <string name="pm_progress_name">Progress name</string>
+    <string name="pm_progress_name">Pin name</string>
     <string name="pm_edit_name">Edit name</string>
     <string name="pm_delete_progress">Delete progress</string>
     <string name="pm_activate_tutorial">Long-press and drag to place a progress on a verse.</string>
@@ -363,7 +363,7 @@
     <string name="drawer_close">Close drawer</string>
     <string name="menuSplitVersion">Split</string>
     <string name="menuBible">Bible</string>
-    <string name="menuProgress">Progress</string>
+    <string name="menuProgress">Pins</string>
     <string name="switch_off">OFF</string>
     <string name="switch_on">ON</string>
     <string name="sn_menu_copy">Copy song</string>
