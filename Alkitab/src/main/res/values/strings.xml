@@ -23,7 +23,7 @@
     <string name="versi">Version</string>
     <string name="menuDevotion">Devotion</string>
     <string name="search">Search</string>
-    <string name="activity_title_markers">Markers</string>
+    <string name="activity_title_markers">Annotations</string>
     <string name="menu_markers">Markers</string>
     <string name="hapus_pembatas_buku">Delete bookmark</string>
     <string name="menuShare">Share</string>
@@ -243,11 +243,11 @@
     <string name="desc_drag_to_reorder_versions">Drag to reorder versions</string>
     <string name="desc_close">Close</string>
     <string name="desc_play">Play</string>
-    <string name="desc_progress_1">First progress</string>
-    <string name="desc_progress_2">Second progress</string>
-    <string name="desc_progress_3">Third progress</string>
-    <string name="desc_progress_4">Fourth progress</string>
-    <string name="desc_progress_5">Fifth progress</string>
+    <string name="desc_progress_1">Pin 1</string>
+    <string name="desc_progress_2">Pin 2</string>
+    <string name="desc_progress_3">Pin 3</string>
+    <string name="desc_progress_4">Pin 4</string>
+    <string name="desc_progress_5">Pin 5</string>
 
     <string name="intent_filter_open_yes_file">Open YES file</string>
     <string name="intent_filter_open_pdb_file">Open PDB file</string>
@@ -263,9 +263,9 @@
 
     <string name="me_export_markers">Export markers</string>
     <string name="me_export_menu_item">Export</string>
-    <string name="me_all_notes">All notes</string>
-    <string name="me_all_highlights">All highlights</string>
-    <string name="me_all_bookmarks">All bookmarks</string>
+    <string name="me_all_notes">Notes</string>
+    <string name="me_all_highlights">Highlights</string>
+    <string name="me_all_bookmarks">Bookmarks</string>
     <string name="me_section_bookmarks">Bookmarks</string>
     <string name="me_section_notes">Notes</string>
     <string name="me_section_highlights">Highlights</string>
@@ -273,16 +273,15 @@
     <string name="me_edited_modify_date">(edited %s)</string>
 
     <string name="pm_progress_1">Pin 1</string>
-    <string name="pm_progress_2">Pin 1</string>
+    <string name="pm_progress_2">Pin 2</string>
     <string name="pm_progress_3">Pin 3</string>
     <string name="pm_progress_4">Pin 4</string>
     <string name="pm_progress_5">Pin 5</string>
     <string name="pm_menu_save_progress">Save %s</string>
-    <string name="pm_menu_view_progress">View progress</string>
     <string name="pm_progress_name">Pin name</string>
     <string name="pm_edit_name">Edit name</string>
-    <string name="pm_delete_progress">Delete progress</string>
-    <string name="pm_activate_tutorial">Long-press and drag to place a progress on a verse.</string>
+    <string name="pm_delete_progress">Remove pin</string>
+    <string name="pm_activate_tutorial">Long-press and drag to place a pin on a verse.</string>
     <string name="pm_delete_progress_confirm">Remove <b>^1</b>?</string>
 
     <string name="copy_share">Copy or share</string>
@@ -503,5 +502,6 @@
 	<string name="marker_migrate_import_from_newest">Yes, import from the newest (recommended)</string>
 	<string name="marker_migrate_import_from_other">Other backup</string>
 	<string name="marker_migrate_filename_dated">%1$s dated %2$s</string>
+    <string name="pm_menu_view_progress">View pin</string>
 
 </resources>

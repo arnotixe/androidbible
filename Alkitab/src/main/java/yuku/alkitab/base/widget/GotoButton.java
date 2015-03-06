@@ -9,16 +9,20 @@ import android.widget.Button;
 public class GotoButton extends Button {
 	public static final String TAG = GotoButton.class.getSimpleName();
 
+	/*
+	Gone by Arno
+
 	public interface FloaterDragListener {
-		void onFloaterDragStart(float screenX, float screenY);
+	 	void onFloaterDragStart(float screenX, float screenY);
 		void onFloaterDragMove(float screenX, float screenY);
 		void onFloaterDragComplete(float screenX, float screenY);
 	}
-
+*/
 	int[] screenLocation = {0, 0};
-	boolean inFloaterDrag;
+	//boolean inFloaterDrag;
 	boolean inLongClicked;
-	FloaterDragListener floaterDragListener;
+	//FloaterDragListener floaterDragListener;
+
 
 	public GotoButton(final Context context) {
 		super(context);
@@ -32,6 +36,7 @@ public class GotoButton extends Button {
 		super(context, attrs, defStyle);
 	}
 
+/*
 	@Override
 	public boolean onTouchEvent(final MotionEvent event) {
 		final int action = MotionEventCompat.getActionMasked(event);
@@ -67,15 +72,19 @@ public class GotoButton extends Button {
 					floaterDragListener.onFloaterDragMove(screenX, screenY);
 				}
 			}
-		}
 
+		}
 		return super.onTouchEvent(event);
 	}
+*/
 
-	public void setFloaterDragListener(final FloaterDragListener floaterDragListener) {
+
+
+
+/*	public void setFloaterDragListener(final FloaterDragListener floaterDragListener) {
 		this.floaterDragListener = floaterDragListener;
 	}
-
+*/
 	@Override
 	public boolean performLongClick() {
 		inLongClicked = true;

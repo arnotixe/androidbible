@@ -76,7 +76,7 @@ import yuku.alkitab.base.util.LidToAri;
 import yuku.alkitab.base.util.OsisBookNames;
 import yuku.alkitab.base.util.Sqlitil;
 import yuku.alkitab.base.widget.CallbackSpan;
-import yuku.alkitab.base.widget.Floater;
+//import yuku.alkitab.base.widget.Floater;
 import yuku.alkitab.base.widget.FormattedTextRenderer;
 import yuku.alkitab.base.widget.GotoButton;
 import yuku.alkitab.base.widget.LabeledSplitHandleButton;
@@ -147,7 +147,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			floater.hide();
 			floater.onDragComplete(screenX - floaterLocationOnScreen[0], screenY - floaterLocationOnScreen[1]);
 		}
-	}; */
+	};
 
 	final Floater.Listener floater_listener = new Floater.Listener() {
 		@Override
@@ -155,7 +155,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			jumpToAri(ari, false);
 			history.add(ari);
 		}
-	};
+	};*/
 
 	TwofingerLinearLayout.Listener splitRoot_listener = new TwofingerLinearLayout.Listener() {
 		float startFontSize;
@@ -258,7 +258,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	ImageButton bLeft;
 	ImageButton bRight;
 	TextView bVersion;
-	Floater floater;
+	//Floater floater;
 
 	Book activeBook;
 	int chapter_1 = 0;
@@ -350,7 +350,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		splitRoot = V.get(this, R.id.splitRoot);
 		splitHandle = V.get(this, R.id.splitHandle);
 		splitHandleButton = V.get(this, R.id.splitHandleButton);
-		floater = V.get(this, R.id.floater);
+		//floater = V.get(this, R.id.floater);
 
 		lsText.setName("lsText");
 		lsSplit1.setName("lsSplit1");
@@ -369,7 +369,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		bRight.setOnClickListener(v -> bRight_click());
 		bVersion.setOnClickListener(v -> bVersion_click());
 
-		floater.setListener(floater_listener);
+		//floater.setListener(floater_listener);
 
 		lsText.setOnKeyListener((v, keyCode, event) -> {
 			int action = event.getAction();
