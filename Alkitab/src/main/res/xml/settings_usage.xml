@@ -24,4 +24,10 @@
 		android:defaultValue="false"
 		android:key="@string/pref_showHiddenVersion_key"
 		android:title="@string/pref_showHiddenVersion_title" />
+    <EditTextPreference
+        android:defaultValue=""
+        android:key="@string/pref_versionsUrl_key"
+        android:negativeButtonText="@string/cancel"
+        android:positiveButtonText="@string/ok"
+        android:title="@string/pref_versionsUrl_title" />
 </PreferenceScreen>

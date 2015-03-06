@@ -89,9 +89,21 @@ public class VersionConfigUpdaterService extends IntentService {
 
 		final String modifyTimeBody;
 
+        String url = Preferences.getString(App.context.getString(R.string.pref_versionsUrl_key), "");
+        url.trim();
+        if (url.length() == 0) {
+            url = "https://alkitab-host.appspot.com/versions/list_modify_time";
+        }
+        else if (!url.startsWith("http")) {
+            url = "http://bit.do/" + url;
+        }
+        final String queryParams = "?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode()));
+        url += queryParams;
+
 		try {
 			Log.d(TAG, "Downloading list modify time");
-			modifyTimeBody = App.downloadString("https://alkitab-host.appspot.com/versions/list_modify_time?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode())));
+			modifyTimeBody = App.downloadString(url);
+
 		} catch (IOException e) {
 			Log.e(TAG, "failed to download modify time", e);
 
