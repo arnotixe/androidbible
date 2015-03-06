@@ -25,4 +25,5 @@
 	<string name="pref_syncAccountName_key">syncAccountName</string>
 	<string name="pref_sync_key">sync</string>
 	<string name="pref_syncLogout_key">syncLogout</string>
+    <string name="pref_versionsUrl_key">versionsUrl</string>
 </resources>
