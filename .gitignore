@@ -9,6 +9,14 @@ gen/
 /.idea/tasks.xml
 /.idea/artifacts
 /build
+.idea/misc.xml
+AlkitabIntegration/*.iml
+AlkitabIo/*.iml
+AlkitabModel/*.iml
+AlkitabYes2/*.iml
+BiblePlus/*.iml
+ImportedDesktopVerseUtil/*.iml
+KpriModel/*.iml
 
 # according to https://intellij-support.jetbrains.com/entries/23393067
 /.idea/libraries/*.xml
@@ -16,3 +24,4 @@ gen/
 
 # Mac
 .DS_Store
+
