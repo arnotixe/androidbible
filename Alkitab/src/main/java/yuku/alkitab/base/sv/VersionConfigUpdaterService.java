@@ -138,7 +138,7 @@ public class VersionConfigUpdaterService extends IntentService {
 			if (!auto) {
 				toast(getString(R.string.version_config_updater_no_newer_available));
 			}
-			return;
+			// return; download updates anyway, until we get the timer reset FIXME
 		}
 
 		final String versionConfigBody;
