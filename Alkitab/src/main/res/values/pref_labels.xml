@@ -16,5 +16,5 @@
     <string name="pref_copyWithVerseNumbers_summary">Put verse numbers on every verse when copying/sharing</string>
     <string name="pref_showHiddenVersion_title">Enable possibly restricted versions</string>
     <string name="pref_versionsUrl_title">URL for Bible versions</string>
-    <string name="pref_versionsUrl_summary">Enter shortname (\"qibi\", \"yuku\", etc) or full URL. If using shortname, a http://bit.do/&lt;shortname&gt; redirect is assumed.</string>
+    <string name="pref_versionsUrl_summary">Enter shortname (\"Qibi\", \"yuku\", etc) or full URL. If using shortname, a http://bit.do/&lt;shortname&gt; redirect is assumed.</string>
 </resources>
