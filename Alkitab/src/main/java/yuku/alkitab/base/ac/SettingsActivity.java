@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.CheckBoxPreference;
+import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -13,6 +14,7 @@ import android.view.View;
 import yuku.afw.storage.Preferences;
 import yuku.alkitab.base.App;
 import yuku.alkitab.base.ac.base.BasePreferenceActivity;
+import yuku.alkitab.base.storage.Prefkey;
 import yuku.alkitab.base.sync.SyncSettingsActivity;
 import yuku.alkitab.base.ac.VersionsActivity;
 import yuku.alkitab.debug.R;
@@ -106,7 +108,7 @@ public class SettingsActivity extends BasePreferenceActivity {
 			autoDisplayListPreference(pref_volumeButtonNavigation);
 
 			/* Hacked away by Arno
-			 final CheckBoxPreference pref_showHiddenVersion = (CheckBoxPreference) findPreference(getString(R.string.pref_showHiddenVersion_key));
+			final CheckBoxPreference pref_showHiddenVersion = (CheckBoxPreference) findPreference(getString(R.string.pref_showHiddenVersion_key));
 			pref_showHiddenVersion.setOnPreferenceChangeListener((preference, newValue) -> {
 				final boolean value = (boolean) newValue;
 
@@ -120,7 +122,16 @@ public class SettingsActivity extends BasePreferenceActivity {
 				}
 
 				return true;
-			});*/
+			});
+			*/
+
+            final EditTextPreference pref_versionsUrl = (EditTextPreference) findPreference(getString(R.string.pref_versionsUrl_key));
+            pref_versionsUrl.setOnPreferenceChangeListener((preference, newValue) -> {
+               // Reset timer when bible version server changes
+               Preferences.setInt(Prefkey.version_config_last_update_check,0); //assume we need to update
+               Preferences.setInt(Prefkey.version_config_current_modify_time, 0); //assume we need to update
+               return true;
+            });
 		}
 	}
 

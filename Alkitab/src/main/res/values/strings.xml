@@ -386,10 +386,10 @@
     <string name="search_version_select_label">Find in:</string>
 	<string name="show_hidden_version_warning">Enabling this option allows you to download Bible versions which may be subject to certain regional or monetary requirements. Before downloading them, please make sure you are allowed to do so. You are fully responsible for downloading and using such versions and I cannot be held accountable for this. Tap OK if you agree to the above terms.</string>
 
-	<string name="version_config_updater_error_download_modify_time">Failed to check version list.</string>
+	<string name="version_config_updater_error_download_modify_time">Failed to check version list. Is internet connected?</string>
 	<string name="version_config_updater_error_modify_time_failed">Version list not available: %s</string>
-	<string name="version_config_updater_no_newer_available">No version updates found.</string>
-	<string name="version_config_updater_error_download_list">Failed to download version list.</string>
+	<string name="version_config_updater_no_newer_available">No version updates. You already have the newest versions.</string>
+	<string name="version_config_updater_error_download_list">Failed to download version list. Is internet connected?</string>
 	<string name="version_config_updater_error_parsing_list">Version list downloaded is corrupt.</string>
 	<string name="version_config_updater_updated">Version list updated!</string>
 	<string name="version_config_cannot_write_updated_list">Failed to store updated list.</string>

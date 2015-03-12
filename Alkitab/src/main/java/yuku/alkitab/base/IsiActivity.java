@@ -1778,16 +1778,16 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				IntArrayList selectedVerses = v.getSelectedVerses_1();
 				lsSplit1.checkVerses(selectedVerses, false);
 			}
-			
+
 			if (actionMode == null) {
 				actionMode = startSupportActionMode(actionMode_callback);
 			}
-			
+
 			if (actionMode != null) {
 				actionMode.invalidate();
 			}
 		}
-		
+
 		@Override public void onNoVersesSelected(VersesView v) {
 			if (activeSplitVersion != null) {
 				// synchronize the selection with the split view
@@ -1799,10 +1799,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				actionMode = null;
 			}
 		}
-		
+
 		@Override public void onVerseSingleClick(VersesView v, int verse_1) {}
 	};
-	
+
 	VersesView.SelectedVersesListener lsSplit1_selectedVerses = new VersesView.SelectedVersesListener() {
 		@Override public void onSomeVersesSelected(VersesView v) {
 			// synchronize the selection with the main view

@@ -361,4 +361,6 @@
   <string name="version_config_updater_error_modify_time_cannot_parse">Fallo al analizar el corrector de la lista de actualización de versiones.</string>
   <string name="about_translators">Traductores</string>
   <string name="about_version_name">versión %s</string>
+    <string name="app_name">QiBi</string>
+    <string name="about_material_sources">Fuentes</string>
 </resources>

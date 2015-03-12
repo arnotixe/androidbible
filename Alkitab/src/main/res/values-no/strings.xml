@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QiBi</string>
+    <string name="tambah">Legg til</string>
+    <string name="tambah_pembatas_buku">Legg til bokmerke</string>
+    <string name="tambah_titiktiga">Legg til...</string>
+    <string name="text_appearance_bold">Halvfet</string>
+    <string name="text_appearance_line_spacing">Linjeavstand</string>
+    <string name="text_appearance_text_size">Tekststørrelse</string>
+    <string name="switch_off">AV</string>
+    <string name="switch_on">PÅ</string>
+    <string name="split_version_none">Ingen</string>
+    <string name="split_version_cant_display_verse">%1$s er ikke tilgjengelig i %2$s.</string>
+</resources>
