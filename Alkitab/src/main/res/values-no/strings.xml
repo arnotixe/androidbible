@@ -176,4 +176,19 @@
     <string name="book_filter_old_testament">De hebraiske skrifter</string>
     <string name="book_filter_old_wisdom">Visdomsbøkene</string>
     <string name="kelola_versi">Oversettelser</string>
+    <string name="belum_ada_pembatas_buku">Det finnes ingen bokmerker.\nTrykk på et vers for å legge til et.</string>
+    <string name="bl_no_highlighted_verses">Det finnes ingen uthevede vers.\nTrykk på et vers for å utheve det.</string>
+    <string name="bl_no_notes_written_yet">Det finnes ingen notater.\nTrykk på et vers for å legge til et.</string>
+    <string name="bl_send_backup">Overfør</string>
+    <string name="bl_there_are_no_bookmarks_without_any_labels">Det finnes ingen bokmerker uten tagger.</string>
+    <string name="bl_there_are_no_bookmarks_with_the_label_label">"Det finnes ingen bokmerker med taggen '%s'."</string>
+    <string name="bl_filtering_titiktiga">Filtrerer…</string>
+    <string name="bl_filter_by_some_keywords">Filtrer etter nøkkelord</string>
+    <string name="bl_clear_filter">Slett filter</string>
+    <string name="beri_saran_title">Foreslå</string>
+    <string name="bl_file_not_found_filename">Fant ikke filen %s</string>
+    <string name="pref_textPadding_summary">Gjør paragrafene litt smalere så det blir lettere å lese</string>
+    <string name="pref_textPadding_title">Ramme rundt teksten</string>
+    <string name="pref_versionsUrl_title">Nettadresse for Bibelversjoner</string>
+    <string name="pref_versionsUrl_summary">Skriv in kortnavn (\"Qibi\", \"yuku\", osv) eller full URL. Hvis du bruker kortnavn, prøver appen http://bit.do/&lt;kortnavn&gt;.</string>
 </resources>
