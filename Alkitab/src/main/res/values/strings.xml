@@ -24,14 +24,14 @@
     <string name="menuDevotion">Devotion</string>
     <string name="search">Search</string>
     <string name="activity_title_markers">Annotations</string>
-    <string name="menu_markers">Markers</string>
+    <string name="menu_markers">Annotations</string>
     <string name="hapus_pembatas_buku">Delete bookmark</string>
     <string name="menuShare">Share</string>
     <string name="tulis_catatan">Write note</string>
     <string name="tambah_pembatas_buku">Add bookmark</string>
     <string name="salin_ayat">Copy verse</string>
-    <string name="perj_baru">New Test.</string>
-    <string name="perj_lama">Old Test.</string>
+    <string name="perj_baru">Greek scriptures</string>
+    <string name="perj_lama">Hebrew scriptures</string>
     <string name="search_bookname_only">%s only</string>
     <string name="ayat_sebelumangka">Verse</string>
     <string name="pasal_sebelumangka">Chapter</string>
@@ -148,7 +148,7 @@
     <string name="select_books_to_search">Select books to search</string>
     <string name="rename_label_title">Rename label</string>
     <string name="are_you_sure_you_want_to_delete_the_label_label">"Delete the label '%1$s'? This label will be removed from %2$s bookmarks."</string>
-    <string name="bmcat_all_bookmarks">All bookmarks</string>
+    <string name="bmcat_all_bookmarks">Bookmarks</string>
     <string name="bmcat_notes">Notes</string>
     <string name="bmcat_highlights">Highlights</string>
     <string name="bmcat_unlabeled_bookmarks">Unlabeled bookmarks</string>
@@ -184,7 +184,7 @@
     <string name="split_version_none">None</string>
     <string name="split_version_cant_display_verse">%1$s is not available in %2$s.</string>
     <string name="generic_verse_not_available_in_this_version">Not available in this version.</string>
-    <string name="menuAddSomething">Add marker</string>
+    <string name="menuAddSomething">Add annotation</string>
     <string name="color_settings_title">Colors</string>
     <string name="color_settings_night_title">Colors (Night mode)</string>
     <string name="menuDisplay">Appearance</string>
@@ -194,8 +194,7 @@
     <string name="text_appearance_bold">Bold</string>
     <string name="devotion_change_date">Change date</string>
     <string name="bookmark_search">Search</string>
-    <string name="verse_select_one_verse_selected">1 verse selected</string>
-    <string name="verse_select_multiple_verse_selected">%s verses selected</string>
+    <string name="verse_select_one_verse_selected" translatable="false">1 verse selected</string>
 
     <!-- Goto tabs -->
     <string name="goto_tab_dialer_label">Dialer</string>
@@ -375,12 +374,11 @@
     <string name="book_filter_old_wisdom">Wisdom</string>
     <string name="book_filter_old_major_prophets">Major Prophets</string>
     <string name="book_filter_old_minor_prophets">Minor Prophets</string>
-    <string name="book_filter_new_testament">New Testament</string>
     <string name="book_filter_new_gospels">Gospels</string>
     <string name="book_filter_new_acts">Apostolic History</string>
     <string name="book_filter_new_pauline_epistles">Pauline Epistles</string>
     <string name="book_filter_new_general_epistles">General Epistles</string>
-    <string name="book_filter_new_apocalypse">Apocalypse</string>
+    <string name="book_filter_new_apocalypse">Revelation</string>
 
     <string name="search_filter_multiple_books_selected">%s books selected</string>
     <string name="search_version_select_label">Find in:</string>
@@ -484,7 +482,7 @@
 	<string name="dr_default_sound">Default sound</string>
 
 	<!-- about -->
-	<string name="about_text_desc" translatable="false">100% free Bible app, licensed under Apache License 2.0\n<a href="http://www.bibleforandroid.com/guide?utm_source=app&amp;utm_medium=button&amp;utm_campaign=about">www.bibleforandroid.com</a></string>
+	<string name="about_text_desc" translatable="false">100% free Bible app, licensed under Apache License 2.0</string>
 	<string name="about_translators">Translators</string>
 	<string name="about_user_guide">User\'s Guide</string>
 	<string name="about_beta_feedback">Beta Version Feedback</string>
@@ -503,5 +501,8 @@
 	<string name="marker_migrate_import_from_other">Other backup</string>
 	<string name="marker_migrate_filename_dated">%1$s dated %2$s</string>
     <string name="pm_menu_view_progress">View pin</string>
+    <string name="verse_select_multiple_verse_selected" translatable="false"></string>
+    <string name="pref_versionsUrl_text" translatable="false">Qibi</string>
+    <string name="book_filter_new_testament">The greek scriptures</string>
 
 </resources>

@@ -477,7 +477,7 @@ public class SearchActivity extends BaseActivity {
 						adapter.notifyDataSetChanged();
 					}
 				}
-			});
+			}, false); // cannot return null on cancel
 		}
 	};
 

@@ -257,7 +257,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	GotoButton bGoto;
 	ImageButton bLeft;
 	ImageButton bRight;
-	TextView bVersion;
+	// Moved to left drawer
+	// TextView bVersion;
+
+    // Unused in QiBi
 	//Floater floater;
 
 	Book activeBook;
@@ -340,7 +343,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		bGoto = V.get(this, R.id.bGoto);
 		bLeft = V.get(this, R.id.bLeft);
 		bRight = V.get(this, R.id.bRight);
-		bVersion = V.get(this, R.id.bVersion);
+		// Moved to left drawer
+		// bVersion = V.get(this, R.id.bVersion);
 
 		overlayContainer = V.get(this, R.id.overlayContainer);
 		root = V.get(this, R.id.root);
@@ -367,7 +371,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 		bLeft.setOnClickListener(v -> bLeft_click());
 		bRight.setOnClickListener(v -> bRight_click());
-		bVersion.setOnClickListener(v -> bVersion_click());
+		// Moved to left drawer
+		// bVersion.setOnClickListener(v -> bVersion_click());
 
 		//floater.setListener(floater_listener);
 
@@ -725,7 +730,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 			S.activeVersion = version;
 			S.activeVersionId = mv.getVersionId();
-			bVersion.setText(S.getVersionInitials(version));
+			// Moved to left drawer
+			// bVersion.setText(S.getVersionInitials(version));
 			splitHandleButton.setLabel1("\u25b2 " + getSplitHandleVersionName(mv, version));
 
 			if (display) {
@@ -1198,7 +1204,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	}
 
 	void openVersionsDialog() {
-		S.openVersionsDialog(this, false, S.activeVersionId, mv -> loadVersion(mv, true));
+		S.openVersionsDialog(this, false, S.activeVersionId, mv -> loadVersion(mv, true), false); // don't return null on cancel
 	}
 
 	void openSplitVersionsDialog() {
@@ -1215,10 +1221,13 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				} else {
 					activeSplitVersion = null;
 					activeSplitVersionId = null;
-					closeSplitDisplay();
+                    closeSplitDisplay();
 				}
 			}
-		});
+            if (activeSplitVersion == null) { // switch should be off now
+               leftDrawer.getHandle().setSplitVersion(false);
+            }
+		}, true); // Can return null on cancel, so that split switch will turn off.
 	}
 
 	void openSplitDisplay() {
@@ -1244,7 +1253,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			lsSplit1.setVisibility(View.VISIBLE);
 		});
 
-		bVersion.setVisibility(View.GONE);
+		// Moved to left drawer
+		// bVersion.setVisibility(View.GONE);
 		if (actionMode != null) actionMode.invalidate();
 		leftDrawer.getHandle().setSplitVersion(true);
 	}
@@ -1260,7 +1270,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
 		lsText.setLayoutParams(lp);
 
-		bVersion.setVisibility(View.VISIBLE);
+		// Moved to left drawer
+		// bVersion.setVisibility(View.VISIBLE);
 		if (actionMode != null) actionMode.invalidate();
 		leftDrawer.getHandle().setSplitVersion(false);
 	}
@@ -1510,9 +1521,12 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		}
 	}
 
-	void bVersion_click() {
+    //Moved to left drawer, not used now
+    /*
+    void bVersion_click() {
 		openVersionsDialog();
 	}
+    */
 
 	@Override public boolean onSearchRequested() {
 		menuSearch_click();
@@ -1896,8 +1910,9 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			menuAddNote.setVisible(contiguous);
 			menuCompare.setVisible(single);
 
-			final MenuItem menuVersions = menu.findItem(R.id.menuVersions);
-			menuVersions.setVisible(activeSplitVersion == null);
+			// moved to left drawer
+			//final MenuItem menuVersions = menu.findItem(R.id.menuVersions);
+			//menuVersions.setVisible(activeSplitVersion == null);
 
 			// show selected verses
 			if (single) {
@@ -2118,20 +2133,26 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		}
 	}
 
-	@Override
-	public void bProgressMarkList_click() {
-		if (S.getDb().countAllProgressMarks() > 0) {
-			final ProgressMarkListDialog dialog = new ProgressMarkListDialog();
-			dialog.show(getSupportFragmentManager(), "dialog_progress_mark_list");
-		} else {
-			new AlertDialog.Builder(this)
-				.setMessage(R.string.pm_activate_tutorial)
-				.setPositiveButton(R.string.ok, null)
-				.show();
-		}
-	}
+    @Override
+    public void bProgressMarkList_click() {
+        if (S.getDb().countAllProgressMarks() > 0) {
+            final ProgressMarkListDialog dialog = new ProgressMarkListDialog();
+            dialog.show(getSupportFragmentManager(), "dialog_progress_mark_list");
+        } else {
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.pm_activate_tutorial)
+                    .setPositiveButton(R.string.ok, null)
+                    .show();
+        }
+    }
 
-	@Override
+    // Bible selector in left drawer.
+    @Override
+    public void bmenuVersions_click() {
+        openVersionsDialog();
+    }
+
+    @Override
 	public void bProgress_click(final int preset_id) {
 		gotoProgressMark(preset_id);
 	}

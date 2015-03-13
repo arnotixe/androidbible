@@ -87,7 +87,9 @@
 			android:gravity="center"
 			android:textSize="14sp"
 			android:textStyle="bold"
-			tools:text="VERSNM" />
+			tools:text="VERSNM"
+            android:visibility="gone"
+            android:width="0dp" />
 
 		<yuku.alkitab.base.widget.NavFrameLayout
 			android:layout_width="match_parent"

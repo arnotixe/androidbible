@@ -151,6 +151,11 @@ public class S {
 			}
 		}
 
+        // if at least one other version exist, disable the internal (informational)
+        if (res.size() > 1) {
+            res.remove(res.get(0)); // remove the informational "version", which is first.
+        }
+
 		// sort based on ordering
 		Collections.sort(res, new Comparator<MVersion>() {
 			@Override
@@ -180,51 +185,80 @@ public class S {
 		void onVersionSelected(MVersion mv);
 	}
 
-	public static void openVersionsDialog(final Activity activity, final boolean withNone, final String selectedVersionId, final VersionDialogListener listener) {
-		final List<MVersion> versions = getAvailableVersions();
+    public static void openVersionsDialog(final Activity activity, final boolean withNone, final String selectedVersionId, final VersionDialogListener listener, final boolean canCancel) {
+        final List<MVersion> versions = getAvailableVersions();
 
-		if (withNone) {
-			versions.add(0, null);
-		}
+        if (withNone) {
+            versions.add(0, null);
+        }
 
-		// determine the currently selected one
-		int selected = -1;
-		if (withNone && selectedVersionId == null) {
-			selected = 0; // "none"
-		} else {
-			for (int i = (withNone? 1: 0) /* because 0 is None */; i < versions.size(); i++) {
-				final MVersion mv = versions.get(i);
-				if (mv.getVersionId().equals(selectedVersionId)) {
-					selected = i;
-					break;
-				}
-			}
-		}
+        // determine the currently selected one
+        int selected = -1;
+        if (withNone && selectedVersionId == null) {
+            selected = 0; // "none"
+        } else {
+            for (int i = (withNone? 1: 0) /* because 0 is None */; i < versions.size(); i++) {
+                final MVersion mv = versions.get(i);
+                if (mv.getVersionId().equals(selectedVersionId)) {
+                    selected = i;
+                    break;
+                }
+            }
+        }
 
-		final String[] options = new String[versions.size()];
-		for (int i = 0; i < versions.size(); i++) {
-			final MVersion version = versions.get(i);
-			options[i] = version == null ? activity.getString(R.string.split_version_none) : version.longName;
-		}
+        final String[] options = new String[versions.size()];
+        for (int i = 0; i < versions.size(); i++) {
+            final MVersion version = versions.get(i);
+            options[i] = version == null ? activity.getString(R.string.split_version_none) : version.longName;
+        }
 
-		new AlertDialog.Builder(activity)
-			.setSingleChoiceItems(options, selected, new DialogInterface.OnClickListener() {
-				@Override public void onClick(DialogInterface dialog, int which) {
-					final MVersion mv = versions.get(which);
-					listener.onVersionSelected(mv);
-					dialog.dismiss();
-				}
-			})
-			.setPositiveButton(R.string.versi_lainnya, new DialogInterface.OnClickListener() {
-				@Override public void onClick(DialogInterface dialog, int which) {
-					activity.startActivity(VersionsActivity.createIntent());
-				}
-			})
-			.setNegativeButton(R.string.cancel, null)
-			.show();
-	}
+        if (canCancel) { // split version could return null, to close split view.
+            new AlertDialog.Builder(activity)
+                .setSingleChoiceItems(options, selected, new DialogInterface.OnClickListener() {
+                    @Override public void onClick(DialogInterface dialog, int which) {
+                        final MVersion mv = versions.get(which);
+                        listener.onVersionSelected(mv);
+                        dialog.dismiss();
+                    }
+                })
+                .setPositiveButton(R.string.versi_lainnya, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        activity.startActivity(VersionsActivity.createIntent());
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Reset split versions switch by returning "none". Bad for master version.
+                        if (which == 0 ) {
+                            listener.onVersionSelected(null); // return null only if "none" selected, else just dismiss dialog box
+                        }
+                    }
+                })
+                .show();
+        } else {  // master version should not return null, or the app will crash.
+            new AlertDialog.Builder(activity)
+                 .setSingleChoiceItems(options, selected, new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         final MVersion mv = versions.get(which);
+                         listener.onVersionSelected(mv);
+                         dialog.dismiss();
+                     }
+                 })
+                 .setPositiveButton(R.string.versi_lainnya, new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         activity.startActivity(VersionsActivity.createIntent());
+                     }
+                 })
+                 .setNegativeButton(R.string.cancel, null)
+                 .show();
+        }
+    }
 
-	public static String getVersionInitials(final Version version) {
+    public static String getVersionInitials(final Version version) {
 		final String shortName = version.getShortName();
 		if (shortName != null) {
 			return shortName;

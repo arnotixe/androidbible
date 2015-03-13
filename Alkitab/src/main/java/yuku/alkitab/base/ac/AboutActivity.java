@@ -70,7 +70,7 @@ public class AboutActivity extends BaseActivity {
 		tAboutTextDesc.setMovementMethod(LinkMovementMethod.getInstance());
 
 		tVersion.setText(getString(R.string.about_version_name, App.getVersionName()));
-		tBuild.setText(String.format("%s %s", App.getVersionCode(), getString(R.string.last_commit_hash)));
+		tBuild.setText(String.format("%s", App.getVersionCode()));
 
 		root.setOnTouchListener(root_touch);
 	}

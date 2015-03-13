@@ -9,7 +9,10 @@
 	android:showDividers="middle"
 	tools:ignore="Overdraw">
 
-	<TextView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
 		android:id="@+id/bBible"
 		style="?android:buttonBarButtonStyle"
 		android:textColor="?android:textColorPrimary"
@@ -23,7 +26,30 @@
 		android:text="@string/menuBible"
         android:focusable="false" />
 
-	<TextView
+     <!--
+     <item
+		android:id="@+id/menuVersions"
+		android:icon="@drawable/ic_menu_versions"
+		app:showAsAction="ifRoom"
+		android:title="@string/versi" />
+
+
+        android:id="@+id/bProgressMarkList"
+     -->
+
+
+    <ImageButton
+        android:id="@+id/menuVersions"
+        android:background="?selectableItemBackgroundBorderless"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:minWidth="48dp"
+        android:src="@drawable/ic_progress_mark_list" />
+    </FrameLayout>
+
+    <TextView
 		android:id="@+id/bDevotion"
 		style="?android:buttonBarButtonStyle"
 		android:textColor="?android:textColorPrimary"

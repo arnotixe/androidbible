@@ -21,39 +21,42 @@
 		app:showAsAction="always"
 		android:title="@string/menu_compare" />
 
-	<item
-		android:id="@+id/menuVersions"
-		android:icon="@drawable/ic_menu_versions"
-		app:showAsAction="ifRoom"
-		android:title="@string/versi" />
+        <!-- Moved to left drawer -->
+        <!--
+        <item
+            android:id="@+id/menuVersions"
+            android:icon="@drawable/ic_menu_versions"
+            app:showAsAction="ifRoom"
+            android:title="@string/versi" />
+        -->
 
-	<item
-		android:id="@+id/menuAddSomething"
-		android:icon="@drawable/ic_menu_add_light"
-		app:showAsAction="always"
-		android:title="@string/menuAddSomething">
-		<menu>
-			<item
-				android:id="@+id/menuAddBookmark"
-				android:icon="@drawable/ic_menu_add_bookmark"
-				android:title="@string/tambah_pembatas_buku" />
-			<item
-				android:id="@+id/menuAddNote"
-				android:icon="@drawable/ic_menu_add_note"
-				android:title="@string/tulis_catatan" />
-			<item
-				android:id="@+id/menuAddHighlight"
-				android:icon="@drawable/ic_menu_add_highlight"
-				android:title="@string/highlight_stabilo" />
-		</menu>
-	</item>
+        <item
+            android:id="@+id/menuAddSomething"
+            android:icon="@drawable/ic_menu_add_light"
+            app:showAsAction="always"
+            android:title="@string/menuAddSomething">
+            <menu>
+                <item
+                    android:id="@+id/menuAddBookmark"
+                    android:icon="@drawable/ic_menu_add_bookmark"
+                    android:title="@string/tambah_pembatas_buku" />
+                <item
+                    android:id="@+id/menuAddNote"
+                    android:icon="@drawable/ic_menu_add_note"
+                    android:title="@string/tulis_catatan" />
+                <item
+                    android:id="@+id/menuAddHighlight"
+                    android:icon="@drawable/ic_menu_add_highlight"
+                    android:title="@string/highlight_stabilo" />
+            </menu>
+        </item>
 
-	<item
-		android:id="@+id/menuEsvsb"
-		android:icon="@android:drawable/ic_menu_call"
-		app:showAsAction="ifRoom"
-		android:title="ESV Study Bible"
-		android:visible="false"
-		tools:ignore="HardcodedText" />
+        <item
+            android:id="@+id/menuEsvsb"
+            android:icon="@android:drawable/ic_menu_call"
+            app:showAsAction="ifRoom"
+            android:title="ESV Study Bible"
+            android:visible="false"
+            tools:ignore="HardcodedText" />
 
-</menu>
+    </menu>

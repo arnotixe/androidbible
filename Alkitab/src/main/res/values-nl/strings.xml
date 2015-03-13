@@ -334,4 +334,5 @@
   <string name="version_config_updater_error_modify_time_cannot_parse">Fout bij controleren updates voor lijst met Bijbelversies.</string>
   <string name="about_translators">Vertalers</string>
   <string name="about_version_name">versie %s</string>
+    <string name="versi_lainnya"></string>
 </resources>

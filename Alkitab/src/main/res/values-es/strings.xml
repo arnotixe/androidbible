@@ -31,8 +31,8 @@
   <string name="tulis_catatan">Escribir nota</string>
   <string name="tambah_pembatas_buku">Agregar marcador</string>
   <string name="salin_ayat">Copiar versículo</string>
-  <string name="perj_baru">Nuevo Testamento.</string>
-  <string name="perj_lama">Viejo Testamento.</string>
+  <string name="perj_baru">Escrituras griegas</string>
+  <string name="perj_lama">Escrituras hebreas</string>
   <string name="search_bookname_only">Solo %s</string>
   <string name="ayat_sebelumangka">Versículo</string>
   <string name="pasal_sebelumangka">Capítulo</string>
@@ -333,8 +333,8 @@
   <string name="menuSplitVersion">Dividir</string>
   <string name="menuBible">Biblia</string>
   <string name="menuProgress">Tachuelas</string>
-  <string name="switch_off">Apagado</string>
-  <string name="switch_on">Encendido</string>
+  <string name="switch_off">No</string>
+  <string name="switch_on">Si</string>
   <string name="sn_menu_copy">Copiar canción</string>
   <string name="menuPlay">Reproducir</string>
   <string name="menuPause">Pausa</string>
@@ -363,4 +363,6 @@
   <string name="about_version_name">versión %s</string>
     <string name="app_name">QiBi</string>
     <string name="about_material_sources">Fuentes</string>
+    <string name="about_credits">Agradecimientos</string>
+    <string name="about_user_guide">Manual del usuario</string>
 </resources>
