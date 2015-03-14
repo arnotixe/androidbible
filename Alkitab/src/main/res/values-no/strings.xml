@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QiBi</string>
     <string name="tambah">Legg til</string>
     <string name="tambah_pembatas_buku">Legg til bokmerke</string>
     <string name="tambah_titiktiga">Legg til...</string>
@@ -190,5 +189,41 @@
     <string name="pref_textPadding_summary">Gjør paragrafene litt smalere så det blir lettere å lese</string>
     <string name="pref_textPadding_title">Ramme rundt teksten</string>
     <string name="pref_versionsUrl_title">Nettadresse for Bibelversjoner</string>
-    <string name="pref_versionsUrl_summary">Skriv in kortnavn (\"Qibi\", \"yuku\", osv) eller full URL. Hvis du bruker kortnavn, prøver appen http://bit.do/&lt;kortnavn&gt;.</string>
+    <string name="pref_versionsUrl_summary">Skriv inn kortnavn (\"Qibi\", \"yuku\", osv) eller full URL. Hvis du bruker kortnavn, prøver appen http://bit.do/&lt;kortnavn&gt;.</string>
+    <string name="ada_kegagalan_membuka_edisiid">Feil ved åpning av %s</string>
+    <string name="alamat_sudah_disalin">Kopierte %s.</string>
+    <string name="alamat_tidak_sah_alamat">%s er ikke en gyldig adresse</string>
+    <string name="apakah_anda_mau_menumpuk_pembatas_buku_dan_catatan_tanya">Vil du overskrive alle bokmerker, notater og uthevelser?</string>
+    <string name="are_you_sure_you_want_to_delete_the_label_label">"Vil du slette taggen '%1$s'? Denne taggen vil bli fjernet fra %2$s bokmerker."</string>
+    <string name="backup_last_time">Siste backup: %s</string>
+    <string name="backup_select_file">Velg backup-fil</string>
+    <string name="backup_selection_autobackup_at">Automatisk backup %s</string>
+    <string name="backup_selection_manualbackup_at">Backup %s</string>
+    <string name="bagikan_alamat">Del %s</string>
+    <string name="berhasil_mengunduh_namaumum_tgl_tgl">Lastet ned %1$s datert %2$s</string>
+    <string name="about_material_sources">Kildemateriale </string>
+    <string name="app_name" translatable="false"></string>
+    <string name="bl_no_items_match_the_filter_above">Ingenting passet med filteret.</string>
+    <string name="bl_send_backup_confirmation">Opprette og sende sikkerhetskopi av bokmerker, notater og uthevelser? Du kan for eksempel sende den som vedlegg til en ny enhet, eller som sikkerhet.</string>
+    <string name="bl_sync_suggest">Beskytt anmerkningene dine med Sync</string>
+    <string name="desc_drag_to_reorder_labels">Dra for å sortere taggene</string>
+    <string name="desc_drag_to_reorder_versions">Dra for å sortere oversettelsene</string>
+    <string name="desc_next_chapter">Neste kapittel</string>
+    <string name="desc_next_day">Neste dag</string>
+    <string name="desc_play">Spill</string>
+    <string name="desc_previous_chapter">Forrige kapittel</string>
+    <string name="desc_previous_day">Forrige dag</string>
+    <string name="dl_failed_to_rename_temporary_file">Kunne ikke gi nytt navn til den midlertidige filen</string>
+    <string name="dr_alarm">Alarm</string>
+    <string name="dr_app_name">Påminnelse</string>
+    <string name="dr_default_sound">Standardlyd</string>
+    <string name="dr_error_contact_reminder">Kunne ikke kontakte Påminnelses-appen.</string>
+    <string name="dr_pref_notification_message">Påminnelsesmelding</string>
+    <string name="ed_default_filename_file">Preset-navn</string>
+    <string name="ed_error_encountered">Feil.</string>
+    <string name="ed_error_reading_pdb_file">Kunne ikke lede PDB-filen</string>
+    <string name="ed_file_file_sudah_ada_dalam_daftar_versi">Filen %s er allerede på listen.</string>
+    <string name="ed_invalid_file_selected">Ugyldig fil.</string>
+    <string name="ed_no_external_storage">Kunne ikke finne SD-kort eller USB-lagringsplass.</string>
+    <string name="ed_reading_pdb_file">Leser PDB-fil…</string>
 </resources>

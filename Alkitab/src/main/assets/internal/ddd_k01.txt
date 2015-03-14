@@ -1,40 +1,40 @@
-1:1:1 Normal text
-1:1:2 Normal looooooooooong text laba laba bala bala laba laba
-@@@01:1:3 indent 0
-@@@01:1:4 indent 0 with looooooooooong text laba laba bala bala laba laba 
-@@@^1:1:5 para start
-@@@^1:1:6 para start with looooooooooooong text laba laba bala bala laba laba bala bala laba laba
-@@1:1:7 no-para@^para start
-@@1:1:8 no-para with looooooooooooooooooooooong text laba laba bala bala laba laba@^para start with long text laba laba bala bala laba laba
-@@@01:1:9 Indent 0@1Indent 1@2Indent 2@3Indent 3@4Indent 4
-@@1:1:10 Normal text with format marker
-@@1:1:11 character formatting @9abcde@7 @6fghij@5 @9abcde@7 @6fghij@5 @9abcde@7 @6fghij@5
-@@1:1:12 A@8B@8C@8D
-@@@11:1:13 A@8B@8C@8D@2A@8B@8C@8D@3A@8B@8C@8D
-@@@11:1:14 indent 1
-@@@11:1:15 indent 1 with long text laba laba bala bala laba laba 
-@@@21:1:16 indent 2
-@@@21:1:17 indent 2 with long text laba laba bala bala laba laba 
-1:1:18
-1:1:19
-1:1:20 For index testing:
-1:1:21 aa bb cccc ddd xyz
-1:1:22 AA BB CCCC DDD XYZ
-1:1:23 "Quote" "Text in quotation"
-1:1:24 a,b,c,d,e f.g.h.i.j
-1:1:25 and-he-does-it-again
-1:1:26
-1:1:27
-1:1:28
-1:1:29
-1:1:30
-1:1:31
-1:2:1 Another testing chapter
-1:2:2 After this comes an empty verse
-
-1:2:4 And after this 2 empty verses
-
-
+1:1:1 SPANISH - NO vienen Biblias con el QiBi, por razones de derecho de autor. Favor abrir el Menu, ir a Ajustes, Uso y Dirección… e ingrese un nombre de servidor. Luego ir a Ajustes - Versiones para descargar una traducción.
+1:1:2 ENGLISH - NO Bible is included with QiBi, due to copyright issues. Go to the Menu | Settings | Usage | Bible versions… and enter a server name. Then go to Settings | Versions to download a Bible version.
+1:1:3 NORSK - Det følger ikke med noen Bibler med QiBi, på grunn av lover om opphavsrett. Gå til Menyen → Innstillinger → Bruk → Nettadresse… og skriv inn navnet på en server. Etter dette kan du laste ned en oversettelse under Innstillinger → Oversettelser.
+1:1:4 SUOMI - 
+1:1:5 
+1:1:6 
+1:1:7 
+1:1:8 
+1:1:9 
+1:1:10 
+1:1:11 
+1:1:12 
+1:1:13 
+1:1:14 
+1:1:15 
+1:1:16 
+1:1:17 
+1:1:18 
+1:1:19 
+1:1:20 
+1:1:21 
+1:1:22 
+1:1:23 
+1:1:24 
+1:1:25 
+1:1:26 
+1:1:27 
+1:1:28 
+1:1:29 
+1:1:20 
+1:1:31 
+1:2:1
+1:2:2 
+1:2:3 
+1:2:4 
+1:2:5 
+1:2:6 
 1:2:7
 1:2:8
 1:2:9

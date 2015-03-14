@@ -455,4 +455,5 @@
   <string name="about_version_name">version %s</string>
   <string name="about_material_sources">Sources matérielles</string>
   <string name="about_credits">Remerciements</string>
+    <string name="app_name" translatable="false"></string>
 </resources>

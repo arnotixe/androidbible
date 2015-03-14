@@ -366,4 +366,5 @@
   <string name="version_download_add_from_url">インターネットURLから</string>
   <string name="about_translators">翻訳者</string>
   <string name="about_version_name">バージョン %s</string>
+    <string name="app_name" translatable="false"></string>
 </resources>

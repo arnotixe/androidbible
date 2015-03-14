@@ -1224,10 +1224,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
                     closeSplitDisplay();
 				}
 			}
-            if (activeSplitVersion == null) { // switch should be off now
-               leftDrawer.getHandle().setSplitVersion(false);
-            }
 		}, true); // Can return null on cancel, so that split switch will turn off.
+        if (activeSplitVersion == null) { // switch should be off now
+            leftDrawer.getHandle().setSplitVersion(false);
+        }
 	}
 
 	void openSplitDisplay() {

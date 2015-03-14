@@ -361,8 +361,10 @@
   <string name="version_config_updater_error_modify_time_cannot_parse">Fallo al analizar el corrector de la lista de actualización de versiones.</string>
   <string name="about_translators">Traductores</string>
   <string name="about_version_name">versión %s</string>
-    <string name="app_name">QiBi</string>
     <string name="about_material_sources">Fuentes</string>
     <string name="about_credits">Agradecimientos</string>
     <string name="about_user_guide">Manual del usuario</string>
+    <string name="pref_versionsUrl_summary">Ingrese nombre corto (\"Qibi\", \"yuku\", etc) o el URL completo. Si usa un nombre corto, el app asume http://bit.do/&lt;nombre_corto&gt;.</string>
+    <string name="pref_versionsUrl_title">Dirección del servidor de versiones</string>
+    <string name="app_name" translatable="false"></string>
 </resources>

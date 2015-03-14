@@ -370,4 +370,5 @@
   <string name="note_actionbar_ok">Зроблено</string>
   <string name="about_translators">Перекладачі</string>
   <string name="about_version_name">Версія складання %s</string>
+    <string name="app_name" translatable="false"></string>
 </resources>
