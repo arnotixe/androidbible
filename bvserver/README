@@ -1,1 +1,12 @@
-In this directory, the server software is located
+In this directory, the server software is located.
+
+1 Set the server root address in config.php
+
+2 Stick your .yes files in the directory yes/
+
+3 See inside get_list.php for instructions on how to add versions and languages.
+
+4 Upload this directory and the directory yes/ to your web server. Point QiBi to http://your.server/list_modify_time.php and enjoy :D
+
+best
+QiBi team
