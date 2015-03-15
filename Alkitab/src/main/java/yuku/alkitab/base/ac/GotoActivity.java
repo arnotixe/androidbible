@@ -61,7 +61,12 @@ public class GotoActivity extends BaseActivity implements GotoFinishListener {
 	int chapter_1;
 	int verse_1;
 
-	@Override public void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreateWithNonToolbarUpButton(Bundle savedInstanceState) {
+        super.onCreateWithNonToolbarUpButton(savedInstanceState);
+    }
+
+    @Override public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_goto);
 
@@ -97,6 +102,8 @@ public class GotoActivity extends BaseActivity implements GotoFinishListener {
 				viewPager.setCurrentItem(tabUsed - 1 /* to make it 0-based */, false);
 			}
 
+            tabUsed=2; // always use Grid :)
+
 			if (tabUsed == 2) {
 				viewPager.postDelayed(() -> {
 					final View editText = V.get(GotoActivity.this, R.id.tDirectReference);
@@ -120,7 +127,9 @@ public class GotoActivity extends BaseActivity implements GotoFinishListener {
 	}
 
 	public class GotoPagerAdapter extends FragmentPagerAdapter {
-		final int[] pageTitleResIds = {R.string.goto_tab_dialer_label, R.string.goto_tab_direct_label, R.string.goto_tab_grid_label};
+        // Grid only. FIXME
+        // final int[] pageTitleResIds = {R.string.goto_tab_dialer_label, R.string.goto_tab_direct_label, R.string.goto_tab_grid_label};
+        final int[] pageTitleResIds = {R.string.goto_tab_grid_label};
 
 		public GotoPagerAdapter(FragmentManager fm) {
 			super(fm);
@@ -129,13 +138,16 @@ public class GotoActivity extends BaseActivity implements GotoFinishListener {
 		@Override
 		public Fragment getItem(final int position) {
 			final Fragment res;
-			if (position == 0) {
+			/*if (position == 0) {
 				res = Fragment.instantiate(GotoActivity.this, GotoDialerFragment.class.getName(), GotoDialerFragment.createArgs(bookId, chapter_1, verse_1));
 			} else if (position == 1) {
 				res = Fragment.instantiate(GotoActivity.this, GotoDirectFragment.class.getName(), GotoDirectFragment.createArgs(bookId, chapter_1, verse_1));
 			} else {
 				res = Fragment.instantiate(GotoActivity.this, GotoGridFragment.class.getName(), GotoGridFragment.createArgs(bookId, chapter_1, verse_1));
 			}
+			*/
+            //always grid FIXME
+            res = Fragment.instantiate(GotoActivity.this, GotoGridFragment.class.getName(), GotoGridFragment.createArgs(bookId, chapter_1, verse_1));
 			return res;
 		}
 
@@ -153,6 +165,7 @@ public class GotoActivity extends BaseActivity implements GotoFinishListener {
 	@Override public void onGotoFinished(int gotoTabUsed, int bookId, int chapter_1, int verse_1) {
 		// store goto tab used for next time
 		Preferences.setInt(Prefkey.goto_last_tab, gotoTabUsed);
+        Preferences.setInt(Prefkey.goto_last_tab, 2); // always grid. FIXME
 		
 		Intent data = new Intent();
 		data.putExtra(EXTRA_bookId, bookId);

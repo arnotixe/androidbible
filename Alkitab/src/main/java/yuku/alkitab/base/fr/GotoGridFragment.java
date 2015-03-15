@@ -33,7 +33,7 @@ public class GotoGridFragment extends BaseGotoFragment {
 	private static final String EXTRA_chapter = "chapter"; //$NON-NLS-1$
 	private static final String EXTRA_bookId = "bookId"; //$NON-NLS-1$
 
-	private static final int ANIM_DURATION = 200;
+	private static final int ANIM_DURATION = 100; // quicker animation
 
 	View panelChapterVerse;
 	TextView lSelectedBook;
