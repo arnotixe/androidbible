@@ -51,7 +51,7 @@
             android:layout_height="fill_parent">
 
             <FrameLayout
-                android:layout_width="380dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <GridView
@@ -86,12 +86,6 @@
                     android:stretchMode="spacingWidthUniform"
                     android:gravity="center"
                     android:numColumns="@integer/goto_grid_numeric_num_columns" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
             </FrameLayout>
 
