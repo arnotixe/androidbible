@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
-import android.text.style.UnderlineSpan;
+//import android.text.style.UnderlineSpan;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -81,6 +81,10 @@ public class GotoGridFragment extends BaseGotoFragment {
 		@Override public void onClick(View v) {
 			selectedBook = null;
 			selectedChapter = 0;
+            gridVerse.setVisibility(View.GONE);
+            gridChapter.setVisibility(View.GONE);
+            lSelectedChapter.setVisibility(View.GONE);
+            lSelectedBook.setText(R.string.grid_selectbook);
 			transitionChapterToBook();
 		}
 	};
@@ -88,17 +92,21 @@ public class GotoGridFragment extends BaseGotoFragment {
 	private View.OnClickListener lSelectedChapter_click = new View.OnClickListener() {
 		@Override public void onClick(View v) {
 			selectedChapter = 0;
-			transitionVerseToChapter();
+            gridVerse.setVisibility(View.GONE);
+            gridChapter.setVisibility(View.GONE);
+            lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+            transitionVerseToChapter();
 		}
 	};
 	
 	void transitionBookToChapter() {
-		gridBook.setVisibility(View.INVISIBLE);
+        gridBook.setVisibility(View.GONE);
+        gridVerse.setVisibility(View.GONE);
+        gridChapter.setVisibility(View.VISIBLE);
+        gridChapter.setAdapter(chapterAdapter = new ChapterAdapter(selectedBook));
 		panelChapterVerse.setVisibility(View.VISIBLE);
-		gridChapter.setVisibility(View.VISIBLE);
-		gridChapter.setAdapter(chapterAdapter = new ChapterAdapter(selectedBook));
-		gridVerse.setVisibility(View.INVISIBLE);
-		
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+
 		animateFadeOutAndSlideLeft(gridBook, gridChapter);
 		lSelectedBook.setAlpha(0.f);
 		lSelectedBook.animate().alpha(1.f).setDuration(ANIM_DURATION);
@@ -107,13 +115,15 @@ public class GotoGridFragment extends BaseGotoFragment {
 	}
 
 	void transitionBookToVerse() {
-		gridBook.setVisibility(View.INVISIBLE);
+		gridBook.setVisibility(View.GONE);
+        gridChapter.setVisibility(View.GONE);
 		panelChapterVerse.setVisibility(View.VISIBLE);
 		gridVerse.setVisibility(View.VISIBLE);
 		gridVerse.setAdapter(verseAdapter = new VerseAdapter(selectedBook, selectedChapter));
-		gridChapter.setVisibility(View.INVISIBLE);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbstart);
 
-		animateFadeOutAndSlideLeft(gridBook, gridVerse);
+
+        animateFadeOutAndSlideLeft(gridBook, gridVerse);
 		lSelectedBook.setAlpha(0.f);
 		lSelectedBook.animate().alpha(1.f).setDuration(ANIM_DURATION);
 
@@ -123,15 +133,19 @@ public class GotoGridFragment extends BaseGotoFragment {
 	void transitionChapterToBook() {
 		// TODO Animate
 		gridBook.setVisibility(View.VISIBLE);
-		panelChapterVerse.setVisibility(View.INVISIBLE);
+        gridChapter.setVisibility(View.GONE);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+		// Always visible
+		// panelChapterVerse.setVisibility(View.INVISIBLE);
 	}
 	
 	void transitionChapterToVerse() {
-		gridBook.setVisibility(View.INVISIBLE);
+		gridBook.setVisibility(View.GONE);
+        gridChapter.setVisibility(View.GONE);
+        gridVerse.setVisibility(View.VISIBLE);
 		panelChapterVerse.setVisibility(View.VISIBLE);
-		gridChapter.setVisibility(View.INVISIBLE);
-		gridVerse.setVisibility(View.VISIBLE);
 		gridVerse.setAdapter(verseAdapter = new VerseAdapter(selectedBook, selectedChapter));
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbstart);
 
 		animateFadeOutAndSlideLeft(gridChapter, gridVerse);
 
@@ -173,32 +187,34 @@ public class GotoGridFragment extends BaseGotoFragment {
 	}
 	
 	protected void displaySelectedBookAndChapter() {
-		lSelectedBook.setText(underline(selectedBook.shortName));
-		lSelectedBook.setTextColor(U.getForegroundColorOnDarkBackgroundByBookId(selectedBook.bookId));
+		lSelectedBook.setText(selectedBook.shortName);
+		// lSelectedBook.setTextColor(U.getForegroundColorOnDarkBackgroundByBookId(selectedBook.bookId));
 		if (selectedChapter == 0) {
 			lSelectedChapter.setVisibility(View.GONE);
 		} else {
 			lSelectedChapter.setVisibility(View.VISIBLE);
-			lSelectedChapter.setText(underline("" + selectedChapter));
+			lSelectedChapter.setText("" + selectedChapter);
 		}
 	}
 
-	private CharSequence underline(CharSequence cs) {
+/*	private CharSequence underline(CharSequence cs) {
 		SpannableStringBuilder sb = SpannableStringBuilder.valueOf(cs);
 		sb.setSpan(new UnderlineSpan(), 0, cs.length(), 0);
 		return sb;
-	}
+	} */
 
 	@Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View res = inflater.inflate(R.layout.fragment_goto_grid, container, false);
 		panelChapterVerse = V.get(res, R.id.panelChapterVerse);
 		lSelectedBook = V.get(res, R.id.lSelectedBook);
-		lSelectedChapter = V.get(res, R.id.lSelectedChapter);
+        lSelectedBook.setText(R.string.grid_selectbook);
+        lSelectedChapter = V.get(res, R.id.lSelectedChapter);
 		gridBook = V.get(res, R.id.gridBook);
 		gridChapter = V.get(res, R.id.gridChapter);
 		gridVerse = V.get(res, R.id.gridVerse);
 		
-		panelChapterVerse.setVisibility(View.INVISIBLE);
+		// Always visible
+		// panelChapterVerse.setVisibility(View.INVISIBLE);
 		gridBook.setOnItemClickListener(gridBook_itemClick);
 		gridBook.setVisibility(View.VISIBLE);
 		gridChapter.setVisibility(View.INVISIBLE);

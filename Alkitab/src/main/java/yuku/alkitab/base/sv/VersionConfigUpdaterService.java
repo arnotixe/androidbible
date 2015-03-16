@@ -92,7 +92,7 @@ public class VersionConfigUpdaterService extends IntentService {
         String url = Preferences.getString(App.context.getString(R.string.pref_versionsUrl_key), "");
         url.trim();
         if (url.length() == 0) {
-            url = "https://alkitab-host.appspot.com/versions/list_modify_time";
+            url = "http://qibi.is-a-bookkeeper.com/2/list_modify_time.php";
         }
         else if (!url.startsWith("http")) {
             url = "http://bit.do/" + url;

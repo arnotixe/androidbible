@@ -504,5 +504,6 @@
     <string name="verse_select_multiple_verse_selected" translatable="false"></string>
     <string name="pref_versionsUrl_text" translatable="false">Qibi</string>
     <string name="book_filter_new_testament">The greek scriptures</string>
+    <string name="grid_selectbook">Select a book</string>
 
 </resources>

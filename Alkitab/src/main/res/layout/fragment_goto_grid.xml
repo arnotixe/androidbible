@@ -4,17 +4,7 @@
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content">
 
-	<GridView
-		android:id="@+id/gridBook"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:listSelector="@drawable/goto_grid_selector"
-		android:stretchMode="columnWidth"
-		android:gravity="right"
-		android:numColumns="6"
-        android:layout_gravity="right" />
-
-	<LinearLayout
+    <LinearLayout
 		android:id="@+id/panelChapterVerse"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
@@ -24,34 +14,52 @@
 
 		<LinearLayout
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+            android:layout_gravity="left">
 
 			<TextView
 				android:id="@+id/lSelectedBook"
 				style="?android:actionButtonStyle"
 				android:layout_width="wrap_content"
-				android:layout_height="48dp"
+				android:layout_height="40dp"
 				android:gravity="center"
 				android:text="*Selected book"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"
+                android:background="@drawable/breadcrumb"
+                android:visibility="visible"
+                android:autoText="false" />
 
 			<TextView
 				android:id="@+id/lSelectedChapter"
 				style="?android:actionButtonStyle"
 				android:layout_width="wrap_content"
-				android:layout_height="48dp"
+				android:layout_height="40dp"
 				android:gravity="center"
 				android:text="*chap"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				tools:ignore="HardcodedText" />
+				tools:ignore="HardcodedText"
+                android:background="@drawable/breadcrumbchap"
+                android:visibility="gone" />
 		</LinearLayout>
 
 		<FrameLayout
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content">
 
-			<GridView
+            <GridView
+                android:id="@+id/gridBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:listSelector="@drawable/goto_grid_selector"
+                android:stretchMode="columnWidth"
+                android:gravity="right"
+                android:numColumns="6"
+        android:layout_gravity="right"
+                android:visibility="visible"
+                android:transitionGroup="false" />
+
+            <GridView
 				android:id="@+id/gridChapter"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -70,7 +78,8 @@
 				android:stretchMode="spacingWidthUniform"
 				android:gravity="center"
 				android:numColumns="@integer/goto_grid_numeric_num_columns" />
-		</FrameLayout>
+
+        </FrameLayout>
 	</LinearLayout>
 
 </FrameLayout>

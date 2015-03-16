@@ -226,4 +226,5 @@
     <string name="ed_invalid_file_selected">Ugyldig fil.</string>
     <string name="ed_no_external_storage">Kunne ikke finne SD-kort eller USB-lagringsplass.</string>
     <string name="ed_reading_pdb_file">Leser PDB-fil…</string>
+    <string name="grid_selectbook">Velg en bok</string>
 </resources>
