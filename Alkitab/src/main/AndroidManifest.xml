@@ -11,20 +11,20 @@
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-	<!-- sync permissions -->
+	<!-- sync permissions
 	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
 	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />-->
 
-	<!-- gcm -->
+	<!-- gcm
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<permission android:name="yuku.alkitab.debug.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-	<uses-permission android:name="yuku.alkitab.debug.permission.C2D_MESSAGE" />
+	<uses-permission android:name="yuku.alkitab.debug.permission.C2D_MESSAGE" /> -->
 
-	<!-- from a separate app: devotion reminder -->
+	<!-- from a separate app: devotion reminder
 	<uses-permission android:name="android.permission.VIBRATE"/>
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> -->
 
 	<uses-feature
         android:name="android.hardware.touchscreen"
@@ -208,14 +208,14 @@
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
             android:label="@string/search"
             android:windowSoftInputMode="adjustResize" />
-        <activity
+        <!--<activity
             android:name="yuku.alkitab.base.ac.DevotionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
             android:label="@string/menuDevotion">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="yuku.alkitab.base.IsiActivity" />
-		</activity>
+		</activity>-->
         <activity
             android:name="yuku.alkitab.base.ac.HelpActivity"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
@@ -231,7 +231,7 @@
             android:name="yuku.alkitab.base.ac.FontManagerActivity"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />
-        <activity
+        <!--<activity
             android:name="yuku.alkitab.base.ac.SongListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
 			android:label="@string/sn_songs_activity_title"
@@ -250,7 +250,7 @@
             android:label="Secret sync debug" />
         <activity
             android:name="yuku.alkitab.base.ac.ReadingPlanActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />-->
 		<activity android:name="yuku.alkitab.base.ac.PatchTextActivity"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
 			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
@@ -258,14 +258,14 @@
 		<activity android:name="yuku.alkitab.base.sync.SyncSettingsActivity"
 			android:theme="@style/Theme.MaterialOrHolo"
 			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />
-		<activity android:name="yuku.alkitab.base.sync.SyncLogActivity"
+		<!--<activity android:name="yuku.alkitab.base.sync.SyncLogActivity"
 			android:label="@string/sync_log_activity_title"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
 			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />
 		<activity android:name="yuku.alkitab.base.sync.SyncLoginActivity"
 			android:label="@string/sync_login_activity_title"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
-			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />
+			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" />-->
 		<activity android:name="yuku.alkitab.base.ac.YukuAlkitabImportOfferActivity"
 			android:label="@string/marker_migrate_title"
 			android:theme="@style/Theme.Alkitab.WithActionBar.AppCompat"
@@ -287,13 +287,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name="yuku.alkitab.base.ac.DailyVerseAppWidgetConfigurationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
-        </activity>
+        </activity>-->
         <activity
             android:name="yuku.alkitab.base.ac.SearchBookFilterActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
@@ -342,7 +342,7 @@
 			</intent-filter>
 		</receiver>
 
-        <receiver
+        <!--<receiver
             android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver"
             android:icon="@drawable/ic_launcher" >
             <intent-filter>
@@ -353,7 +353,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/daily_verse_app_widget_provider" />
         </receiver>
-        <receiver android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver$ClickReceiver" />
+        <receiver android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver$ClickReceiver" />-->
 
         <receiver
             android:name="yuku.alkitab.base.br.VersionDownloadCompleteReceiver"
@@ -364,9 +364,9 @@
             </intent-filter>
         </receiver>
 
-        <service
+        <!--<service
             android:name="yuku.alkitab.base.sv.DailyVerseAppWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
+            android:permission="android.permission.BIND_REMOTEVIEWS" />-->
 
         <uses-library
             android:name="com.sec.android.app.multiwindow"
@@ -385,7 +385,7 @@
         </service>
 
 		<!-- sync components -->
-		<service android:name="yuku.alkitab.base.sync.AuthenticatorService">
+	<!--	<service android:name="yuku.alkitab.base.sync.AuthenticatorService">
 			<intent-filter>
 				<action android:name="android.accounts.AccountAuthenticator" />
 			</intent-filter>
@@ -399,24 +399,24 @@
 			android:authorities="@string/sync_provider_authority"
 			android:exported="false"
 			android:syncable="true" />
-
-		<service
+-->
+		<!--<service
 			android:name="yuku.alkitab.base.sync.SyncService"
-			android:exported="true">
+			android:exported="true">-->
 			<!--
 			This service is not run in a separate process, because the singleton Preferences might not work well when accessed by multiple processes.
 			Moreover, local broadcast manager is in-process only (for example, the sync service asks the app UI to update something using LBM, it won't work.
 			 -->
-			<intent-filter>
+<!--			<intent-filter>
 				<action android:name="android.content.SyncAdapter" />
 			</intent-filter>
 			<meta-data
 				android:name="android.content.SyncAdapter"
 				android:resource="@xml/syncadapter" />
-		</service>
+		</service>-->
 
 		<!-- gcm -->
-		<receiver
+<!--		<receiver
 			android:name="yuku.alkitab.base.sync.GcmBroadcastReceiver"
 			android:permission="com.google.android.c2dm.permission.SEND" >
 			<intent-filter>
@@ -424,12 +424,14 @@
 				<category android:name="yuku.alkitab.debug" />
 			</intent-filter>
 		</receiver>
-		<service android:name="yuku.alkitab.base.sync.GcmIntentService" />
+		<service android:name="yuku.alkitab.base.sync.GcmIntentService" />x
 
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		-->
+
 
 		<!-- from a separate app: devotion reminder -->
-		<activity android:name="yuku.alkitab.reminder.ac.DevotionReminderActivity"
+<!--		<activity android:name="yuku.alkitab.reminder.ac.DevotionReminderActivity"
 			android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
 			android:theme="@style/Theme.MaterialOrHolo"
 			android:label="@string/dr_app_name" />
@@ -439,6 +441,7 @@
 				<action android:name="android.intent.action.BOOT_COMPLETED"/>
 			</intent-filter>
 		</receiver>
+		-->
 
 	</application>
 
