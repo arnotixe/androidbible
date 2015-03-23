@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false"></string>
-    <string name="account_type" translatable="false"></string>
     <string name="about_text_desc" translatable="false"></string>
 </resources>
