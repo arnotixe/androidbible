@@ -1,28 +1,22 @@
 {
     "presets": [
-{"locale": "qic", "preset_name": "js", "shortName": "JS", "longName": "Jehovapaj Shimi", "modifyTime": 1426257657, "description": "Jehovapaj Shimi (Cotopaxi)"},
-{"locale": "es", "preset_name": "nwt1984S", "shortName": "TNM1984", "longName": "Traducción del Nuevo Mundo 1984", "modifyTime": 1390532303, "description": "Traducción del Nuevo Mundo 1984"},
-{"locale": "en", "preset_name": "nwt1984E", "shortName": "NWT1984", "longName": "New World Translation 1984", "modifyTime": 1404229477, "description": "New World Translation 1984"},
-{"locale": "en", "preset_name": "nwt2013E", "shortName": "NWT2013", "longName": "New World Translation 2013", "modifyTime": 1390532307, "description": "New World Translation 2013"},
-{"locale": "no", "preset_name": "nwt1984N", "shortName": "NV1985", "longName": "Ny Verden-Oversettelsen 1984", "modifyTime": 1426391145, "description": "Ny Verden-Oversettelsen 1984"},
-{"locale": "qia", "preset_name": "qca4", "shortName": "QCA4", "longName": "Dios Rimashca Shimi", "modifyTime": 1415247992, "description": "Dios Rimashca Shimi (Cañar)"},
-{"locale": "shuar", "preset_name": "JIVAIE", "shortName": "JIVAIE", "longName": "NT Shuar", "modifyTime": 1426389153, "description": "AIE NT (Shuar)"},
-{"locale": "el", "preset_name": "el-lxx", "shortName": "LXX", "longName": "Septuaginta", "modifyTime": 1424818632, "description": "Hebrew scriptures in greek"},
-{"locale": "el", "preset_name": "el-whubs4", "shortName": "WH", "longName": "Westcott/Hort", "modifyTime": 1424818632, "description": "WH Greek scriptures"},
-{"locale": "he", "preset_name": "he-aleppo", "shortName": "ALP", "longName": "Aleppo Codex", "modifyTime": 1424818632, "description": "Hebrew scriptures Aleppo"},
-{"locale": "he", "preset_name": "he-modern", "shortName": "HEM", "longName": "Hebrew modern", "modifyTime": 1424818632, "description": "Modern hebrew scriptures"},
-{"locale": "en", "preset_name": "kjv-red", "shortName": "KJV", "longName": "King James", "modifyTime": 1390532295, "description": "King James Version with red text on Jesus' words"},
-{"locale": "la", "preset_name": "la-clementine", "shortName": "CLEM", "longName": "Latin Clementine", "modifyTime": 1424818632, "description": "Latin Clementine"},
-{"locale": "qic", "preset_name": "qch2010orig", "shortName": "DRS10", "longName": "Diospaj Rimashca Shimi", "modifyTime": 1419042777, "description": "Diospaj Rimashca Shimi 2010"},
-{"locale": "qii", "preset_name": "qii1994", "shortName": "QII94", "longName": "Diospaj Shimi", "modifyTime": 1417143423, "description": "Diospaj Shimi 1994"},
-{"locale": "en", "preset_name": "web", "shortName": "WEB", "longName": "World English Bible", "modifyTime": 1417815535, "description": "World English Bible (Public Domain)"}
+{"locale": "en", "preset_name": "web", "shortName": "WEB", "longName": "World English Bible", "modifyTime": 1427285637, "description": "World English Bible (Public Domain)"}
 		],
 
     "locale_display": {
         "shuar": "Shuar",
+        "shiwiar": "Siwiar (Achuar, Jívaro, Maina)",
+        "cofan": "Cofán",
+        "siapedee": "Sia pedee",
+        "chapala": "Cha'palaachi",
+        "kwi": "Awá pit",
         "qix": "Quichua Cotopaxi",
         "qii": "Quichua Imbabura",
         "qic": "Quichua Chimborazo",
+        "qit": "Quichua Tena",
+        "qip": "Quichua Pastaza",
+        "qis": "Quichua Salasaca",
+        "qin": "Quichua Napo",
         "qia": "Quichua Cañar",
         "ace": "Aceh",
         "alp": "Alune",

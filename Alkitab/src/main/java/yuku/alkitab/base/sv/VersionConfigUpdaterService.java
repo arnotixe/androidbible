@@ -95,6 +95,9 @@ public class VersionConfigUpdaterService extends IntentService {
             url = "http://qibi.is-a-bookkeeper.com/2/list_modify_time.php";
         }
         else if (!url.startsWith("http")) {
+            // registered alternatives
+            //url = "http://tiny.cc/" + url;
+            //url = "http://qibi.is-a-bookkeeper.com/" + url;
             url = "http://bit.do/" + url;
         }
         final String queryParams = "?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode()));

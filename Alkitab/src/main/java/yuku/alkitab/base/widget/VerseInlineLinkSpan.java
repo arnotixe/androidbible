@@ -34,6 +34,10 @@ public abstract class VerseInlineLinkSpan extends ClickableSpan {
 	@Override
 	public void updateDrawState(final TextPaint ds) {
 		// don't call super to prevent link underline and link coloring
-		// NOP
+
+        // FIXME color of choice here
+        //ds.setColor(ds.linkColor);
+        ds.setColor(0xff08088a);
+        // NOP
 	}
 }
