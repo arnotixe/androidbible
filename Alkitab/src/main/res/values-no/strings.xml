@@ -188,7 +188,7 @@
     <string name="bl_file_not_found_filename">Fant ikke filen %s</string>
     <string name="pref_textPadding_summary">Gjør paragrafene litt smalere så det blir lettere å lese</string>
     <string name="pref_textPadding_title">Ramme rundt teksten</string>
-    <string name="pref_versionsUrl_title">Nettadresse for Bibelversjoner</string>
+    <string name="pref_versionsUrl_title">Tjener</string>
     <string name="pref_versionsUrl_summary">Skriv inn kortnavn (\"Qibi\", \"yuku\", osv) eller full URL. Hvis du bruker kortnavn, prøver appen http://bit.do/&lt;kortnavn&gt;.</string>
     <string name="ada_kegagalan_membuka_edisiid">Feil ved åpning av %s</string>
     <string name="alamat_sudah_disalin">Kopierte %s.</string>
