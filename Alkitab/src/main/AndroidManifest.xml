@@ -12,19 +12,25 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 	<!-- sync permissions -->
+<!--
 	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
 	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
 	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+-->
 
 	<!-- gcm -->
+<!--
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<permission android:name="yuku.alkitab.debug.permission.C2D_MESSAGE" android:protectionLevel="signature" />
 	<uses-permission android:name="yuku.alkitab.debug.permission.C2D_MESSAGE" />
+-->
 
 	<!-- from a separate app: devotion reminder -->
+<!--
 	<uses-permission android:name="android.permission.VIBRATE"/>
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+-->
 
 	<uses-feature
         android:name="android.hardware.touchscreen"
@@ -344,7 +350,11 @@
 
         <receiver
             android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver"
-            android:icon="@drawable/ic_launcher" >
+            android:icon="@drawable/ic_launcher"
+            android:label="QiBi history" >
+            <!-- Label deprecated in API 21 and loaded in yuku.alkitab.base.br.DailyVerseAppWidgetReceiver,
+            see http://developer.android.com/reference/android/appwidget/AppWidgetProviderInfo.html#loadLabel%28android.content.pm.PackageManager%29-->
+
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -384,49 +394,38 @@
             android:exported="false" >
         </service>
 
-		<!-- sync components -->
-		<service android:name="yuku.alkitab.base.sync.AuthenticatorService">
-			<intent-filter>
-				<action android:name="android.accounts.AccountAuthenticator" />
-			</intent-filter>
-			<meta-data
-				android:name="android.accounts.AccountAuthenticator"
-				android:resource="@xml/authenticator" />
-		</service>
+		<!--&lt;!&ndash; sync components &ndash;&gt;-->
+		<!--<service android:name="yuku.alkitab.base.sync.AuthenticatorService">-->
+			<!--<intent-filter>-->
+				<!--<action android:name="android.accounts.AccountAuthenticator" />-->
+			<!--</intent-filter>-->
+			<!--<meta-data-->
+				<!--android:name="android.accounts.AccountAuthenticator"-->
+				<!--android:resource="@xml/authenticator" />-->
+		<!--</service>-->
 
-		<provider
-			android:name="yuku.alkitab.base.sync.StubProvider"
-			android:authorities="@string/sync_provider_authority"
-			android:exported="false"
-			android:syncable="true" />
+		<!--<provider-->
+			<!--android:name="yuku.alkitab.base.sync.StubProvider"-->
+			<!--android:authorities="@string/sync_provider_authority"-->
+			<!--android:exported="false"-->
+			<!--android:syncable="true" />-->
 
-		<service
-			android:name="yuku.alkitab.base.sync.SyncService"
-			android:exported="true">
-			<!--
-			This service is not run in a separate process, because the singleton Preferences might not work well when accessed by multiple processes.
-			Moreover, local broadcast manager is in-process only (for example, the sync service asks the app UI to update something using LBM, it won't work.
-			 -->
-			<intent-filter>
-				<action android:name="android.content.SyncAdapter" />
-			</intent-filter>
-			<meta-data
-				android:name="android.content.SyncAdapter"
-				android:resource="@xml/syncadapter" />
-		</service>
+		<!--<service-->
+			<!--android:name="yuku.alkitab.base.sync.SyncService"-->
+			<!--android:exported="true">-->
+			<!--&lt;!&ndash;-->
+			<!--This service is not run in a separate process, because the singleton Preferences might not work well when accessed by multiple processes.-->
+			<!--Moreover, local broadcast manager is in-process only (for example, the sync service asks the app UI to update something using LBM, it won't work.-->
+			 <!--&ndash;&gt;-->
+			<!--<intent-filter>-->
+				<!--<action android:name="android.content.SyncAdapter" />-->
+			<!--</intent-filter>-->
+			<!--<meta-data-->
+				<!--android:name="android.content.SyncAdapter"-->
+				<!--android:resource="@xml/syncadapter" />-->
+		<!--</service>-->
 
 		<!-- gcm -->
-		<receiver
-			android:name="yuku.alkitab.base.sync.GcmBroadcastReceiver"
-			android:permission="com.google.android.c2dm.permission.SEND" >
-			<intent-filter>
-				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-				<category android:name="yuku.alkitab.debug" />
-			</intent-filter>
-		</receiver>
-		<service android:name="yuku.alkitab.base.sync.GcmIntentService" />
-
-		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 
 		<!-- from a separate app: devotion reminder -->
 		<activity android:name="yuku.alkitab.reminder.ac.DevotionReminderActivity"

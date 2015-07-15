@@ -93,6 +93,7 @@ public class Gcm {
 	}
 
 	private static void registerInBackground() {
+/*  // Don't register. Arno
 		new Thread(() -> {
 			try {
 				final GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(App.context);
@@ -116,5 +117,6 @@ public class Gcm {
 				Log.e(TAG, "Error :" + ex.getMessage(), ex);
 			}
 		}).start();
+*/
 	}
 }
