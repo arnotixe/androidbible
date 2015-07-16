@@ -7,6 +7,7 @@ import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 //import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -36,7 +37,8 @@ public class GotoGridFragment extends BaseGotoFragment {
 	private static final int ANIM_DURATION = 100; // quicker animation
 
 	View panelChapterVerse;
-	TextView lSelectedBook;
+    TextView lgridBack;
+    TextView lSelectedBook;
 	TextView lSelectedChapter;
 	GridView gridBook;
 	GridView gridChapter;
@@ -76,25 +78,33 @@ public class GotoGridFragment extends BaseGotoFragment {
 			((GotoFinishListener) getActivity()).onGotoFinished(GotoFinishListener.GOTO_TAB_grid, selectedBook.bookId, selectedChapter, selectedVerse); 
 		}
 	};
-	
-	private View.OnClickListener lSelectedBook_click = new View.OnClickListener() {
-		@Override public void onClick(View v) {
-			selectedBook = null;
-			selectedChapter = 0;
+
+    private View.OnClickListener lSelectedBook_click = new View.OnClickListener() {
+        @Override public void onClick(View v) {
+            selectedBook = null;
+            selectedChapter = 0;
             gridVerse.setVisibility(View.GONE);
             gridChapter.setVisibility(View.GONE);
             lSelectedChapter.setVisibility(View.GONE);
             lSelectedBook.setText(R.string.grid_selectbook);
-			transitionChapterToBook();
-		}
-	};
-	
-	private View.OnClickListener lSelectedChapter_click = new View.OnClickListener() {
+            transitionChapterToBook();
+        }
+    };
+
+    private View.OnClickListener lgridBack_click = new View.OnClickListener() {
+        @Override public void onClick(View v) {
+            // v.finish(); // finish an activity
+            getActivity().onBackPressed(); // press back button to go back to isiactivity :) Arno
+            //getFragmentManager().popBackStack();
+        }
+    };
+
+    private View.OnClickListener lSelectedChapter_click = new View.OnClickListener() {
 		@Override public void onClick(View v) {
 			selectedChapter = 0;
             gridVerse.setVisibility(View.GONE);
             gridChapter.setVisibility(View.GONE);
-            lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+            lSelectedBook.setBackgroundResource(R.drawable.breadcrumbchap);
             transitionVerseToChapter();
 		}
 	};
@@ -105,7 +115,7 @@ public class GotoGridFragment extends BaseGotoFragment {
         gridChapter.setVisibility(View.VISIBLE);
         gridChapter.setAdapter(chapterAdapter = new ChapterAdapter(selectedBook));
 		panelChapterVerse.setVisibility(View.VISIBLE);
-        lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbchap);
 
 		animateFadeOutAndSlideLeft(gridBook, gridChapter);
 		lSelectedBook.setAlpha(0.f);
@@ -120,7 +130,7 @@ public class GotoGridFragment extends BaseGotoFragment {
 		panelChapterVerse.setVisibility(View.VISIBLE);
 		gridVerse.setVisibility(View.VISIBLE);
 		gridVerse.setAdapter(verseAdapter = new VerseAdapter(selectedBook, selectedChapter));
-        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbstart);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbcont);
 
 
         animateFadeOutAndSlideLeft(gridBook, gridVerse);
@@ -132,9 +142,10 @@ public class GotoGridFragment extends BaseGotoFragment {
 
 	void transitionChapterToBook() {
 		// TODO Animate
+        Log.d(TAG, "Clicking Book.");
 		gridBook.setVisibility(View.VISIBLE);
         gridChapter.setVisibility(View.GONE);
-        lSelectedBook.setBackgroundResource(R.drawable.breadcrumb);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbchap);
 		// Always visible
 		// panelChapterVerse.setVisibility(View.INVISIBLE);
 	}
@@ -145,7 +156,7 @@ public class GotoGridFragment extends BaseGotoFragment {
         gridVerse.setVisibility(View.VISIBLE);
 		panelChapterVerse.setVisibility(View.VISIBLE);
 		gridVerse.setAdapter(verseAdapter = new VerseAdapter(selectedBook, selectedChapter));
-        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbstart);
+        lSelectedBook.setBackgroundResource(R.drawable.breadcrumbcont);
 
 		animateFadeOutAndSlideLeft(gridChapter, gridVerse);
 
@@ -154,7 +165,7 @@ public class GotoGridFragment extends BaseGotoFragment {
 	
 	void transitionVerseToChapter() {
 		// TODO Animate
-		gridBook.setVisibility(View.INVISIBLE);
+		gridBook.setVisibility(View.GONE);
 		panelChapterVerse.setVisibility(View.VISIBLE);
 		gridChapter.setVisibility(View.VISIBLE);
 		gridChapter.setAdapter(chapterAdapter = new ChapterAdapter(selectedBook));
@@ -206,10 +217,15 @@ public class GotoGridFragment extends BaseGotoFragment {
 	@Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View res = inflater.inflate(R.layout.fragment_goto_grid, container, false);
 		panelChapterVerse = V.get(res, R.id.panelChapterVerse);
+
+
 		lSelectedBook = V.get(res, R.id.lSelectedBook);
         lSelectedBook.setText(R.string.grid_selectbook);
         lSelectedChapter = V.get(res, R.id.lSelectedChapter);
-		gridBook = V.get(res, R.id.gridBook);
+
+        lgridBack = V.get(res, R.id.lgridBack);
+
+        gridBook = V.get(res, R.id.gridBook);
 		gridChapter = V.get(res, R.id.gridChapter);
 		gridVerse = V.get(res, R.id.gridVerse);
 		
@@ -217,14 +233,15 @@ public class GotoGridFragment extends BaseGotoFragment {
 		// panelChapterVerse.setVisibility(View.INVISIBLE);
 		gridBook.setOnItemClickListener(gridBook_itemClick);
 		gridBook.setVisibility(View.VISIBLE);
-		gridChapter.setVisibility(View.INVISIBLE);
+		gridChapter.setVisibility(View.GONE);
 		gridChapter.setOnItemClickListener(gridChapter_itemClick);
-		gridVerse.setVisibility(View.INVISIBLE);
+		gridVerse.setVisibility(View.GONE);
 		gridVerse.setOnItemClickListener(gridVerse_itemClick);
 		
 		lSelectedBook.setOnClickListener(lSelectedBook_click);
 		lSelectedChapter.setOnClickListener(lSelectedChapter_click);
-		
+        lgridBack.setOnClickListener(lgridBack_click);
+
 		return res;
 	}
 	

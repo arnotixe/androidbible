@@ -19,15 +19,27 @@
             android:gravity="left">
 
             <TextView
+                android:id="@+id/lgridBack"
+                style="?android:actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="start|center_vertical"
+                android:text=" "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                tools:ignore="HardcodedText"
+                android:background="@drawable/breadcrumbback"
+                android:visibility="visible" />
+
+            <TextView
                 android:id="@+id/lSelectedBook"
                 style="?android:actionButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:gravity="start|center_vertical"
                 android:text="*Selected book"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 tools:ignore="HardcodedText"
-    android:background="@drawable/breadcrumb"
+    android:background="@drawable/breadcrumbchap"
     android:visibility="visible"
     android:autoText="false" />
 
@@ -36,7 +48,7 @@
                 style="?android:actionButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:gravity="start|center_vertical"
                 android:text="*chap"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 tools:ignore="HardcodedText"
