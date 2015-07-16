@@ -293,6 +293,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+<!--
         <activity
             android:name="yuku.alkitab.base.ac.DailyVerseAppWidgetConfigurationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection" >
@@ -300,6 +301,7 @@
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
+-->
         <activity
             android:name="yuku.alkitab.base.ac.SearchBookFilterActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
@@ -348,12 +350,13 @@
 			</intent-filter>
 		</receiver>
 
+<!--
         <receiver
             android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver"
             android:icon="@drawable/ic_launcher"
             android:label="QiBi history" >
-            <!-- Label deprecated in API 21 and loaded in yuku.alkitab.base.br.DailyVerseAppWidgetReceiver,
-            see http://developer.android.com/reference/android/appwidget/AppWidgetProviderInfo.html#loadLabel%28android.content.pm.PackageManager%29-->
+            &lt;!&ndash; Label deprecated in API 21 and loaded in yuku.alkitab.base.br.DailyVerseAppWidgetReceiver,
+            see http://developer.android.com/reference/android/appwidget/AppWidgetProviderInfo.html#loadLabel%28android.content.pm.PackageManager%29&ndash;&gt;
 
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -364,6 +367,7 @@
                 android:resource="@xml/daily_verse_app_widget_provider" />
         </receiver>
         <receiver android:name="yuku.alkitab.base.br.DailyVerseAppWidgetReceiver$ClickReceiver" />
+-->
 
         <receiver
             android:name="yuku.alkitab.base.br.VersionDownloadCompleteReceiver"
@@ -374,9 +378,11 @@
             </intent-filter>
         </receiver>
 
+<!--
         <service
             android:name="yuku.alkitab.base.sv.DailyVerseAppWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
+-->
 
         <uses-library
             android:name="com.sec.android.app.multiwindow"

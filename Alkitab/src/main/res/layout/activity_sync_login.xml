@@ -22,7 +22,6 @@
 			android:layout_gravity="center_horizontal"
 			android:adjustViewBounds="true"
 			android:scaleType="fitStart"
-			android:src="@drawable/sync_intro"
 			tools:ignore="ContentDescription"
 			android:paddingLeft="@dimen/padding_large"
 			android:paddingRight="@dimen/padding_large" />
