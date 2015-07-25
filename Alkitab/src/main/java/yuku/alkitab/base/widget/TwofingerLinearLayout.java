@@ -6,7 +6,10 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
+
+import yuku.afw.storage.Preferences;
 import yuku.alkitab.debug.BuildConfig;
+import yuku.alkitab.debug.R;
 
 public class TwofingerLinearLayout extends LinearLayout {
 	public static final String TAG = TwofingerLinearLayout.class.getSimpleName();
@@ -198,17 +201,19 @@ public class TwofingerLinearLayout extends LinearLayout {
 				float dy = event.getY() - onefingerStart.y;
 				float ady = Math.abs(dy);
 
-				if (dx > threshold_twofinger_swipe && ady < 0.5f * threshold_twofinger_swipe) {
-					// swipe to right
-					state = State.onefinger_right;
-					return true;
-				} else if (dx < -threshold_twofinger_swipe && ady < 0.5f * threshold_twofinger_swipe) {
-					// swipe to left
-					state = State.onefinger_left;
-					return true;
-				} else if (ady > threshold_twofinger_swipe) {
-					// invalidate
-					onefingerStart.x = Float.MIN_VALUE;
+				if (Preferences.getBoolean(getContext().getString(R.string.pref_usesideswipe), false)) {
+					if (dx > threshold_twofinger_swipe && ady < 0.5f * threshold_twofinger_swipe) {
+						// swipe to right
+						state = State.onefinger_right;
+						return true;
+					} else if (dx < -threshold_twofinger_swipe && ady < 0.5f * threshold_twofinger_swipe) {
+						// swipe to left
+						state = State.onefinger_left;
+						return true;
+					} else if (ady > threshold_twofinger_swipe) {
+						// invalidate
+						onefingerStart.x = Float.MIN_VALUE;
+					}
 				}
 			}
 		}

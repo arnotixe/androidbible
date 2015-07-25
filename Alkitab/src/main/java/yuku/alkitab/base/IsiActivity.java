@@ -248,6 +248,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 	FrameLayout overlayContainer;
 	View root;
+    public int lastselectedverse;
 	VersesView lsText;
 	VersesView lsSplit1;
 	TextView tSplitEmpty;
@@ -264,7 +265,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	//Floater floater;
 
 	Book activeBook;
-	int chapter_1 = 0;
+    int chapter_1 = 0;
+
 	boolean fullScreen;
 	Toast fullScreenToast;
 
@@ -307,7 +309,11 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		return new Intent(App.context, IsiActivity.class);
 	}
 
-	public static Intent createIntent(int ari) {
+	public IsiActivity getouter() {
+        return IsiActivity.this;
+    } // to get outer class from inside classes
+
+    public static Intent createIntent(int ari) {
 		Intent res = new Intent(App.context, IsiActivity.class);
 		res.setAction("yuku.alkitab.action.VIEW");
 		res.putExtra("ari", ari);
@@ -1363,7 +1369,9 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	 */
 	int display(int chapter_1, int verse_1, boolean uncheckAllVerses) {
 		int current_chapter_1 = this.chapter_1;
-		
+        lsText.lastselected = verse_1; // the only currently selected verse. Used for comparison.
+        // This is hit by both Grid and Search
+
 		if (chapter_1 < 1) chapter_1 = 1;
 		if (chapter_1 > this.activeBook.chapter_count) chapter_1 = this.activeBook.chapter_count;
 		
@@ -1380,7 +1388,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			}
 
 			// tell activity
-			this.chapter_1 = chapter_1;
+            this.chapter_1 = chapter_1;
+            //lsText.lastselected = verse_1; // view's last selected
 
 			lsText.scrollToVerse(verse_1);
 		}
@@ -1794,6 +1803,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			}
 
 			if (actionMode == null) {
+                  // when first verse is selected. Not when second is selected.
 				actionMode = startSupportActionMode(actionMode_callback);
 			}
 
@@ -1803,6 +1813,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		}
 
 		@Override public void onNoVersesSelected(VersesView v) {
+            // run when last verse is deselected
 			if (activeSplitVersion != null) {
 				// synchronize the selection with the split view
 				lsSplit1.uncheckAllVerses(false);
@@ -1819,7 +1830,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 	VersesView.SelectedVersesListener lsSplit1_selectedVerses = new VersesView.SelectedVersesListener() {
 		@Override public void onSomeVersesSelected(VersesView v) {
-			// synchronize the selection with the main view
+            Log.d(TAG, "Main following split 1/2: lsText.lastselected currently: " + lsText.lastselected + ". lsSplit1.lastselected is " + lsSplit1.lastselected );
+               lsText.lastselected = lsSplit1.lastselected;
+            Log.d(TAG, "Main following split 1/2: lsText.lastselected currently: " + lsText.lastselected + ". lsSplit1.lastselected is " + lsSplit1.lastselected );
+            // synchronize the selection with the main view
 			IntArrayList selectedVerses = v.getSelectedVerses_1();
 			lsText.checkVerses(selectedVerses, true);
 		}
@@ -1906,9 +1920,13 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				}
 			}
 
+            // contiguos only when continuous (2-5 etc, but not 1-3, 6)
+            // single only when one single verse selected
+
 			menuAddBookmark.setVisible(contiguous);
 			menuAddNote.setVisible(contiguous);
-			menuCompare.setVisible(single);
+			//menuCompare.setVisible(single);
+            menuCompare.setVisible(true); //always showing last selected verse
 
 			// moved to left drawer
 			//final MenuItem menuVersions = menu.findItem(R.id.menuVersions);
@@ -1973,7 +1991,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				mode.finish();
 			} return true;
 			case R.id.menuCompare: {
-				final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, selected.get(0));
+                // should compare only last selected verse actually
+                // final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, selected.get(0)); // original
+                //final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, 2); // hack to always compare verse 2
+                final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, lsText.lastselected); // take last selected int from view
 				VersesDialog.newCompareInstance(ari).show(getSupportFragmentManager(), "compare_dialog");
 			} return true;
 			case R.id.menuVersions: {

@@ -235,6 +235,7 @@ public abstract class LeftDrawer extends ScrollView {
 		Switch cSplitVersion;
 
         View bProgressMarkList;
+        View bPins;
         View bmenuVersions;
 		View bProgress1;
 		View bProgress2;
@@ -278,6 +279,7 @@ public abstract class LeftDrawer extends ScrollView {
 			cSplitVersion = V.get(this, R.id.cSplitVersion);
 
             bProgressMarkList = V.get(this, R.id.bProgressMarkList);
+            bPins = V.get(this, R.id.bPins);
             bmenuVersions = V.get(this, R.id.menuVersions);
             bProgress1 = V.get(this, R.id.bProgress1);
 			bProgress2 = V.get(this, R.id.bProgress2);
@@ -288,7 +290,10 @@ public abstract class LeftDrawer extends ScrollView {
 			cNightMode.setChecked(!isInEditMode() && Preferences.getBoolean(Prefkey.is_night_mode, false));
 
             bProgressMarkList.setOnClickListener(v -> listener.bProgressMarkList_click());
+            bPins.setOnClickListener(v -> listener.bProgressMarkList_click());
+
             bmenuVersions.setOnClickListener(v -> listener.bmenuVersions_click());
+            bBible.setOnClickListener(v -> listener.bmenuVersions_click());
 
 			final View[] views = new View[]{bProgress1, bProgress2, bProgress3, bProgress4, bProgress5};
 			for (int i = 0; i < views.length; i++) {

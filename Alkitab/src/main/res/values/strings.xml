@@ -202,7 +202,7 @@
     <string name="goto_tab_grid_label">Grid</string>
 
     <!-- Font Manager -->
-    <string name="fm_activity_title">Font Manager</string>
+    <string name="fm_activity_title">Manage Fonts</string>
     <string name="fm_need_to_log_in_to_wifi">You need to log-in to your (Wi-Fi) network first.</string>
     <string name="fm_do_you_want_to_delete">Delete font %s?</string>
     <string name="fm_error_when_extracting_font">Error when extracting font %1$s: %2$s</string>
@@ -502,7 +502,11 @@
 	<string name="marker_migrate_filename_dated">%1$s dated %2$s</string>
     <string name="pm_menu_view_progress">View pin</string>
     <string name="verse_select_multiple_verse_selected" translatable="false"></string>
-    <string name="pref_versionsUrl_text" translatable="false">Qibi</string>
+    <string name="pref_versionsUrl_text" translatable="false"></string>
+    <string name="pref_versionsCDNUrl_text" translatable="false">Qibi4</string>
+    <string name="pref_sideswipe_title">Swipe chapters</string>
+    <string name="pref_sideswipe_summary">Swipe right/left to flip chapters</string>
+
     <string name="book_filter_new_testament">The greek scriptures</string>
     <string name="grid_selectbook">Select a book</string>
 

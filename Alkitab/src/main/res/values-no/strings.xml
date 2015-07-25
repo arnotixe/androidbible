@@ -97,7 +97,7 @@
     <string name="pref_bahasa_language">Språk (Language)</string>
     <string name="pref_biarkan_layar_menyala">Hold skjermen på</string>
     <string name="pref_copyWithVerseNumbers_summary">Ta med versnumre ved kopi/deling</string>
-    <string name="pref_copyWithVerseNumbers_title">Ta med versnumre</string>
+    <string name="pref_copyWithVerseNumbers_title">Kopiér versnumre</string>
     <string name="pref_kitab_menurut_abjad">Sortér bøkene alfabetisk</string>
     <string name="pref_layar_tidak_akan_padam_ketika_membaca_teks_alkitab">Skjermen slås ikke av mens du leser Bibelen</string>
     <string name="pref_penampilan_layar">Visning</string>
@@ -227,4 +227,7 @@
     <string name="ed_no_external_storage">Kunne ikke finne SD-kort eller USB-lagringsplass.</string>
     <string name="ed_reading_pdb_file">Leser PDB-fil…</string>
     <string name="grid_selectbook">Velg en bok</string>
+    <string name="fm_activity_title">Administrér Skrifttyper</string>
+    <string name="pref_sideswipe_summary">Sveip høyre/venstre for å bla i kapitler</string>
+    <string name="pref_sideswipe_title">Sveip kapitler</string>
 </resources>

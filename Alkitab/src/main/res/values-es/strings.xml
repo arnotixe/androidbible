@@ -195,7 +195,7 @@
   <string name="goto_tab_dialer_label">Marcador</string>
   <string name="goto_tab_direct_label">Directo</string>
   <string name="goto_tab_grid_label">Rejilla</string>
-  <string name="fm_activity_title">Administrador de Fuentes</string>
+  <string name="fm_activity_title">Administrar Fuentes</string>
   <string name="fm_need_to_log_in_to_wifi">Primero necesita registrarse en su red (Wi-Fi).</string>
   <string name="fm_do_you_want_to_delete">¿Eliminar la fuente %s?</string>
   <string name="fm_error_when_extracting_font">Error extrayendo la fuente %1$s: %2$s</string>
@@ -368,4 +368,6 @@
     <string name="pref_versionsUrl_title">Servidor</string>
     <string name="app_name" translatable="false"></string>
     <string name="grid_selectbook">Escoja un libro</string>
+  <string name="pref_sideswipe_summary">Deslizar a la derecha/izquierda para hojear entre capítulos</string>
+  <string name="pref_sideswipe_title">Deslizar capítulos</string>
 </resources>

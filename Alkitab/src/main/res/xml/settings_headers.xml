@@ -5,10 +5,13 @@
             android:id="@+id/header_id_sync"
             android:title="@string/pref_sync_title" />  Hacked away by Arno-->
 
-    	<header
-		android:id="@+id/header_id_versions"
-		android:title="@string/kelola_versi" />
+    <header
+	android:id="@+id/header_id_versions"
+    android:title="@string/kelola_versi" />
 
+    <header
+        android:id="@+id/header_id_fonts"
+        android:title="@string/fm_activity_title" />
 
     <header
 		android:fragment="yuku.alkitab.base.ac.SettingsActivity$DisplayFragment"
@@ -17,5 +20,7 @@
 	<header
 		android:fragment="yuku.alkitab.base.ac.SettingsActivity$UsageFragment"
 		android:title="@string/pref_penggunaan" />
+
+
 
 </preference-headers>

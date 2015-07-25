@@ -56,9 +56,12 @@ public class SettingsActivity extends BasePreferenceActivity {
         //	}
         //}
         for (final Header header : target) {
-        	if (header.id == R.id.header_id_versions) {
-            header.intent = new Intent(App.context, VersionsActivity.class);
-        	}
+            if (header.id == R.id.header_id_versions) {
+                header.intent = new Intent(App.context, VersionsActivity.class);
+            }
+            if (header.id == R.id.header_id_fonts) {
+                header.intent = new Intent(App.context, FontManagerActivity.class);
+            }
         }
 	}
 
@@ -125,8 +128,8 @@ public class SettingsActivity extends BasePreferenceActivity {
 			});
 			*/
 
-            final EditTextPreference pref_versionsUrl = (EditTextPreference) findPreference(getString(R.string.pref_versionsUrl_key));
-            pref_versionsUrl.setOnPreferenceChangeListener((preference, newValue) -> {
+            final EditTextPreference pref_versionsCDNUrl = (EditTextPreference) findPreference(getString(R.string.pref_versionsCDNUrl_key));
+            pref_versionsCDNUrl.setOnPreferenceChangeListener((preference, newValue) -> {
                // Reset timer when bible version server changes
                Preferences.setInt(Prefkey.version_config_last_update_check,0); //assume we need to update
                Preferences.setInt(Prefkey.version_config_current_modify_time, 0); //assume we need to update

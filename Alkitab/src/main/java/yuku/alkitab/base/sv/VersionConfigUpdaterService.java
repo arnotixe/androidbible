@@ -89,10 +89,11 @@ public class VersionConfigUpdaterService extends IntentService {
 
 		final String modifyTimeBody;
 
-        String url = Preferences.getString(App.context.getString(R.string.pref_versionsUrl_key), "");
+        String url = Preferences.getString(App.context.getString(R.string.pref_versionsCDNUrl_key), "");
         url.trim();
-        if (url.length() == 0) {
-            url = "http://qibi.is-a-bookkeeper.com/2/list_modify_time.php";
+        // Don't deviate via bit.do if server value is default
+        if ((url.length() == 0) || (url == "Qibi4")) {
+            url = "https://qibicdn.appspot.com/yes/list_modify_time.php";
         }
         else if (!url.startsWith("http")) {
             // registered alternatives
@@ -100,8 +101,11 @@ public class VersionConfigUpdaterService extends IntentService {
             //url = "http://qibi.is-a-bookkeeper.com/" + url;
             url = "http://bit.do/" + url;
         }
-        final String queryParams = "?packageName=" + Uri.encode(getPackageName()) + "&versionCode=" + Uri.encode(String.valueOf(App.getVersionCode()));
-        url += queryParams;
+
+        //bypass bit.do by default (all that starts with Qibi.*)
+        if (url.startsWith("http://bit.do/Qibi")) {
+            url = "https://qibicdn.appspot.com/yes/list_modify_time.php";
+        }
 
 		try {
 			Log.d(TAG, "Downloading list modify time");

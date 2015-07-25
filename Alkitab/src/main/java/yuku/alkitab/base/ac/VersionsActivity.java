@@ -125,7 +125,9 @@ public class VersionsActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		// super.onCreate(savedInstanceState);
+        super.onCreateWithNonToolbarUpButton(savedInstanceState);
+
 		setContentView(R.layout.activity_versions);
 
 		setTitle(R.string.kelola_versi);
@@ -147,7 +149,7 @@ public class VersionsActivity extends BaseActivity {
 		slidingTabs.setCustomTabColorizer(position -> getResources().getColor(R.color.accent));
 		slidingTabs.setViewPager(mViewPager);
 
-		processIntent(getIntent(), "onCreate");
+		processIntent(getIntent(), "onCreate"); // this causing back button not working?
 
 		// try to auto-update version list
 		VersionConfigUpdaterService.checkUpdate(true);

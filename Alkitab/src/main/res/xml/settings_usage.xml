@@ -10,6 +10,11 @@
 		android:key="@string/pref_copyWithVerseNumbers_key"
 		android:summary="@string/pref_copyWithVerseNumbers_summary"
 		android:title="@string/pref_copyWithVerseNumbers_title" />
+	<CheckBoxPreference
+		android:defaultValue="false"
+		android:key="@string/pref_usesideswipe"
+		android:summary="@string/pref_sideswipe_summary"
+		android:title="@string/pref_sideswipe_title" />
 
 	<ListPreference
 		android:defaultValue="@string/pref_volumeButtonNavigation_default"
@@ -26,10 +31,11 @@
 		android:key="@string/pref_showHiddenVersion_key"
 		android:title="@string/pref_showHiddenVersion_title" /> -->
     <EditTextPreference
-        android:defaultValue="@string/pref_versionsUrl_text"
-        android:key="@string/pref_versionsUrl_key"
+        android:defaultValue="@string/pref_versionsCDNUrl_text"
+        android:key="@string/pref_versionsCDNUrl_key"
         android:negativeButtonText="@string/cancel"
         android:positiveButtonText="@string/ok"
         android:title="@string/pref_versionsUrl_title"
-        android:summary="@string/pref_versionsUrl_summary" />
+        android:summary="@string/pref_versionsUrl_summary"
+		android:text="Qibi4" />
 </PreferenceScreen>

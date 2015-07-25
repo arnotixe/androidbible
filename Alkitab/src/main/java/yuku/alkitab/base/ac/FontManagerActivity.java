@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -20,8 +21,10 @@ import android.widget.TextView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import yuku.afw.V;
+import yuku.afw.storage.Preferences;
 import yuku.alkitab.base.App;
 import yuku.alkitab.base.ac.base.BaseActivity;
+import yuku.alkitab.base.storage.Prefkey;
 import yuku.alkitab.base.sv.DownloadService;
 import yuku.alkitab.base.sv.DownloadService.DownloadBinder;
 import yuku.alkitab.base.sv.DownloadService.DownloadEntry;
@@ -42,10 +45,15 @@ import java.util.zip.ZipInputStream;
 
 public class FontManagerActivity extends BaseActivity implements DownloadListener {
 	public static final String TAG = FontManagerActivity.class.getSimpleName();
-	
-	private static final String URL_fontList = "https://alkitab-host.appspot.com/addon/fonts/v1/list-v2.txt";
-	private static final String URL_fontData = "https://alkitab-host.appspot.com/addon/fonts/v1/data/%s.zip";
-	private static final String URL_fontPreview = "https://alkitab-host.appspot.com/addon/fonts/v1/preview/%s-384x84.png";
+
+    /*
+    private static final String URL_fontList = "https://alkitab-host.appspot.com/addon/fonts/v1/list-v2.txt";
+    private static final String URL_fontData = "https://alkitab-host.appspot.com/addon/fonts/v1/data/%s.zip";
+    private static final String URL_fontPreview = "https://alkitab-host.appspot.com/addon/fonts/v1/preview/%s-384x84.png";
+    */
+    private static final String URL_fontList = "https://qibicdn.appspot.com/fonts/list-v2.txt";
+    private static final String URL_fontData = "https://qibicdn.appspot.com/fonts/data/%s.zip";
+    private static final String URL_fontPreview = "https://qibicdn.appspot.com/fonts/preview/%s-384x84.png";
 
 	public static Intent createIntent() {
 		return new Intent(App.context, FontManagerActivity.class);
@@ -55,7 +63,7 @@ public class FontManagerActivity extends BaseActivity implements DownloadListene
 	FontAdapter adapter;
 	TextView lEmptyError;
 	DownloadService dls;
-	
+
 	private ServiceConnection serviceConnection = new ServiceConnection() {
 		@Override public void onServiceDisconnected(ComponentName name) {
 			dls = null;
@@ -74,6 +82,7 @@ public class FontManagerActivity extends BaseActivity implements DownloadListene
 
 	@Override protected void onCreate(Bundle savedInstanceState) {
 		super.onCreateWithNonToolbarUpButton(savedInstanceState);
+        //super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_font_manager);
 		setTitle(R.string.fm_activity_title);
@@ -86,8 +95,28 @@ public class FontManagerActivity extends BaseActivity implements DownloadListene
 		
 		bindService(new Intent(App.context, DownloadService.class), serviceConnection, BIND_AUTO_CREATE);
 	}
-	
-	@Override protected void onDestroy() {
+
+    /*
+    // FIXME Find time to implement set-font-on-click.
+    AdapterView.OnItemSelectedListener cbTypeface_itemSelected = new AdapterView.OnItemSelectedListener() {
+        @Override public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+            String name = typefaceAdapter.getNameByPosition(position);
+            if (name == null) {
+                activity.startActivityForResult(FontManagerActivity.createIntent(), reqcodeGetFonts);
+            } else {
+                Preferences.setString(Prefkey.jenisHuruf, name);
+                listener.onValueChanged();
+            }
+        }
+
+        @Override public void onNothingSelected(AdapterView<?> parent) {}
+    };
+    */
+
+
+
+
+    @Override protected void onDestroy() {
 		super.onDestroy();
 		
 		if (dls != null) {

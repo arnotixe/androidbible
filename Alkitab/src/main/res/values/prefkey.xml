@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android" tools:ignore="MissingTranslation">
 	<string name="pref_keepScreenOn_key">nyalakanTerusLayar</string>
 	<string name="pref_textPadding_key">textPadding</string>
 
@@ -25,5 +25,8 @@
 	<string name="pref_syncAccountName_key">syncAccountName</string>
 	<string name="pref_sync_key">sync</string>
 	<string name="pref_syncLogout_key">syncLogout</string>
-    <string name="pref_versionsUrl_key">versionsUrl</string>
+
+    <string name="pref_versionsCDNUrl_key">pref_versionsCDNUrl_text</string> <!-- used to be versionsUrl, but that was before the CDN move -->
+	<string name="pref_usesideswipe" translatable="false">usesideswipe</string>
+
 </resources>

@@ -41,13 +41,17 @@
 			android:layout_height="32dp">
 
 			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_vertical"
-				android:layout_marginLeft="16dp"
-				android:text="@string/menuProgress"
-				android:textColor="#bebebe"
-				android:textSize="12sp" />
+                android:id="@+id/bPins"
+                style="?android:buttonBarButtonStyle"
+                android:textColor="?android:textColorPrimary"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_gravity="left|center_vertical"
+                android:text="@string/menuProgress"
+                android:focusable="false"/>
 
 			<ImageButton
 				android:id="@+id/bProgressMarkList"

@@ -14,6 +14,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import yuku.afw.storage.Preferences;
+import yuku.alkitab.base.IsiActivity;
 import yuku.alkitab.base.U;
 import yuku.alkitab.debug.R;
 import yuku.alkitab.model.Book;
@@ -26,7 +27,9 @@ import java.lang.reflect.Method;
 
 public class VersesView extends ListView implements AbsListView.OnScrollListener {
 	public static final String TAG = VersesView.class.getSimpleName();
-	
+
+    public int lastselected = 0;
+
 	// http://stackoverflow.com/questions/6369491/stop-listview-scroll-animation
 	static class StopListFling {
 
@@ -118,6 +121,7 @@ public class VersesView extends ListView implements AbsListView.OnScrollListener
 	private View[] scrollToVerseConvertViews;
 	private String name;
 	private boolean firstTimeScroll = true;
+
 
 	public VersesView(Context context) {
 		super(context);
@@ -243,7 +247,48 @@ public class VersesView extends ListView implements AbsListView.OnScrollListener
 
 	private OnItemClickListener itemClick = new OnItemClickListener() {
 		@Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			if (verseSelectionMode == VerseSelectionMode.singleClick) {
+
+            boolean ischecked = false;
+
+            // Inform app what verse was clicked last, to
+            // This is also called by clicking in splitview, great :D
+            // Bad news is, it's in lsSplit's own onItemClick...
+
+            SparseBooleanArray checkedItems = getCheckedItemPositions();
+            Log.d(TAG, "Verse click at list pos " + position + ". Currently checkedItems=" + checkedItems.toString() );
+            lastselected = position + 1; // local to versesView. Accesible from isiActivity as lsText.lastselected
+
+            /*Attempt to set lastselected only when CHECKINg and not when DECHECKING.
+            The idea was to use "first selected verse" if last selected verse was deselected.
+            Seems listview getCheckedItemPositions and then valueAt(pos) isn't always reliable? */
+            /*
+            if (checkedItems != null) {
+                if ((checkedItems.size() == 1) & (checkedItems.valueAt(0) == false)) {
+                    Log.i(TAG, "Checkeditems ZARRO size - no verses selected now.");
+                }
+                if (checkedItems.valueAt(position)) {
+                    Log.i(TAG, "Verse click at " + position + " SELECTED it. checkedItems " + checkedItems.toString() );
+                    //getouter().lastselectedverse = 1;
+                    lastselected = position + 1; // local to versesView. Accesible from isiActivity as lsText.lastselected
+                } else {
+                    Log.i(TAG, "Verse click at " + position + " DEselected it. checkedItems " + checkedItems.toString() );
+                }
+
+                // Demo iterating over checkeditems, eututting its contents to log
+                for (int i=0; i<checkedItems.size(); i++) {
+                    if (checkedItems.valueAt(i)) {
+                        String item = getAdapter().getItem( checkedItems.keyAt(i)).toString();
+                        Log.i(TAG, "Index " + i + ", Verse no. " + checkedItems.valueAt(i) + " is selected, contents:" + item);
+                    }
+                }
+
+            } else {
+                lastselected = 0; // local to versesView. Accesible from isiActivity as lsText.lastselected
+            }
+            //if lastselected = 0 then the last selection operation was unselecting something.
+            */
+
+            if (verseSelectionMode == VerseSelectionMode.singleClick) {
 				if (listener != null) listener.onVerseSingleClick(VersesView.this, adapter.getVerseFromPosition(position));
 			} else if (verseSelectionMode == VerseSelectionMode.multiple) {
 				adapter.notifyDataSetChanged();

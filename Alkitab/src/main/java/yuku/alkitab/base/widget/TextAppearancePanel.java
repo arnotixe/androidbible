@@ -110,7 +110,7 @@ public class TextAppearancePanel {
 		cBold.setChecked(bold);
 		
 		float textSize = Preferences.getFloat(Prefkey.ukuranHuruf2, (float) App.context.getResources().getInteger(R.integer.pref_ukuranHuruf2_default));
-		sbTextSize.setProgress((int) ((textSize - 2.f) * 2));
+		sbTextSize.setProgress((int) ((textSize - 2.f) * 2)-5);
 		displayTextSizeText(textSize);
 		
 		float lineSpacing = Preferences.getFloat(Prefkey.lineSpacingMult, 1.15f);
@@ -202,7 +202,7 @@ public class TextAppearancePanel {
 		@Override public void onStartTrackingTouch(SeekBar seekBar) {}
 		
 		@Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-			float textSize = progress * 0.5f + 2.f;
+			float textSize = 5+ (progress * 0.5f + 2.f);
 			Preferences.setFloat(Prefkey.ukuranHuruf2, textSize);
 			displayTextSizeText(textSize);
 			listener.onValueChanged();
