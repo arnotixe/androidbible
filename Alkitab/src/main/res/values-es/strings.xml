@@ -354,7 +354,7 @@
   <string name="version_config_updater_error_download_modify_time">Fallo al revisar la lista de versiones.</string>
   <string name="version_config_updater_error_modify_time_failed">Lista de versiones no disponible: %s</string>
   <string name="version_config_updater_no_newer_available">Actualizaciones de versión no encontradas.</string>
-  <string name="version_config_updater_error_download_list">Fallo al descargar la lista de versiones.</string>
+  <string name="version_config_updater_error_download_list">Fallo al descargar la lista de versiones. Está conectado el internet?</string>
   <string name="version_config_updater_error_parsing_list">La lista de versiones descargada está corrupta.</string>
   <string name="version_config_updater_updated">¡Lista de versiones actualizada!</string>
   <string name="version_config_cannot_write_updated_list">Fallo al almacenar lista actualizada.</string>
@@ -370,4 +370,8 @@
     <string name="grid_selectbook">Escoja un libro</string>
   <string name="pref_sideswipe_summary">Deslizar a la derecha/izquierda para hojear entre capítulos</string>
   <string name="pref_sideswipe_title">Deslizar capítulos</string>
+  <string name="xref_missing_short">(falta)</string>
+  <string name="xref_missingverse">La referencia apunta a un versículo que no existe. Estará vacía.</string>
+  <string name="xref_missing_long">La referencia falta</string>
+  <string name="font_downloaded">%s descargado</string>
 </resources>

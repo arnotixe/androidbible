@@ -10,7 +10,11 @@ import android.text.style.LeadingMarginSpan;
 import android.text.style.LineHeightSpan;
 import android.text.style.MetricAffectingSpan;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.widget.TextView;
+
+import java.util.logging.Logger;
+
 import yuku.alkitab.base.S;
 import yuku.alkitab.base.util.Appearances;
 
@@ -103,8 +107,14 @@ public class VerseRenderer {
 		// @^ = start-of-paragraph marker
 		// @< to @> = special tags (not visible for unsupported tags) [can be considered formatting]
 		// @/ = end of special tags (closing tag) (As of 2013-10-04, all special tags must be closed) [can be considered formatting]
-		
-		int text_len = text.length();
+
+        int text_len = 0;
+		try {
+            text_len = text.length();
+        } catch (Exception e) {
+            // Log.e(TAG, "Bad Xref. Leaving Render."); // This will be logged and toasted further on.
+            return;
+        }
 		
 		// Determine if this verse text is a simple verse or formatted verse. 
 		// Formatted verses start with "@@".
@@ -282,10 +292,14 @@ public class VerseRenderer {
 		if (tag.length() >= 2) {
 			// Footnote
 			if (tag.charAt(0) == 'f') {
-				final int field = Integer.parseInt(tag.substring(1));
-				appendSuperscriptNumber(sb, field);
-				if (inlineLinkSpanFactory != null) {
-					sb.setSpan(inlineLinkSpanFactory.create(VerseInlineLinkSpan.Type.footnote, ari << 8 | field), sb_len, sb.length(), 0);
+				try {
+					final int field = Integer.parseInt(tag.substring(1)); // crashes on non-existent footnote
+					appendSuperscriptNumber(sb, field);
+					if (inlineLinkSpanFactory != null) {
+						sb.setSpan(inlineLinkSpanFactory.create(VerseInlineLinkSpan.Type.footnote, ari << 8 | field), sb_len, sb.length(), 0);
+					}
+				} catch (Exception e) { // FIXME This catches all errors. Could inform on WHAT went wrong here...
+					Log.e(TAG, "Trouble with footnote, not adding it."); //$NON-NLS-1$
 				}
 			} else if (tag.charAt(0) == 'x') {
 				sb.append(XREF_MARK); // star mark

@@ -230,4 +230,9 @@
     <string name="fm_activity_title">Administrér Skrifttyper</string>
     <string name="pref_sideswipe_summary">Sveip høyre/venstre for å bla i kapitler</string>
     <string name="pref_sideswipe_title">Sveip kapitler</string>
+    <string name="xref_missing_short">(mangler)</string>
+    <string name="xref_missingverse">Kryssreferansen peker til et manglende vers. Den kommer til å være tom.</string>
+    <string name="xref_missing_long">Kryssreferansen mangler</string>
+    <string name="font_downloaded">Lastet ned %s</string>
+    <string name="version_config_cannot_write_updated_list">Kunne ikke lagre den oppdaterte listen.</string>
 </resources>

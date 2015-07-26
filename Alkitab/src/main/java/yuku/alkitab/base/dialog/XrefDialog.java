@@ -13,8 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import yuku.afw.D;
 import yuku.afw.V;
+import yuku.afw.storage.Preferences;
+import yuku.alkitab.base.App;
 import yuku.alkitab.debug.R;
 import yuku.alkitab.base.S;
 import yuku.alkitab.base.dialog.base.BaseDialog;
@@ -108,38 +112,47 @@ public class XrefDialog extends BaseDialog {
 		sb.append(" ");
 		
 		final int[] linkPos = {0};
-		findTags(xrefEntry.content, new FindTagsListener() {
-			@Override public void onTaggedText(final String tag, int start, int end) {
-				final int thisLinkPos = linkPos[0];
-				linkPos[0]++;
-				
-				int sb_len = sb.length();
-				sb.append(xrefEntry.content, start, end);
-				
-				if (tag.startsWith("t")) { // the only supported tag at the moment
-					final String encodedTarget = tag.substring(1);
-					
-					if (thisLinkPos == displayedLinkPos || (displayedLinkPos == -1 && thisLinkPos == 0)) { 
-						// just make it bold, because this is the currently displayed link
-						sb.setSpan(new StyleSpan(Typeface.BOLD), sb_len, sb.length(), 0); 
-						
-						if (displayedLinkPos == -1) {
-							showVerses(0, encodedTarget);
-						}
-					} else {
-						sb.setSpan(new ClickableSpan() {
-							@Override public void onClick(View widget) {
-								showVerses(thisLinkPos, encodedTarget);
+		try {
+			findTags(xrefEntry.content, new FindTagsListener() {
+				@Override
+				public void onTaggedText(final String tag, int start, int end) {
+					final int thisLinkPos = linkPos[0];
+					linkPos[0]++;
+
+					int sb_len = sb.length();
+					sb.append(xrefEntry.content, start, end);
+
+					if (tag.startsWith("t")) { // the only supported tag at the moment
+						final String encodedTarget = tag.substring(1);
+
+						if (thisLinkPos == displayedLinkPos || (displayedLinkPos == -1 && thisLinkPos == 0)) {
+							// just make it bold, because this is the currently displayed link
+							sb.setSpan(new StyleSpan(Typeface.BOLD), sb_len, sb.length(), 0);
+
+							if (displayedLinkPos == -1) {
+								showVerses(0, encodedTarget);
 							}
-						}, sb_len, sb.length(), 0);
+						} else {
+							sb.setSpan(new ClickableSpan() {
+								@Override
+								public void onClick(View widget) {
+									showVerses(thisLinkPos, encodedTarget);
+								}
+							}, sb_len, sb.length(), 0);
+						}
 					}
 				}
-			}
-			
-			@Override public void onPlainText(int start, int end) {
-				sb.append(xrefEntry.content, start, end);
-			}
-		});
+
+				@Override
+				public void onPlainText(int start, int end) {
+					sb.append(xrefEntry.content, start, end);
+				}
+			});
+		} catch (Exception e) {
+			sb.append(App.context.getString(R.string.xref_missing_short));
+            App.context.getString(R.string.pref_versionsCDNUrl_key);
+            Toast.makeText( getActivity().getBaseContext(), App.context.getString(R.string.xref_missing_long), Toast.LENGTH_SHORT).show();
+		}
 		
 		Appearances.applyTextAppearance(tXrefText);
 		

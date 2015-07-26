@@ -2,12 +2,17 @@ package yuku.alkitab.base.widget;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
+import android.widget.Toast;
+
 import yuku.afw.V;
+import yuku.afw.storage.Preferences;
+import yuku.alkitab.base.App;
 import yuku.alkitab.base.S;
 import yuku.alkitab.base.U;
 import yuku.alkitab.base.util.Appearances;
@@ -67,7 +72,13 @@ public class SingleViewVerseAdapter extends VerseAdapter {
 			attributeView.setProgressMarkBits(progressMarkBitsMap_ == null ? 0 : progressMarkBitsMap_[id]);
 			attributeView.setAttributeListener(attributeListener_, book_, chapter_1_, verse_1);
 
-			res.setCollapsed(text.length() == 0 && !attributeView.isShowingSomething());
+			try { // Catch bad Xrefs.
+				res.setCollapsed(text.length() == 0 && !attributeView.isShowingSomething());
+			} catch (Exception e) {
+				Log.e(TAG, App.context.getString(R.string.xref_missingverse));
+                Toast.makeText( this.context_, App.context.getString(R.string.xref_missingverse), Toast.LENGTH_SHORT).show();
+				//return null; // FIXME probably needs to handle this further on...
+			}
 
 			res.setAri(ari);
 

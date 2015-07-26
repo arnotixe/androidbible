@@ -510,4 +510,10 @@
     <string name="book_filter_new_testament">The greek scriptures</string>
     <string name="grid_selectbook">Select a book</string>
 
+    <string name="font_downloaded">% downloaded</string>
+    <string name="xref_missing_short">(missing)</string>
+    <string name="xref_missing_long">The cross reference is missing</string>
+    <string name="xref_missingverse">The cross reference is pointing to a missing verse. It will be blank.</string>
+
+
 </resources>

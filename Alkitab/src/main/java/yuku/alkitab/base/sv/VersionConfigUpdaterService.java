@@ -92,7 +92,7 @@ public class VersionConfigUpdaterService extends IntentService {
         String url = Preferences.getString(App.context.getString(R.string.pref_versionsCDNUrl_key), "");
         url.trim();
         // Don't deviate via bit.do if server value is default
-        if ((url.length() == 0) || (url == "Qibi4")) {
+        if (url.length() == 0) {
             url = "https://qibicdn.appspot.com/yes/list_modify_time.php";
         }
         else if (!url.startsWith("http")) {

@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import yuku.afw.V;
@@ -266,6 +268,7 @@ public class FontManagerActivity extends BaseActivity implements DownloadListene
 						progressbar.setIndeterminate(false);
 						progressbar.setMax(100); // consider full
 						progressbar.setProgress(100); // consider full
+						Toast.makeText(getBaseContext(), String.format("%s downloaded.", lFontName.getText()), Toast.LENGTH_SHORT).show();
 						bDownload.setVisibility(View.GONE);
 						bDelete.setVisibility(View.VISIBLE);
 						lErrorMsg.setVisibility(View.GONE);
