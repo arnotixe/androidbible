@@ -28,7 +28,8 @@
 		android:layout_height="wrap_content"
 		android:gravity="center_vertical"
 		android:minHeight="48dp"
-		android:orientation="horizontal">
+		android:orientation="horizontal"
+		android:paddingRight="12dp">
 
 		<Button
 			android:id="@+id/bLongName"
@@ -46,7 +47,8 @@
 			android:id="@+id/panelRight"
 			android:layout_width="48dp"
 			android:layout_height="match_parent"
-			android:layout_weight="0">
+			android:layout_weight="0"
+			>
 
 			<CheckBox
 				android:id="@+id/cActive"
