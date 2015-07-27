@@ -374,5 +374,4 @@
   <string name="version_download_invalid_url">URL tidak sah.</string>
   <string name="about_translators">Penterjemah</string>
   <string name="about_version_name">versi %s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

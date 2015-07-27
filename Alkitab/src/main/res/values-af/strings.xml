@@ -465,5 +465,4 @@
   <string name="marker_migrate_import_from_newest">Ja, voer die nuutste in (aanbeveel)</string>
   <string name="marker_migrate_import_from_other">Ander rugsteun</string>
   <string name="marker_migrate_filename_dated">%1$s gedateer %2$s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

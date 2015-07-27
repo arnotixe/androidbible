@@ -183,7 +183,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		public void onTwofingerScale(final float scale) {
 			float nowFontSize = startFontSize * scale;
 
-			if (nowFontSize < 2.f) nowFontSize = 2.f;
+			if (nowFontSize < 7.f) nowFontSize = 7.f;
 			if (nowFontSize > 42.f) nowFontSize = 42.f;
 
 			Preferences.setFloat(Prefkey.ukuranHuruf2, nowFontSize);

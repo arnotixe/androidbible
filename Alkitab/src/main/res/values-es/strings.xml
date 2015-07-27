@@ -366,7 +366,6 @@
     <string name="about_user_guide">Manual del usuario</string>
     <string name="pref_versionsUrl_summary">Ingrese nombre corto (\"Qibi\", \"yuku\", etc) o el URL completo. Si usa un nombre corto, el app asume http://bit.do/&lt;nombre_corto&gt;.</string>
     <string name="pref_versionsUrl_title">Servidor</string>
-    <string name="app_name" translatable="false"></string>
     <string name="grid_selectbook">Escoja un libro</string>
   <string name="pref_sideswipe_summary">Deslizar a la derecha/izquierda para hojear entre capítulos</string>
   <string name="pref_sideswipe_title">Deslizar capítulos</string>

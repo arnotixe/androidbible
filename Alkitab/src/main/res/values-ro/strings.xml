@@ -455,5 +455,4 @@
   <string name="about_version_name">versiune %s</string>
   <string name="about_material_sources">Surse materiale</string>
   <string name="about_credits">Credite</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

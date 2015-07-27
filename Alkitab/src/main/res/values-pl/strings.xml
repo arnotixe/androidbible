@@ -465,5 +465,4 @@
   <string name="marker_migrate_import_from_newest">Tak, zaimportuj z najnowszej (zalecane)</string>
   <string name="marker_migrate_import_from_other">Inne kopie</string>
   <string name="marker_migrate_filename_dated">%1$s z dnia %2$s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

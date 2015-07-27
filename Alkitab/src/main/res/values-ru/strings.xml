@@ -441,5 +441,4 @@
   <string name="pref_textPadding_summary">Сделать текст в строке уже для более удобного чтения</string>
   <string name="about_translators">Переводчики</string>
   <string name="about_version_name">версия %s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

@@ -335,5 +335,4 @@
   <string name="about_translators">Vertalers</string>
   <string name="about_version_name">versie %s</string>
     <string name="versi_lainnya"></string>
-    <string name="app_name" translatable="false"></string>
 </resources>

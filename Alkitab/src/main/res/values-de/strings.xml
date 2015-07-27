@@ -464,5 +464,4 @@
   <string name="marker_migrate_import_from_newest">Ja, importiere vom neusten (empfohlen)</string>
   <string name="marker_migrate_import_from_other">Anderes Backup</string>
   <string name="marker_migrate_filename_dated">%1$s vom %2$s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

@@ -465,5 +465,4 @@
   <string name="marker_migrate_import_from_newest">Ya, ambil dari yang terbaru (disarankan)</string>
   <string name="marker_migrate_import_from_other">Cadangan lainnya</string>
   <string name="marker_migrate_filename_dated">%1$s tertanggal %2$s</string>
-    <string name="app_name" translatable="false"></string>
 </resources>

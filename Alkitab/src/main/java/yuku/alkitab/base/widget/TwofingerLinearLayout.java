@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
+import java.util.List;
+
 import yuku.afw.storage.Preferences;
 import yuku.alkitab.debug.BuildConfig;
 import yuku.alkitab.debug.R;
@@ -132,7 +134,7 @@ public class TwofingerLinearLayout extends LinearLayout {
 
 					// Scale mode is started when scale differs by 10~15% or more
 					// and distance between two fingers changes by a certain threshold
-					if ((scale < 0.9f || scale >= 1.15f) && (distChange > threshold_twofinger_scale)) {
+					if ((scale < 0.95f || scale >= 1.05f) && (distChange > threshold_twofinger_scale)) {
 						mode = Mode.scale;
 						startScaleDist = nowDist;
 					}
