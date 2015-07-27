@@ -255,7 +255,13 @@ public class VersesView extends ListView implements AbsListView.OnScrollListener
             // Bad news is, it's in lsSplit's own onItemClick...
 
             SparseBooleanArray checkedItems = getCheckedItemPositions();
-            Log.d(TAG, "Verse click at list pos " + position + ". Currently checkedItems=" + checkedItems.toString() );
+            try {
+                // Works if this is actually a verse; checkedItems is NULL in XREF and Compare views
+                Log.d(TAG, "Verse click at list pos " + position + ". Currently checkedItems=" + checkedItems.toString() );
+            } catch (Exception e) {
+                // checkedItems is NULL in XREF and Compare views
+                Log.d(TAG, "XREF/Compare list click on position " + position);
+            }
             lastselected = position + 1; // local to versesView. Accesible from isiActivity as lsText.lastselected
 
             /*Attempt to set lastselected only when CHECKINg and not when DECHECKING.
