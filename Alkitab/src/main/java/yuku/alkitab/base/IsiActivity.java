@@ -184,7 +184,7 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			float nowFontSize = startFontSize * scale;
 
 			if (nowFontSize < 7.f) nowFontSize = 7.f;
-			if (nowFontSize > 42.f) nowFontSize = 42.f;
+			if (nowFontSize > 47.f) nowFontSize = 47.f;
 
 			Preferences.setFloat(Prefkey.ukuranHuruf2, nowFontSize);
 
