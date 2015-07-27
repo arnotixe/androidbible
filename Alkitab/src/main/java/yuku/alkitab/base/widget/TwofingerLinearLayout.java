@@ -58,7 +58,7 @@ public class TwofingerLinearLayout extends LinearLayout {
 		final float density = getResources().getDisplayMetrics().density;
 		threshold_twofinger_swipe = 48.f * density;
 		threshold_twofinger_drag = 48.f * density;
-		threshold_twofinger_scale = 72.f * density;
+		threshold_twofinger_scale = 36.f * density; // Used to be 72.f
 	}
 
 	public boolean isTwofingerEnabled() {
