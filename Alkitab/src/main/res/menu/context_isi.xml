@@ -51,12 +51,4 @@
             </menu>
         </item>
 
-        <item
-            android:id="@+id/menuEsvsb"
-            android:icon="@android:drawable/ic_menu_call"
-            app:showAsAction="ifRoom"
-            android:title="ESV Study Bible"
-            android:visible="false"
-            tools:ignore="HardcodedText" />
-
     </menu>

@@ -276,7 +276,6 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	TextAppearancePanel textAppearancePanel;
 
 	// temporary states
-	Boolean hasEsvsbAsal;
 	Version activeSplitVersion;
 	String activeSplitVersionId;
 
@@ -335,11 +334,15 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_isi);
 
+
 		drawerLayout = V.get(this, R.id.drawerLayout);
 		leftDrawer = V.get(this, R.id.left_drawer);
 		leftDrawer.configure(this, drawerLayout);
 
 		final Toolbar toolbar = V.get(this, R.id.toolbar);
+        toolbar.setContentInsetsAbsolute(0, 0);
+        // http://stackoverflow.com/questions/28992857/android-how-can-i-set-an-item-in-a-toolbar-to-fill-all-of-the-available-space
+
 		setSupportActionBar(toolbar);
 		setTitle("");
 
@@ -1084,13 +1087,18 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		menu.clear();
 		getMenuInflater().inflate(R.menu.activity_isi, menu);
 	}
-	
-	@Override public boolean onCreateOptionsMenu(Menu menu) {
-		buildMenu(menu);
-		return true;
-	}
-	
-	@Override public boolean onPrepareOptionsMenu(Menu menu) {
+
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
+        buildMenu(menu);
+        return true;
+    }
+
+    public boolean hideMenu(Menu menu) {
+        menu.clear();
+        return true;
+    }
+
+    @Override public boolean onPrepareOptionsMenu(Menu menu) {
 		if (menu != null) {
 			buildMenu(menu);
 		}
@@ -1873,28 +1881,19 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 	};
 	
 	ActionMode.Callback actionMode_callback = new ActionMode.Callback() {
-		@Override public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-			getMenuInflater().inflate(R.menu.context_isi, menu);
-			
-			/* The following "esvsbasal" thing is a personal thing by yuku that doesn't matter to anyone else.
-			 * Please ignore it and leave it intact. */
-			if (hasEsvsbAsal == null) {
-				try {
-					getPackageManager().getApplicationInfo("yuku.esvsbasal", 0); //$NON-NLS-1$
-					hasEsvsbAsal = true;
-				} catch (PackageManager.NameNotFoundException e) {
-					hasEsvsbAsal = false;
-				}
-			}
-			
-			if (hasEsvsbAsal) {
-				MenuItem esvsb = menu.findItem(R.id.menuEsvsb);
-				if (esvsb != null) esvsb.setVisible(true);
-			}
+
+        @Override public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+
+            bLeft.setVisibility(View.GONE);
+            bRight.setVisibility(View.GONE);
+            // to not interfere with the below menu when tapping the ActionMode title
+
+            getMenuInflater().inflate(R.menu.context_isi, menu);
 
 			// show book name and chapter
 			final String reference = activeBook.reference(chapter_1);
 			mode.setTitle(reference);
+
 
 			return true;
 		}
@@ -1928,23 +1927,11 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			//menuCompare.setVisible(single);
             menuCompare.setVisible(true); //always showing last selected verse
 
-			// moved to left drawer
-			//final MenuItem menuVersions = menu.findItem(R.id.menuVersions);
-			//menuVersions.setVisible(activeSplitVersion == null);
-
-			// show selected verses
-			if (single) {
-				// Arno doesn't want this
-				// mode.setSubtitle(R.string.verse_select_one_verse_selected);
-			} else {
-				// Arno doesn't want this
-				// mode.setSubtitle(getString(R.string.verse_select_multiple_verse_selected, selected.size()));
-			}
-
 			return true;
 		}
 
 		@Override public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+
 			final IntArrayList selected = lsText.getSelectedVerses_1();
 
 			if (selected.size() == 0) return true;
@@ -2046,20 +2033,10 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 				}, colorRgb, reference).show();
 				mode.finish();
 			} return true;
-			case R.id.menuEsvsb: {
-				final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, selected.get(0));
-
-				try {
-					Intent intent = new Intent("yuku.esvsbasal.action.GOTO"); //$NON-NLS-1$
-					intent.putExtra("ari", ari); //$NON-NLS-1$
-					startActivity(intent);
-				} catch (Exception e) {
-					Log.e(TAG, "ESVSB starting", e); //$NON-NLS-1$
-				}
-			} return true;
 
 			}
 			return false;
+            //return true; // stop processing of actionmode, or the touch will be passed on to the menu below... Grrr doesn't work on ActionMode's title...
 		}
 
 		String appendSplitTextForCopyShare(String textToCopy) {
@@ -2073,6 +2050,8 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 		}
 
 		@Override public void onDestroyActionMode(ActionMode mode) {
+            bLeft.setVisibility(View.VISIBLE);
+            bRight.setVisibility(View.VISIBLE); // left/right were hidden to avoid confusion when ActionMode is active (ActionMode title is transparent)
 			actionMode = null;
 
 			// FIXME even with this guard, verses are still unchecked when switching version while both Fullscreen and Split is active.

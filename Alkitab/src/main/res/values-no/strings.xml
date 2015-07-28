@@ -202,7 +202,6 @@
     <string name="bagikan_alamat">Del %s</string>
     <string name="berhasil_mengunduh_namaumum_tgl_tgl">Lastet ned %1$s datert %2$s</string>
     <string name="about_material_sources">Kildemateriale </string>
-    <string name="app_name" translatable="false"></string>
     <string name="bl_no_items_match_the_filter_above">Ingenting passet med filteret.</string>
     <string name="bl_send_backup_confirmation">Opprette og sende sikkerhetskopi av bokmerker, notater og uthevelser? Du kan for eksempel sende den som vedlegg til en ny enhet, eller som sikkerhet.</string>
     <string name="bl_sync_suggest">Beskytt anmerkningene dine med Sync</string>
