@@ -15,12 +15,12 @@
     <string name="ekspor_pembatas_buku_dan_catatan_tanya">Create backup of bookmarks, notes, and highlights to SD Card or USB Storage? Existing backups will be overwritten.</string>
     <string name="terjadi_kesalahan_ketika_mengimpor_pesan">There were error(s) when restoring: %s</string>
     <string name="apakah_anda_mau_menumpuk_pembatas_buku_dan_catatan_tanya">Overwrite the bookmarks, notes, and highlights you currently have?</string>
-    <string name="file_tidak_bisa_dibaca_file">The file does not exist or could not be read: %s</string>
+    <string name="file_tidak_bisa_dibaca_file">The file %s does not exist or could not be read</string>
     <string name="impor_dari_sd_card">Restore</string>
     <string name="ekspor_ke_sd_card">Backup</string>
     <string name="menuBantuan">Help</string>
     <string name="beri_saran_title">Suggest</string>
-    <string name="versi">Version</string>
+    <string name="versi">Translation</string>
     <string name="menuDevotion">Devotion</string>
     <string name="search">Search</string>
     <string name="activity_title_markers">Annotations</string>
@@ -57,7 +57,7 @@
     <string name="pengunduhan_dibatalkan">Download canceled.</string>
     <string name="sedang_mendekompres_harap_tunggu">Decompressing. Please wait…</string>
     <string name="terunduh_sampe_byte">Downloaded: %d bytes</string>
-    <string name="gagal_mengunduh_edisi_judul_ex_pastikan_internet">Failed in downloading version: %1$s (%2$s).\nMake sure that Internet is working correctly.</string>
+    <string name="gagal_mengunduh_edisi_judul_ex_pastikan_internet">Failed downloading translation: %1$s (%2$s).\nMake sure that Internet is working correctly.</string>
     <string name="version_download_complete">Downloaded <b>^1</b></string>
     <string name="mulai_mengunduh">Starting download…</string>
     <string name="mengunduh_nama">Downloading %s</string>
@@ -79,7 +79,7 @@
     <string name="pengaturan_alkitab">Bible Settings</string>
     <string name="kelola_versi">Manage Versions</string>
     <string name="tambah">Add</string>
-    <string name="versi_lainnya">Other versions</string>
+    <string name="versi_lainnya">Other translations</string>
     <string name="ada_kegagalan_membuka_edisiid">Error opening %s</string>
     <string name="version_error_opening">Error opening %s.</string>
     <string name="pdb_file_options">PDB file options</string>
@@ -89,12 +89,12 @@
     <string name="sample_text">Sample text</string>
     <string name="include_book_and_chapter_headers">Include book and chapter headers</string>
     <string name="cp_opening_pdb_file">Opening PDB file</string>
-    <string name="cp_loading_version_info">Loading version info</string>
+    <string name="cp_loading_version_info">Loading translation info</string>
     <string name="cp_loading_word_index">Loading word index</string>
     <string name="cp_analyzing_available_books">Analyzing available books</string>
     <string name="cp_mapping_books">Mapping books</string>
     <string name="cp_constructing_book_info">Constructing book info</string>
-    <string name="cp_constructing_version_info">Constructing version info</string>
+    <string name="cp_constructing_version_info">Constructing translation info</string>
     <string name="cp_writing_num_section_pericope_titles">Writing %s section/pericope titles</string>
     <string name="cp_writing_translated_file">Writing translated file</string>
     <string name="cp_reading_book_info">Reading book info: %s</string>
@@ -118,7 +118,7 @@
     <string name="ed_this_file_is_already_on_the_list">This file is already on the list.</string>
     <string name="ed_reading_pdb_file">Reading PDB file…</string>
     <string name="ed_finished">Finished.</string>
-    <string name="ed_the_following_books_from_the_pdb_file_are_not_recognized">The following books from the PDB file are not recognized and therefore skipped. Please email yukuku@gmail.com if you think these should not have been skipped.</string>
+    <string name="ed_the_following_books_from_the_pdb_file_are_not_recognized">The following books from the PDB file are not recognized and therefore skipped. Please email arnotixe+qibi@gmail.com if you think these should not have been skipped.</string>
     <string name="ed_error_reading_pdb_file">Error reading PDB file</string>
     <string name="ed_details">Details: </string>
     <string name="ed_buka_file_pdb_yes_lainnya">Open a .pdb/.yes file…</string>
@@ -140,7 +140,7 @@
     <string name="menuSortCaption">Title</string>
     <string name="menuSortCaption_color">Highlight color</string>
     <string name="create_edited_modified_time">%1$s\n(edited %2$s)</string>
-    <string name="the_file_for_this_version_is_no_longer_available_file">The file for this version is no longer available. Remove this version from the list?\nFile: %s</string>
+    <string name="the_file_for_this_version_is_no_longer_available_file">The file for this translation is no longer available. Remove it from the list?\nFile: %s</string>
     <string name="create_label_title">Create label</string>
     <string name="do_you_want_to_remove_the_label_label_from_this_bookmark">"Remove the label '%s' from this bookmark?"</string>
     <string name="add_label_title">Add label</string>
@@ -180,10 +180,10 @@
     <string name="pdb_error_not_palmbible">This PDB file is not in PalmBible+ format. This PDB has type of \'%1$s\' and creator id of \'%2$s\', which is not supported by this app.</string>
     <string name="pdb_error_corrupted">The PDB file is corrupted.</string>
     <string name="pdb_error_not_pdb_file">The selected file is not a PDB file.</string>
-    <string name="menu_split_version">Split version</string>
+    <string name="menu_split_version">Split view</string>
     <string name="split_version_none">None</string>
     <string name="split_version_cant_display_verse">%1$s is not available in %2$s.</string>
-    <string name="generic_verse_not_available_in_this_version">Not available in this version.</string>
+    <string name="generic_verse_not_available_in_this_version">Not available in this translation.</string>
     <string name="menuAddSomething">Add annotation</string>
     <string name="color_settings_title">Colors</string>
     <string name="color_settings_night_title">Colors (Night mode)</string>
@@ -239,7 +239,7 @@
     <string name="desc_previous_chapter">Previous chapter</string>
     <string name="desc_next_chapter">Next chapter</string>
     <string name="desc_drag_to_reorder_labels">Drag to reorder labels</string>
-    <string name="desc_drag_to_reorder_versions">Drag to reorder versions</string>
+    <string name="desc_drag_to_reorder_versions">Drag to reorder translations</string>
     <string name="desc_close">Close</string>
     <string name="desc_play">Play</string>
     <string name="desc_progress_1">Pin 1</string>
@@ -256,7 +256,7 @@
     <string name="open_file_unknown_file_format">Could not determine whether this is a PDB or YES file.</string>
     <string name="version_preset_delete_filename">Delete the data file \'%s\'?</string>
     <string name="version_menu_share">Share</string>
-    <string name="version_share_title">Share version to:</string>
+    <string name="version_share_title">Share translation to:</string>
     <string name="menuFullScreen">Full screen</string>
     <string name="send_donation_confirmation">Make some donation to the developer?</string>
 
@@ -339,8 +339,8 @@
     <string name="rp_download_reading_plan_failed">Failed to download the selected reading plan. Please try again with a working Internet connection.</string>
     <string name="rp_download_reading_plan_data_corrupted">Downloaded reading plan data is corrupted. Please try again later with a working Internet connection.</string>
 
-    <string name="version_download_need_fonts">"The version downloaded might need to be displayed with certain fonts. Go to the 'Text appearance' menu and select a font. Greek needs Ubuntu font. Burmese needs Parabaik, ParabaikSans, or Myanmar3. Tamil needs Akshar. Telugu needs Suranna."</string>
-    <string name="version_download_corrupted_file">Downloaded file seems to be corrupt.</string>
+    <string name="version_download_need_fonts">"The translation downloaded might need to be displayed with certain fonts. Go to the 'Appearance' menu and select a font. Greek needs Ubuntu font. Burmese needs Parabaik, ParabaikSans, or Myanmar3. Tamil needs Akshar. Telugu needs Suranna."</string>
+    <string name="version_download_corrupted_file">Downloaded file is corrupt.</string>
     <string name="menuNightMode">Night mode</string>
     <string name="highlight_custom_color">Other colors</string>
     <string name="menu_compare">Compare</string>
@@ -384,18 +384,18 @@
     <string name="search_version_select_label">Find in:</string>
 	<string name="show_hidden_version_warning">Enabling this option allows you to download Bible versions which may be subject to certain regional or monetary requirements. Before downloading them, please make sure you are allowed to do so. You are fully responsible for downloading and using such versions and I cannot be held accountable for this. Tap OK if you agree to the above terms.</string>
 
-	<string name="version_config_updater_error_download_modify_time">Failed to check version list. Is internet connected?</string>
-	<string name="version_config_updater_error_modify_time_failed">Version list not available: %s</string>
-	<string name="version_config_updater_no_newer_available">No version updates. You already have the newest versions.</string>
-	<string name="version_config_updater_error_download_list">Failed to download version list. Is internet connected?</string>
-	<string name="version_config_updater_error_parsing_list">Version list downloaded is corrupt.</string>
-	<string name="version_config_updater_updated">Version list updated!</string>
+	<string name="version_config_updater_error_download_modify_time">Failed to check translation list. Is internet connected?</string>
+	<string name="version_config_updater_error_modify_time_failed">Translations list not available: %s</string>
+	<string name="version_config_updater_no_newer_available">No translations updates. You already have the newest versions.</string>
+	<string name="version_config_updater_error_download_list">Failed to download translations list. Is internet connected?</string>
+	<string name="version_config_updater_error_parsing_list">Downloaded translations list is corrupt.</string>
+	<string name="version_config_updater_updated">Translations list updated!</string>
 	<string name="version_config_cannot_write_updated_list">Failed to store updated list.</string>
-	<string name="version_config_updater_error_modify_time_cannot_parse">Failed to parse version list update checker.</string>
+	<string name="version_config_updater_error_modify_time_cannot_parse">Failed to parse information on latest updates.</string>
 
 	<string name="version_download_add_from_local">From local storage</string>
 	<string name="version_download_add_from_url">From Internet URL</string>
-	<string name="version_download_add_from_url_prompt_yes_only">.yes FILE URL</string>
+	<string name="version_download_add_from_url_prompt_yes_only">.YES-file link</string>
 	<string name="version_download_invalid_url">Invalid URL.</string>
 	<string name="version_download_not_yes">The Internet URL must have the .yes ending.</string>
 
@@ -407,7 +407,7 @@
 	<string name="note_actionbar_edit">Edit</string>
 	<string name="note_actionbar_delete">Delete</string>
 	<string name="note_actionbar_ok">Done</string>
-	<string name="note_activity_cannot_parse_verse">Sorry, we do not understand this verse link.</string>
+	<string name="note_activity_cannot_parse_verse">Verse link not understood.</string>
 
 	<string name="sync_account_not_selected">Not signed in</string>
 	<string name="pref_syncAccountName_title">Account</string>
@@ -496,7 +496,7 @@
 	<string name="marker_migrate_later">Not now</string>
 	<string name="marker_migrate_title">Import old markers</string>
 	<string name="marker_migrate_no_more_confirmation">Are you sure you don\'t need to import the old data?</string>
-	<string name="marker_migrate_error_opening_backup_file">Could not access that backup file.</string>
+	<string name="marker_migrate_error_opening_backup_file">Could not access the backup file.</string>
 	<string name="marker_migrate_import_from_newest">Yes, import from the newest (recommended)</string>
 	<string name="marker_migrate_import_from_other">Other backup</string>
 	<string name="marker_migrate_filename_dated">%1$s dated %2$s</string>
