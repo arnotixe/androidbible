@@ -1,7 +1,10 @@
 package yuku.alkitab.base.ac;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.MailTo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +13,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+
+import java.lang.ref.WeakReference;
+
 import yuku.afw.V;
 import yuku.alkitab.base.App;
 import yuku.alkitab.base.ac.base.BaseActivity;
@@ -38,6 +44,18 @@ public class HelpActivity extends BaseActivity {
 		res.putExtra(EXTRA_okIntent, okIntent);
 		return res;
 	}
+
+	@Override
+	protected void onCreateWithNonToolbarUpButton(Bundle savedInstanceState) {
+		super.onCreateWithNonToolbarUpButton(savedInstanceState);
+	}
+
+	/*private final WeakReference<Activity> mActivityRef;
+
+	public MyWebViewClient(Activity activity) {
+		mActivityRef = new WeakReference<Activity>(activity);
+	}*/
+
 
 	@Override protected void onCreate(Bundle savedInstanceState) {
 		super.onCreateWithNonToolbarUpButton(savedInstanceState);
@@ -88,6 +106,15 @@ public class HelpActivity extends BaseActivity {
 					return true;
 				}
 
+				if ("mailto".equals(scheme)) {
+					// send mail
+					final Intent intent =  new Intent(Intent.ACTION_SENDTO);
+					intent.setData(uri);
+					startActivity(intent);
+
+					return true;
+				}
+
 				if ("suggest".equals(scheme)) {
 					startActivity(com.example.android.wizardpager.MainActivity.createIntent(App.context));
 					finish();
@@ -127,7 +154,17 @@ public class HelpActivity extends BaseActivity {
 			}
 		});
 	}
-	
+
+/*	private Intent newEmailIntent(Context context, String address, String subject, String body, String cc) {
+		Intent intent = new Intent(Intent.ACTION_SEND);
+		intent.putExtra(Intent.EXTRA_EMAIL, new String[] { address });
+		intent.putExtra(Intent.EXTRA_TEXT, body);
+		intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+		intent.putExtra(Intent.EXTRA_CC, cc);
+		intent.setType("message/rfc822");
+		return intent;
+	}*/
+
 	View.OnClickListener bOk_click = new View.OnClickListener() {
 		@Override public void onClick(View v) {
 			if (okIntent != null) {

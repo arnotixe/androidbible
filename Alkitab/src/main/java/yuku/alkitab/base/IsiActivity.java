@@ -1925,8 +1925,9 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 
 			menuAddBookmark.setVisible(contiguous);
 			menuAddNote.setVisible(contiguous);
-			//menuCompare.setVisible(single);
-            menuCompare.setVisible(true); //always showing last selected verse
+			menuCompare.setVisible(single); // last-selected hack did not work out since it was actually behaving as
+			// last-TOUCHED-hack: Last DEselected is also last touched. User is of course confused when comparing last deselected...
+			//menuCompare.setVisible(true); //always showing last selected verse
 
 			// moved to left drawer
 			//final MenuItem menuVersions = menu.findItem(R.id.menuVersions);
@@ -1992,9 +1993,9 @@ public class IsiActivity extends BaseLeftDrawerActivity implements XrefDialog.Xr
 			} return true;
 			case R.id.menuCompare: {
                 // should compare only last selected verse actually
-                // final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, selected.get(0)); // original
+                final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, selected.get(0)); // original
                 //final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, 2); // hack to always compare verse 2
-                final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, lsText.lastselected); // take last selected int from view
+                // final int ari = Ari.encode(IsiActivity.this.activeBook.bookId, IsiActivity.this.chapter_1, lsText.lastselected); // take last selected int from view
 				VersesDialog.newCompareInstance(ari).show(getSupportFragmentManager(), "compare_dialog");
 			} return true;
 			case R.id.menuVersions: {

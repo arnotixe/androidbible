@@ -1,6 +1,7 @@
 package yuku.alkitab.base.ac;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import yuku.afw.V;
+import yuku.afw.storage.Preferences;
 import yuku.alkitab.base.App;
 import yuku.alkitab.base.ac.base.BaseActivity;
 import yuku.alkitab.debug.R;
@@ -48,7 +50,9 @@ public class AboutActivity extends BaseActivity {
 		tAboutTextDesc = V.get(this, R.id.tAboutTextDesc);
 
 		bHelp = V.get(this, R.id.bHelp);
-		bHelp.setOnClickListener(v -> startActivity(HelpActivity.createIntent("help/guide.html", false, null, null)));
+
+		String helplang = Preferences.getString(getString(R.string.pref_language_key), getString(R.string.pref_language_default));
+		bHelp.setOnClickListener(v -> startActivity(HelpActivity.createIntent("help/guide_" + helplang + ".html", false, null, null)));
 
 		bMaterialSources = V.get(this, R.id.bMaterialSources);
 		bMaterialSources.setOnClickListener(v -> startActivity(HelpActivity.createIntent("help/material_sources.html", false, null, null)));

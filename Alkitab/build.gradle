@@ -20,10 +20,8 @@ apply plugin: 'retrolambda'
 android {
     signingConfigs {
         release {
-            keyAlias 'release-arnotixe'
-            keyPassword 'manjar'
+            keyAlias 'atkey'
             storeFile file('/home/arno/teokratisk/publicaciones/biblia/bibliaNWT/QiBi/keystore/.keystore')
-            storePassword 'manjar'
         }
     }
     compileSdkVersion 21
@@ -32,8 +30,8 @@ android {
         applicationId 'arnotixe.qibi'
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 20150727
-        versionName '4.0.0-beta15'
+        versionCode 20160221
+        versionName '4.0.0-beta16'
         multiDexEnabled true
     }
     buildTypes {
@@ -56,6 +54,7 @@ android {
             minSdkVersion 21
         }
         plain {
+            signingConfig signingConfigs.release
         }
     }
 }
