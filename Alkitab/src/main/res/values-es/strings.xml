@@ -21,7 +21,7 @@
   <string name="ekspor_ke_sd_card">Respaldo</string>
   <string name="menuBantuan">Ayuda</string>
   <string name="beri_saran_title">Sugerir</string>
-  <string name="versi">Versión</string>
+  <string name="versi">Traducción</string>
   <string name="menuDevotion">Devoción</string>
   <string name="search">Buscar</string>
   <string name="activity_title_markers">Anotaciones</string>
@@ -240,7 +240,7 @@
   <string name="open_file_unknown_file_format">No se puede determinar si este es un archivo PDB o YES.</string>
   <string name="version_preset_delete_filename">¿Eliminar el archivo de datos \'%s\'?</string>
   <string name="version_menu_share">Compartir</string>
-  <string name="version_share_title">Compartir versión con:</string>
+  <string name="version_share_title">Compartir la traducción con:</string>
   <string name="menuFullScreen">Pantalla completa</string>
   <string name="send_donation_confirmation">¿Hacer una donación al desarrollador?</string>
   <string name="me_export_markers">Exportar marcadores</string>
@@ -315,7 +315,7 @@
   <string name="rp_download_reading_plan_progress">Descargando plan de lectura&#8230;</string>
   <string name="rp_download_reading_plan_failed">Falla al descargar el plan de lectura seleccionado. Por favor trate de nuevo con una conexión a Internet que funcione.</string>
   <string name="rp_download_reading_plan_data_corrupted">Los datos del plan de lectura descargado están dañados. Por favor trate de nuevo con una conexión a Internet que funcione.</string>
-  <string name="version_download_need_fonts">"La versión que descargaste puede necesitar ciertas fuentes para mostrarse. Ve al menú de \'Apariencia de texto\' y elige una fuente. Griego necesita la fuente Ubuntu. Birmano necesita Parabaik, ParabaikSans o Myanmar3. Tamil necesita Suranna."</string>
+  <string name="version_download_need_fonts">"La traducción que descargaste puede necesitar ciertas fuentes para mostrarse. Ve al menú de \'Pantalla\' y elige una fuente. Griego quizás necesie la fuente Ubuntu. Birmano a Parabaik, Tamil a Suranna."</string>
   <string name="version_download_corrupted_file">El archivo descargado parece estar corrupto.</string>
   <string name="menuNightMode">Modo nocturno</string>
   <string name="highlight_custom_color">Otros colores</string>
@@ -351,14 +351,14 @@
   <string name="book_filter_new_general_epistles">Epístolas Generales</string>
   <string name="book_filter_new_apocalypse">Apocalipsis</string>
   <string name="search_filter_multiple_books_selected">%s libros seleccionados</string>
-  <string name="version_config_updater_error_download_modify_time">Fallo al revisar la lista de versiones.</string>
-  <string name="version_config_updater_error_modify_time_failed">Lista de versiones no disponible: %s</string>
-  <string name="version_config_updater_no_newer_available">Actualizaciones de versión no encontradas.</string>
-  <string name="version_config_updater_error_download_list">Fallo al descargar la lista de versiones. Está conectado el internet?</string>
-  <string name="version_config_updater_error_parsing_list">La lista de versiones descargada está corrupta.</string>
-  <string name="version_config_updater_updated">¡Lista de versiones actualizada!</string>
-  <string name="version_config_cannot_write_updated_list">Fallo al almacenar lista actualizada.</string>
-  <string name="version_config_updater_error_modify_time_cannot_parse">Fallo al analizar el corrector de la lista de actualización de versiones.</string>
+  <string name="version_config_updater_error_download_modify_time">No se pudo revisar la lista de traducciones. ¿Está conectado el internet?</string>
+  <string name="version_config_updater_error_modify_time_failed">Lista de traducciones (%s) no disponible.</string>
+  <string name="version_config_updater_no_newer_available">Actualizaciones de traducciones no encontradas. Ya tienes las versiones más nuevas.</string>
+  <string name="version_config_updater_error_download_list">No se pudo descargar la lista de traducciones. ¿Está conectado el internet?</string>
+  <string name="version_config_updater_error_parsing_list">La lista de traducciones descargada está corrupta.</string>
+  <string name="version_config_updater_updated">¡Lista de traducciones actualizada!</string>
+  <string name="version_config_cannot_write_updated_list">No se pudo grabar la lista actualizada.</string>
+  <string name="version_config_updater_error_modify_time_cannot_parse">Hay un error en la lista de traducciones.</string>
   <string name="about_translators">Traductores</string>
   <string name="about_version_name">versión %s</string>
     <string name="about_material_sources">Fuentes</string>
@@ -373,4 +373,11 @@
   <string name="xref_missingverse">La referencia apunta a un versículo que no existe. Estará vacía.</string>
   <string name="xref_missing_long">La referencia falta</string>
   <string name="font_downloaded">%s descargado</string>
+  <string name="versi_lainnya">Otras traducciones</string>
+  <string name="version_download_invalid_url">Dirección web inválida.</string>
+  <string name="version_download_add_from_local">Desde almanecamiento local</string>
+  <string name="version_download_add_from_url">Desde dirección de internet</string>
+  <string name="version_download_add_from_url_prompt_yes_only">Dirección del archivo .yes</string>
+  <string name="version_download_not_yes">La dirección de internet DEBE terminar en .yes</string>
+  <string name="version_error_opening">No se pudo abrir %s.</string>
 </resources>

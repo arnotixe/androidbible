@@ -17,8 +17,8 @@
     <string name="yes">Ja</string>
     <string name="version_menu_share">Del</string>
     <string name="version_preset_delete_filename">Vil du slette \'%s\'?</string>
-    <string name="version_share_title">Del med:</string>
-    <string name="version_config_updater_no_newer_available">Fant ingen oppdateringer. Du har allerede de nyeste versjonene.</string>
+    <string name="version_share_title">Del oversettelsen med:</string>
+    <string name="version_config_updater_no_newer_available">Fant ingen oppdaterte oversettelser. Du har allerede de nyeste versjonene.</string>
     <string name="version_config_updater_error_download_list">Kunne ikke hente listen. Er Internett tilkoblet?</string>
     <string name="version_config_updater_error_download_modify_time">Kunne ikke kontrollere listen. Er Internett tilkoblet?</string>
     <string name="about_translators">Oversettere</string>
@@ -235,4 +235,17 @@
     <string name="xref_missing_long">Kryssreferansen mangler</string>
     <string name="font_downloaded">Lastet ned %s</string>
     <string name="version_config_cannot_write_updated_list">Kunne ikke lagre den oppdaterte listen.</string>
+    <string name="version_download_complete">Lastet ned </string>
+    <string name="version_download_corrupted_file">Noe er galt med den nedlastede filen.</string>
+    <string name="version_download_invalid_url">Feil nettadresse.</string>
+    <string name="version_config_updater_updated">Listen med oversettelser er oppdatert!</string>
+    <string name="version_download_add_from_local">Fra lokal lagring</string>
+    <string name="version_download_add_from_url">Fra nettadresse</string>
+    <string name="version_download_add_from_url_prompt_yes_only">Adresse til .yes-filen</string>
+    <string name="version_download_need_fonts">"Oversettelsen du lastet ned trenger kanskje visse skrifttyper for å kunne leses. Gå til menyen 'Utseende' 'og velg/last ned en skrifttype. Gresk trenger kanskje skrifttypen Ubuntu, Burmesisk Parabaik, Tamil Akshar, og Telugu Suranna."</string>
+    <string name="version_download_not_yes">Internettadressen MÅ slutte på .yes</string>
+    <string name="version_error_opening">Kunne ikke åpne %s.</string>
+    <string name="version_config_updater_error_modify_time_cannot_parse">Feil i den nedlastede listen over oversettelser.</string>
+    <string name="version_config_updater_error_modify_time_failed">Listen over oversettelser (%s) er ikke tilgjengelig.</string>
+    <string name="version_config_updater_error_parsing_list">Feil i den nedlastede listen over oversettelser.</string>
 </resources>
