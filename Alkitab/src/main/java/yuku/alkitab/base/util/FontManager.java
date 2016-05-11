@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import yuku.alkitab.base.App;
+
 public class FontManager {
 	public static final String TAG = FontManager.class.getSimpleName();
 
@@ -54,7 +56,9 @@ public class FontManager {
 	}
 
 	public static String getFontsPath() {
-		return new File(Environment.getExternalStorageDirectory(), "bible/fonts").getAbsolutePath(); //$NON-NLS-1$
+		// return new File(Environment.getExternalStorageDirectory(), "bible/fonts").getAbsolutePath(); //$NON-NLS-1$
+		// thank you http://stackoverflow.com/questions/2002288/static-way-to-get-context-on-android
+		return new File(App.getAppContext().getExternalFilesDir(null), "bible/fonts").getAbsolutePath();
 	}
 	
 	public static Typeface getRegular(String name) {

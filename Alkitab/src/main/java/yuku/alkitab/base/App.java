@@ -2,6 +2,7 @@ package yuku.alkitab.base;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.multidex.MultiDex;
 import android.support.v4.content.LocalBroadcastManager;
@@ -20,10 +21,24 @@ import yuku.alkitab.debug.R;
 import yuku.alkitab.reminder.util.DevotionReminder;
 import yuku.alkitabfeedback.FeedbackSender;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Locale;
 
 public class App extends yuku.afw.App {
+
+	// http://stackoverflow.com/questions/2002288/static-way-to-get-context-on-android
+	// for use in AddonManager
+	private static Context appctx;
+
+    public static Context getAppContext() {
+        return App.appctx;
+    }
+
 	public static final String TAG = App.class.getSimpleName();
 
 	private static boolean initted = false;
@@ -57,8 +72,51 @@ public class App extends yuku.afw.App {
 		return OkHttpClientWrapper.INSTANCE.httpClient;
 	}
 
+	public static void treecopy(File sourceLocation, File targetLocation) throws IOException {
+
+		if (sourceLocation.isDirectory()) {
+			if (!targetLocation.exists()) {
+				targetLocation.mkdir();
+			}
+
+			String[] children = sourceLocation.list();
+			for (int i = 0; i < sourceLocation.listFiles().length; i++) {
+
+				treecopy(new File(sourceLocation, children[i]),
+						new File(targetLocation, children[i]));
+			}
+		} else {
+
+			InputStream in = new FileInputStream(sourceLocation);
+
+			OutputStream out = new FileOutputStream(targetLocation);
+
+			// Copy the bits from instream to outstream
+			byte[] buf = new byte[1024];
+			int len;
+			while ((len = in.read(buf)) > 0) {
+				out.write(buf, 0, len);
+			}
+			in.close();
+			out.close();
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
 	@Override public void onCreate() {
 		super.onCreate();
+
+		super.onCreate();
+		App.appctx = getApplicationContext();
 
 		staticInit();
 
@@ -71,6 +129,30 @@ public class App extends yuku.afw.App {
 			APP_TRACKER = t;
 			analytics.enableAutoActivityReports(this);
 		}
+
+		// Move old files to new, app-internal directory
+		//   external storage (old method)
+		// OLD path 1: return new File(Environment.getExternalStorageDirectory(), "bible/fonts").getAbsolutePath();
+		// OLD path 2: return new File(Environment.getExternalStorageDirectory(), "bible/yes").getAbsolutePath();
+		//   app-internal storage (new location)
+		// NEW path 1: return new File(App.getAppContext().getExternalFilesDir(null), "bible/fonts").getAbsolutePath();
+		// NEW path 2: return new File(App.getAppContext().getExternalFilesDir(null), "bible/yes").getAbsolutePath();
+		// 1 Check if app-internal bible exists. If not,
+		// 2 Check if external storage bible/ exists. If so,
+		// 3 move it to app-internal storage.
+		/*File olddir = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/bible");
+		File newdir = new File(App.getAppContext().getExternalFilesDir(null).getAbsolutePath(), "bible");
+		if  (!newdir.exists()) {
+			// app-internal dir does NOT exist
+			if (olddir.isDirectory()) {
+				// old dir DOES exist. move data.
+				// Caveat: could be someone had a folder named "bible" on sdcard and just installed qibi.
+				// uups
+
+				// olddir.renameTo(newdir);
+				// HMM old dir is moved, but the app seemingly can't use the data from the new location grrr
+			}
+		}*/
 	}
 
 	public synchronized static void staticInit() {

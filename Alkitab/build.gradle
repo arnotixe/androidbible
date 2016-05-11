@@ -30,8 +30,8 @@ android {
         applicationId 'arnotixe.qibi'
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 20160226
-        versionName '4.0.0-beta17'
+        versionCode 20160510
+        versionName '4.0.0-beta18'
         multiDexEnabled true
     }
     buildTypes {

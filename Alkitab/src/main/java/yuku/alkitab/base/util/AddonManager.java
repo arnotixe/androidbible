@@ -4,11 +4,15 @@ import android.os.Environment;
 
 import java.io.File;
 
+import yuku.alkitab.base.App;
+
 public class AddonManager {
 	public static final String TAG = AddonManager.class.getSimpleName();
 
 	public static String getYesPath() {
-		return new File(Environment.getExternalStorageDirectory(), "bible/yes").getAbsolutePath(); //$NON-NLS-1$
+		//return new File(Environment.getExternalStorageDirectory(), "bible/yes").getAbsolutePath(); //$NON-NLS-1$
+		// thank you http://stackoverflow.com/questions/2002288/static-way-to-get-context-on-android
+		return new File(App.getAppContext().getExternalFilesDir(null), "bible/yes").getAbsolutePath();
 	}
 
 	/**
