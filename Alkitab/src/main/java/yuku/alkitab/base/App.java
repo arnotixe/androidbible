@@ -39,6 +39,10 @@ public class App extends yuku.afw.App {
         return App.appctx;
     }
 
+	public static void setAppContext(Context ctx) {
+		App.appctx = ctx;
+	}
+
 	public static final String TAG = App.class.getSimpleName();
 
 	private static boolean initted = false;
@@ -113,9 +117,9 @@ public class App extends yuku.afw.App {
 
 
 	@Override public void onCreate() {
-		super.onCreate();
 
 		super.onCreate();
+
 		App.appctx = getApplicationContext();
 
 		staticInit();
@@ -149,7 +153,7 @@ public class App extends yuku.afw.App {
 				// Caveat: could be someone had a folder named "bible" on sdcard and just installed qibi.
 				// uups
 
-				// olddir.renameTo(newdir);
+				olddir.renameTo(newdir);
 				// HMM old dir is moved, but the app seemingly can't use the data from the new location grrr
 			}
 		}*/

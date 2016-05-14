@@ -106,7 +106,7 @@
   <string name="ed_shortName_shortName">Nombre corto</string>
   <string name="ed_title_title">Titulo</string>
   <string name="ed_stored_in_file">Ubicación del archivo</string>
-  <string name="ed_default_filename_file">Nombre del preajuste</string>
+  <string name="ed_default_filename_file">Nombre técnico</string>
   <string name="ed_download_url_url">Descargar URL</string>
   <string name="ed_version_details">Detalles de la Versión</string>
   <string name="ed_choose_pdb_or_yes_file">Elija un archivo .pdb o .yes</string>
@@ -132,10 +132,10 @@
   <string name="hapus_stabilo">Remover resalto</string>
   <string name="edit_note">Editar nota</string>
   <string name="edit_highlight">Cambiar color de resalto</string>
-  <string name="menuSort">Ordenar</string>
-  <string name="menuSortCreateTime">Crear fecha</string>
-  <string name="menuSortModifyTime">Editar fecha</string>
-  <string name="menuSortAri">Dirección del versículo</string>
+  <string name="menuSort">Ordenar por</string>
+  <string name="menuSortCreateTime">Fecha creada</string>
+  <string name="menuSortModifyTime">Fecha editada</string>
+  <string name="menuSortAri">Ubicación del versículo</string>
   <string name="menuSortCaption">Título</string>
   <string name="menuSortCaption_color">Color de resalto</string>
   <string name="create_edited_modified_time">%1$s\n(editado %2$s)</string>
@@ -151,8 +151,8 @@
   <string name="bmcat_notes">Notas</string>
   <string name="bmcat_highlights">Resaltos</string>
   <string name="bmcat_unlabeled_bookmarks">Marcadores sin etiqueta</string>
-  <string name="bl_no_notes_written_yet">No hay notas escritas.\nElija un versículo para empezar a escribir una nota.</string>
-  <string name="bl_no_highlighted_verses">No hay versículos resaltados.\nElija un versículo para empezar a resaltarlo.</string>
+  <string name="bl_no_notes_written_yet">Aún no hay notas.\nElija un versículo para empezar a escribir una nota.</string>
+  <string name="bl_no_highlighted_verses">Aún no hay versículos resaltados.\nElija un versículo para empezar a resaltarlo.</string>
   <string name="bl_there_are_no_bookmarks_without_any_labels">No hay marcadores sin etiquetas.</string>
   <string name="bl_there_are_no_bookmarks_with_the_label_label">"No hay marcadores con la etiqueta \'%s\'"</string>
   <string name="bl_filter_by_some_keywords">Filtrar por algunas palabras clave</string>

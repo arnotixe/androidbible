@@ -2,7 +2,6 @@ package yuku.alkitab.base.util;
 
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;

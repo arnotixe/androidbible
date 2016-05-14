@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_redTextColor_title">Ord uttalt av Jesus (hvis oversettelsen støtter dette)</string>
+    <string name="pref_tampilkan_kitab_dalam_urutan_abjad_bukan_urutan_aslinya">List books in alphabetical order (a-z) instead of the original</string>
+    <string name="pref_showHiddenVersion_title">Enable possibly restricted versions</string>
+</resources>

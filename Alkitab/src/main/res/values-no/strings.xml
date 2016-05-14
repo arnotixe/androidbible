@@ -75,7 +75,7 @@
     <string name="ok">OK</string>
     <string name="menu_markers">Anmerkninger</string>
     <string name="menuSortCaption">Tittel</string>
-    <string name="menuSort">Sortér</string>
+    <string name="menuSort">Sorter etter</string>
     <string name="pasal_sebelumangka">Kapittel</string>
     <string name="patch_text_menu_reference">Referanse</string>
     <string name="patch_text_menu_send">Send</string>
@@ -102,7 +102,6 @@
     <string name="pref_layar_tidak_akan_padam_ketika_membaca_teks_alkitab">Skjermen slås ikke av mens du leser Bibelen</string>
     <string name="pref_penampilan_layar">Visning</string>
     <string name="pref_penggunaan">Bruk</string>
-    <string name="pref_tampilkan_kitab_dalam_urutan_abjad_bukan_urutan_aslinya">Viser bøkene i alfabetisk (A-Å) isteden for originalrekkefølge. </string>
     <string name="pref_volumeButtonNavigation_title">Bla med volumknappene</string>
     <string name="pref_warna_latar_belakang">Bakgrunn</string>
     <string name="pref_warna_nomor_ayat">Versnumre</string>
@@ -219,7 +218,7 @@
     <string name="dr_default_sound">Standardlyd</string>
     <string name="dr_error_contact_reminder">Kunne ikke kontakte Påminnelses-appen.</string>
     <string name="dr_pref_notification_message">Påminnelsesmelding</string>
-    <string name="ed_default_filename_file">Preset-navn</string>
+    <string name="ed_default_filename_file">Teknisk navn</string>
     <string name="ed_error_encountered">Feil.</string>
     <string name="ed_error_reading_pdb_file">Kunne ikke lede PDB-filen</string>
     <string name="ed_file_file_sudah_ada_dalam_daftar_versi">Filen %s er allerede på listen.</string>
@@ -249,4 +248,8 @@
     <string name="version_config_updater_error_modify_time_failed">Listen over oversettelser (%s) er ikke tilgjengelig.</string>
     <string name="version_config_updater_error_parsing_list">Feil i den nedlastede listen over oversettelser.</string>
     <string name="sn_bookselector_all">Alle</string>
+    <string name="menuSortModifyTime">Endret dato</string>
+    <string name="menuSortCreateTime">Opprettet dato</string>
+    <string name="menuSortCaption_color">Merkefarge</string>
+    <string name="menuSortAri">Versplassering</string>
 </resources>

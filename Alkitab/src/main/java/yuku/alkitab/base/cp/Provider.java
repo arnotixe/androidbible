@@ -54,6 +54,11 @@ public class Provider extends ContentProvider {
     	Log.d(TAG, "@@onCreate");
     	
     	yuku.afw.App.initWithAppContext(getContext().getApplicationContext());
+
+		// App's Context must be stored the variable App.appctx _before_ staticInit, as FontManager depends on it.
+		// -or the app will crash with null pointer reference in getFontPath... aT
+		yuku.alkitab.base.App.setAppContext(getContext().getApplicationContext());
+
     	yuku.alkitab.base.App.staticInit();
     	
 		return true;
