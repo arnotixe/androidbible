@@ -248,4 +248,5 @@
     <string name="version_config_updater_error_modify_time_cannot_parse">Feil i den nedlastede listen over oversettelser.</string>
     <string name="version_config_updater_error_modify_time_failed">Listen over oversettelser (%s) er ikke tilgjengelig.</string>
     <string name="version_config_updater_error_parsing_list">Feil i den nedlastede listen over oversettelser.</string>
+    <string name="sn_bookselector_all">Alle</string>
 </resources>

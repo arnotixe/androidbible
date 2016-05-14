@@ -204,7 +204,6 @@
   <string name="menuSongs">Canciones</string>
   <string name="sn_deep_search_enabled">Letras, etc. también</string>
   <string name="sn_songs_activity_title">Canciones</string>
-  <string name="sn_bookselector_all">TODO</string>
   <string name="sn_bookselector_all_desc">Buscar todos los libros que están instalados.</string>
   <string name="sn_downloading_ellipsis">Descargando&#8230;</string>
   <string name="sn_download_song_books">Descargar canciones de libros</string>
@@ -380,4 +379,10 @@
   <string name="version_download_add_from_url_prompt_yes_only">Dirección del archivo .yes</string>
   <string name="version_download_not_yes">La dirección de internet DEBE terminar en .yes</string>
   <string name="version_error_opening">No se pudo abrir %s.</string>
+  <string name="search_in_version_short_name_placeholder">Buscar en %s</string>
+  <string name="search_syntax_tips"><i>Sugerencias:</i></string>
+  <string name="search_version_select_label">Buscar en:</string>
+  <string name="sn_bookselector_all">Todos</string>
+  <string name="pref_textPadding_summary">Estrechar el texto para facilitar su lectura</string>
+  <string name="pref_textPadding_title">Marco</string>
 </resources>
