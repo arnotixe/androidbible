@@ -135,6 +135,9 @@ public class App extends yuku.afw.App {
 		}
 
 		// Move old files to new, app-internal directory
+		//
+		// NOTE: This cannot be done now that external read/write permissions are revoked !
+		//
 		//   external storage (old method)
 		// OLD path 1: return new File(Environment.getExternalStorageDirectory(), "bible/fonts").getAbsolutePath();
 		// OLD path 2: return new File(Environment.getExternalStorageDirectory(), "bible/yes").getAbsolutePath();
