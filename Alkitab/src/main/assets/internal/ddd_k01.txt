@@ -1,7 +1,7 @@
 1:1:1 SPANISH - Debido a una actualización es necesario que nuevamente descarge las traducciones que desee. Favor abrir el Menu - Ajustes - Versiones para descargarlas. Lamentamos la inconveniencia.
 1:1:2 ENGLISH - Due to an update, you need to re-download the translations you want. Get them on Menu | Settings | Translations. Sorry for this inconvenience.
 1:1:3 NORSK - På grunn av en oppdatering må du hente oversettelsene du ønsker, på ny. Gå til Menyen → Innstillinger → Oversettelser for å hente dem. Beklager bryet.
-1:1:4
+1:1:4 QUICHUA - Cay programaca chayrajlla mushujcachishca. Chaymanta cutin Bibliacunata japina cangui, quishpichihuay. Menú pascay, q'uipa Ajustes, Traducciones. Bibliacunata japilla.
 1:1:5 
 1:1:6 
 1:1:7 
