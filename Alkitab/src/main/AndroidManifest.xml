@@ -4,11 +4,12 @@
 	package="yuku.alkitab.debug"
 	android:installLocation="auto">
 
-    <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Could be these permissions cause trouble on newer/custom android builds?  -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     // experimental remove:
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     -->
     <!-- 3 needed permissions: Internet to download translations. Wakelock to keep screen on. NFC to be able to share things with... NFC -->
     <uses-permission android:name="android.permission.INTERNET" />
