@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion '21.1.1'
+//    buildToolsVersion '21.1.1'
 
     defaultConfig {
         minSdkVersion 14
@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':AlkitabModel')
-    compile project(':BintexReader')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':AlkitabModel')
+    implementation project(':BintexReader')
 }

@@ -25,7 +25,7 @@ android {
         }
     }
     compileSdkVersion 21
-    buildToolsVersion '21.1.1'
+//    buildToolsVersion '21.1.1'
     defaultConfig {
         applicationId 'arnotixe.qibi'
         minSdkVersion 14
@@ -34,7 +34,35 @@ android {
         versionName '4.0.0-beta21'
         multiDexEnabled true
         signingConfig signingConfigs.release
+        // Do not configure matchingFallbacks in the defaultConfig block.
+        // Instead, you must specify fallbacks for a given product flavor in the
+        // productFlavors block, as shown below.
     }
+
+// In the app's build.gradle file.
+// taken directly from https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration?utm_source=android-studio#variant_aware
+    flavorDimensions 'tier'
+    productFlavors {
+        //       paid {
+        //           dimension 'tier'
+        // Because the dependency already includes a "paid" flavor in its
+        // "tier" dimension, you don't need to provide a list of fallbacks
+        // for the "paid" flavor.
+        //       }
+        free {
+            dimension 'tier'
+            // Specifies a sorted list of fallback flavors that the plugin
+            // should try to use when a dependency's matching dimension does
+            // not include a "free" flavor. You may specify as many
+            // fallbacks as you like, and the plugin selects the first flavor
+            // that's available in the dependency's "tier" dimension.
+//            matchingFallbacks = ['demo', 'trial']
+        }
+    }
+
+
+
+
     buildTypes {
         release {
             minifyEnabled true
@@ -61,31 +89,31 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':AlkitabFeedback')
-    compile project(':AlkitabIntegration')
-    compile project(':AlkitabIo')
-    compile project(':AlkitabModel')
-    compile project(':AlkitabYes2')
-    compile project(':BiblePlus')
-    compile project(':DragSortListView')
-    compile project(':KpriModel')
-    compile project(':KpriViewerLib')
-    compile project(':BintexReader')
-    compile project(':BintexWriter')
-    compile project(':Afw')
-    compile project(':FlowLayout')
-    compile project(':AmbilWarna')
-    compile project(':FileChooser')
-    compile project(':ImportedDesktopVerseUtil')
-    compile 'com.android.support:support-v4:21.0.3'
-    compile 'com.squareup.picasso:picasso:2.4.0'
-    compile 'com.squareup.okhttp:okhttp:2.1.0'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
-    compile 'net.sf.trove4j:trove4j:3.0.3'
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile 'com.android.support:support-v13:20.0.0'
-    compile 'com.google.android.gms:play-services-base:6.5.87'
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.android.support:multidex:1.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':AlkitabFeedback')
+    implementation project(':AlkitabIntegration')
+    implementation project(':AlkitabIo')
+    implementation project(':AlkitabModel')
+    implementation project(':AlkitabYes2')
+    implementation project(':BiblePlus')
+    implementation project(':DragSortListView')
+    implementation project(':KpriModel')
+    implementation project(':KpriViewerLib')
+    implementation project(':BintexReader')
+    implementation project(':BintexWriter')
+    implementation project(':Afw')
+    implementation project(':FlowLayout')
+    implementation project(':AmbilWarna')
+    implementation project(':FileChooser')
+    implementation project(':ImportedDesktopVerseUtil')
+    implementation 'com.android.support:support-v4:21.0.3'
+    implementation 'com.squareup.picasso:picasso:2.4.0'
+    implementation 'com.squareup.okhttp:okhttp:2.1.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.1.0'
+    implementation 'net.sf.trove4j:trove4j:3.0.3'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    implementation 'com.android.support:support-v13:20.0.0'
+    implementation 'com.google.android.gms:play-services-base:6.5.87'
+    implementation 'com.android.support:appcompat-v7:21.0.3'
+    implementation 'com.android.support:multidex:1.0.0'
 }
