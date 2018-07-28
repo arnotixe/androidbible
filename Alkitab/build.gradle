@@ -28,10 +28,10 @@ android {
 //    buildToolsVersion '21.1.1'
     defaultConfig {
         applicationId 'arnotixe.qibi'
-        minSdkVersion 14
-        targetSdkVersion 21
-        versionCode 20180609
-        versionName '4.0.0-beta21'
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 20180728
+        versionName '4.0.0-beta22'
         multiDexEnabled true
         signingConfig signingConfigs.release
         // Do not configure matchingFallbacks in the defaultConfig block.
@@ -72,8 +72,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
     lintOptions {
         checkReleaseBuilds false
@@ -99,7 +99,7 @@ dependencies {
     implementation project(':DragSortListView')
     implementation project(':KpriModel')
     implementation project(':KpriViewerLib')
-    implementation project(':BintexReader')
+    //    implementation project(':BintexReader') // these files moved to the BintexWriter for some reason
     implementation project(':BintexWriter')
     implementation project(':Afw')
     implementation project(':FlowLayout')

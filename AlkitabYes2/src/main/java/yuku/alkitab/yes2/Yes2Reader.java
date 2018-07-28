@@ -21,7 +21,14 @@ import yuku.alkitab.yes2.section.TextSection;
 import yuku.alkitab.yes2.section.VersionInfoSection;
 import yuku.alkitab.yes2.section.XrefsSection;
 import yuku.bintex.BintexReader;
+//import yuku.bintex.TixeWr;
 import yuku.bintex.ValueMap;
+import yuku.bintex.BintexWriter;
+
+// moved bintexreader files to under bintexwriter, is that good? arno
+
+//import yuku.bintex.BintexReader;
+//import yuku.bintex.ValueMap;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -65,8 +72,10 @@ public class Yes2Reader implements BibleReader {
 		private final RandomAccessFileRandomInputStream file_;
 		private final Yes2VerseTextDecoder decoder_;
 		private final long sectionContentOffset_;
-		private BintexReader br_;
-		
+        private BintexReader br_;
+//        private BintexWriter bw_;
+//        private TixeWr tw_;
+
 		private SnappyInputStream snappyInputStream;  // null means no compression
 		
 		public TextSectionReader(RandomAccessFileRandomInputStream file, Yes2VerseTextDecoder decoder, ValueMap sectionAttributes, long sectionContentOffset) throws Exception {

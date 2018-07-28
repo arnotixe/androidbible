@@ -1,0 +1,13 @@
+For some unknown reason that escapes me, BintexReader stopped building ("class BintexReader not found" => ?) around august 2018.
+
+moved 
+yuku-android-util/BintexReader/src/main/java/yuku/bintex/BintexReader.java
+yuku-android-util/BintexReader/src/main/java/yuku/bintex/ValueMap.java
+
+to:
+yuku-android-util/BintexWriter/src/main/java/yuku/bintex/BintexReader.java
+yuku-android-util/BintexWriter/src/main/java/yuku/bintex/ValueMap.java
+
+(and imported BintexWriter instead of BintexReader a few places in the code, as a consequence [BintexWriter now includes BintexReader])
+
+Arno

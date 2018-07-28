@@ -12,7 +12,6 @@
       <module fileurl="file://$PROJECT_DIR$/AlkitabYes2/AlkitabYes2.iml" filepath="$PROJECT_DIR$/AlkitabYes2/AlkitabYes2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../yuku-android-util/AmbilWarna/AmbilWarna.iml" filepath="$PROJECT_DIR$/../yuku-android-util/AmbilWarna/AmbilWarna.iml" />
       <module fileurl="file://$PROJECT_DIR$/BiblePlus/BiblePlus.iml" filepath="$PROJECT_DIR$/BiblePlus/BiblePlus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../yuku-android-util/BintexReader/BintexReader.iml" filepath="$PROJECT_DIR$/../yuku-android-util/BintexReader/BintexReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/../yuku-android-util/BintexWriter/BintexWriter.iml" filepath="$PROJECT_DIR$/../yuku-android-util/BintexWriter/BintexWriter.iml" />
       <module fileurl="file://$PROJECT_DIR$/DragSortListView/DragSortListView.iml" filepath="$PROJECT_DIR$/DragSortListView/DragSortListView.iml" />
       <module fileurl="file://$PROJECT_DIR$/../yuku-android-util/FileChooser/FileChooser.iml" filepath="$PROJECT_DIR$/../yuku-android-util/FileChooser/FileChooser.iml" />

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 21
+        targetSdkVersion 28
     }
 
     compileOptions {
@@ -24,5 +24,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':AlkitabModel')
-    implementation project(':BintexReader')
+//    implementation project(':BintexReader') // moved to writer
+    implementation project(':BintexWriter')
 }
