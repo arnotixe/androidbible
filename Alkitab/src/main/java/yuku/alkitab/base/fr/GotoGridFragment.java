@@ -268,7 +268,8 @@ public class GotoGridFragment extends BaseGotoFragment {
 			lName.setTextColor(textColorForView(position));
 			final ColorDrawable color = new ColorDrawable(backgroundColorForView(position));
 			final InsetDrawable bg = new InsetDrawable(color, getResources().getDimensionPixelOffset(R.dimen.goto_grid_cell_inset));
-			lName.setBackgroundDrawable(bg);
+//			lName.setBackgroundDrawable(bg);
+			lName.setBackground(bg);
 		}
 		
 		abstract CharSequence textForView(int position);

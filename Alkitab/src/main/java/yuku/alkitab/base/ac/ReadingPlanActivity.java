@@ -258,12 +258,12 @@ public class ReadingPlanActivity extends BaseLeftDrawerActivity implements LeftD
 		if (downloadedReadingPlanInfos.size() == 0) {
 			actionBar.setDisplayShowTitleEnabled(true);
 			actionBar.setTitle(R.string.rp_menuReadingPlan);
-			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD); // deprecated in API level 21
 			return true;
 		}
 
 		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+//		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST); // deprecated in API level 21
 
 		long id = Preferences.getLong(Prefkey.active_reading_plan_id, 0);
 		int itemNumber = 0;
@@ -280,6 +280,8 @@ public class ReadingPlanActivity extends BaseLeftDrawerActivity implements LeftD
 		final ArrayAdapter<String> navigationAdapter = new ArrayAdapter<>(actionBar.getThemedContext(), android.R.layout.simple_spinner_dropdown_item, titles);
 
 		newDropDownItems = false;
+/*
+// deprecated in API level 21
 		actionBar.setListNavigationCallbacks(navigationAdapter, (i, l) -> {
 			if (newDropDownItems) {
 				loadReadingPlan(downloadedReadingPlanInfos.get(i).id);
@@ -291,6 +293,7 @@ public class ReadingPlanActivity extends BaseLeftDrawerActivity implements LeftD
 			return true;
 		});
 		actionBar.setSelectedNavigationItem(itemNumber);
+*/
 		return false;
 	}
 
@@ -323,6 +326,8 @@ public class ReadingPlanActivity extends BaseLeftDrawerActivity implements LeftD
 				popupMenu.getMenu().add(Menu.NONE, 2, 2, getString(R.string.rp_gotoFirstUnread));
 				popupMenu.getMenu().add(Menu.NONE, 3, 3, getString(R.string.rp_gotoToday));
 
+// lambda expressions not allowed at language level 7
+/*
 				popupMenu.setOnMenuItemClickListener(menuItem -> {
 					popupMenu.dismiss();
 					int itemId = menuItem.getItemId();
@@ -335,6 +340,7 @@ public class ReadingPlanActivity extends BaseLeftDrawerActivity implements LeftD
 					}
 					return true;
 				});
+*/
 				popupMenu.show();
 			}
 

@@ -52,12 +52,15 @@ public abstract class ResourceDragSortCursorAdapter extends DragSortCursorAdapte
      *            define both the item views and the drop down views.
      */
     @Deprecated
+/*
+// FIXME never used
     public ResourceDragSortCursorAdapter(Context context, int layout, Cursor c) {
         super(context, c);
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-    
+*/
+
     /**
      * Constructor with default behavior as per
      * {@link CursorAdapter#CursorAdapter(Context, Cursor, boolean)}; it is recommended
@@ -91,11 +94,14 @@ public abstract class ResourceDragSortCursorAdapter extends DragSortCursorAdapte
      * @param flags Flags used to determine the behavior of the adapter,
      * as per {@link CursorAdapter#CursorAdapter(Context, Cursor, int)}.
      */
+/*
+// FIXME never used
     public ResourceDragSortCursorAdapter(Context context, int layout, Cursor c, int flags) {
         super(context, c, flags);
         mLayout = mDropDownLayout = layout;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+*/
 
     /**
      * Inflates view(s) from the specified XML file.

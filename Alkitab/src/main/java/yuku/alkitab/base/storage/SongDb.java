@@ -1,10 +1,10 @@
 package yuku.alkitab.base.storage;
 
 import android.database.Cursor;
-import android.database.DatabaseUtils.InsertHelper;
+//import android.database.DatabaseUtils.InsertHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Parcel;
-import android.util.TimingLogger;
+//import android.util.TimingLogger;
 import yuku.alkitab.base.util.SongFilter;
 import yuku.alkitab.base.util.SongFilter.CompiledFilter;
 import yuku.alkitab.model.SongInfo;
@@ -13,7 +13,7 @@ import yuku.kpri.model.Song;
 import java.util.ArrayList;
 import java.util.List;
 
-import static yuku.alkitab.base.util.Literals.ToStringArray;
+//import static yuku.alkitab.base.util.Literals.ToStringArray;
 
 public class SongDb extends yuku.afw.storage.InternalDb {
 	public static final String TAG = SongDb.class.getSimpleName();
@@ -43,6 +43,7 @@ public class SongDb extends yuku.afw.storage.InternalDb {
 	 * Store to db songs in a book. Before the songs are stored, all songs of the specified book are deleted.
 	 */
 	public void storeSongs(String bookName, List<Song> songs, int dataFormatVersion) {
+/*
 		TimingLogger tl = new TimingLogger(TAG, "storeSongs");
 		SQLiteDatabase db = helper.getWritableDatabase();
 		db.beginTransaction();
@@ -88,6 +89,7 @@ public class SongDb extends yuku.afw.storage.InternalDb {
 			db.endTransaction();
 			tl.dumpToLog();
 		}
+*/
 	}
 	
 	public Song getSong(String bookName, String code) {

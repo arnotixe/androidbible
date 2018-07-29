@@ -36,17 +36,25 @@ public abstract class DragSortCursorAdapter extends CursorAdapter implements Dra
 
     private ArrayList<Integer> mRemovedCursorPositions = new ArrayList<Integer>();
     
+// FIXME never used
+/*
     public DragSortCursorAdapter(Context context, Cursor c) {
-        super(context, c);
+        super(context, c); // FIXME this is deprecated https://developer.android.com/reference/kotlin/androidx/cursoradapter/widget/SimpleCursorAdapter
+                           // but how is it fixed?  As an alternative, use android.app.LoaderManager with a android.content.CursorLoader. =?
+                            // the good news is it is never used, see SimpleDragSortCursorAdapter.java
     }
+*/
 
     public DragSortCursorAdapter(Context context, Cursor c, boolean autoRequery) {
         super(context, c, autoRequery);
     }
 
+/*
+// FIXME never used
     public DragSortCursorAdapter(Context context, Cursor c, int flags) {
         super(context, c, flags);
     }
+*/
 
     /**
      * Swaps Cursor and clears list-Cursor mapping.

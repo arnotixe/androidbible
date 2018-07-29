@@ -34,7 +34,8 @@ public class BookmarkPDB {
 
 	PDBAccess pdbaccess;
 
-	Vector bookmarks = new Vector();
+//    Vector bookmarks = new Vector(); // Throws error message about unchecked sth
+    Vector<PDBBookmark> bookmarks = new Vector<PDBBookmark>(); // added generics
 
 	public BookmarkPDB(PDBDataStream is) {
 		pdbaccess = new PDBAccess(is);
@@ -42,7 +43,7 @@ public class BookmarkPDB {
 
 	/**
 	 * Decode a PDBRecord to PDBBookmark object
-	 * 
+	 *
 	 * @param rec
 	 *            PDB record
 	 * @return PDBBookmark object or null if failed
@@ -104,7 +105,13 @@ public class BookmarkPDB {
 
 		for (int i = 0; i < reccount; i++) {
 			PDBRecord rec = pdbaccess.readRecord(i);
-			PDBBookmark bm = decode(rec);
+			PDBBookmark bm = decode(rec); // throws compiler warning "unchecked call to addElement(E) as a member of the raw type Vector where E is a type-variable: E extends Object declared in class Vector
+// trying to fix with explicit initialization:
+/*
+			PDBBookmark bm = new <Object>PDBBookmark(0,0,0,"");
+            bm = decode(rec);  // Results in error PDBBookmark does not take parameters
+*/
+
 			if (bm == null) {
 				bookmarks.removeAllElements();
 				return false;

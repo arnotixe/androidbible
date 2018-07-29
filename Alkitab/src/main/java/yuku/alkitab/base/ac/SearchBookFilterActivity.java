@@ -226,7 +226,8 @@ public class SearchBookFilterActivity extends BaseActivity {
 				lName.setTextColor(0xffffffff);
 				final ColorDrawable color = new ColorDrawable(U.getBackgroundColorByBookId(book.bookId));
 				final InsetDrawable bg = new InsetDrawable(color, getResources().getDimensionPixelOffset(R.dimen.goto_grid_cell_inset));
-				lName.setBackgroundDrawable(bg);
+//				lName.setBackgroundDrawable(bg);
+				lName.setBackground(bg);
 			} else {
 				lName.setTextColor(U.getForegroundColorOnDarkBackgroundByBookId(book.bookId));
 				lName.setBackgroundColor(0x0);

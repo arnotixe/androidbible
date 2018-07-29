@@ -68,7 +68,7 @@ public class HelpActivity extends BaseActivity {
 		TextView tMessage = V.get(this, R.id.tMessage);
 
 		WebSettings webSettings = webview.getSettings();
-		webSettings.setSavePassword(false);
+//		webSettings.setSavePassword(false); // Deprecated in API level 18. Does not exist anymore
 		webSettings.setSaveFormData(false);
 		webSettings.setJavaScriptEnabled(false);
 		webSettings.setSupportZoom(true);

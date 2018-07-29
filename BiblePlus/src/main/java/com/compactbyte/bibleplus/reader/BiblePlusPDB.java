@@ -301,7 +301,8 @@ public class BiblePlusPDB {
 	 * @param v
 	 *            verse number
 	 */
-	private void AddResult(Vector result, int b, int c, int v) {
+//	private void AddResult(Vector result, int b, int c, int v) {  // throws error on unchecked type
+	private void AddResult(Vector<Integer> result, int b, int c, int v) {
 		result.addElement(b);
 		result.addElement(c);
 		result.addElement(v);
@@ -431,7 +432,8 @@ public class BiblePlusPDB {
 		// }
 		// System.out.println();
 
-		Vector result = new Vector();
+//        Vector result = new Vector(); // throws addResult() unchecked type later on
+        Vector<Integer> result = new Vector<Integer>(); // added generics
 
 		int result_pos = 0;
 
@@ -1440,7 +1442,8 @@ public class BiblePlusPDB {
 			return null;
 		}
 
-		Vector result = new Vector();
+//        Vector result = new Vector(); // throws addResult() unchecked type later on
+        Vector<Integer> result = new Vector<Integer>(); // added generics
 
 		String[] lower_query = new String[query.length];
 

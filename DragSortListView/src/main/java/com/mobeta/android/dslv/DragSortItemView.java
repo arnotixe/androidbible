@@ -31,7 +31,8 @@ public class DragSortItemView extends ViewGroup implements Checkable {
 
         // always init with standard ListView layout params
         setLayoutParams(new AbsListView.LayoutParams(
-                ViewGroup.LayoutParams.FILL_PARENT,
+//                ViewGroup.LayoutParams.FILL_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
 
         //setClipChildren(true);
